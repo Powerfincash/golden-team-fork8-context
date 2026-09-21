@@ -28,6 +28,10 @@
   **réserve 2025 négative sur les cinq paires mesurées** — EURGBP et USDCAD, les seuls positifs
   en échantillon, s'inversent. Aucune paire ne passe « positif sur les deux périodes ».
 - **Le poste retour à la moyenne reste vacant** (Heron seul). Le portefeuille est 100 % cassure.
+  Troisième échec d'affilée sur la réserve 2025 après Luna AI et Viper : le motif est assez
+  net pour que le prochain candidat soit mesuré sur 2025 **avant** tout le reste.
+- **Mécanisme de reprise de session en place** (PR n°1 fusionnée le 21/09) : `ETAT.md`,
+  ordre de lecture en tête de `CLAUDE.md`, et `./sauver.sh` comme unique commande de sauvegarde.
 
 ## 2. En cours — ce qui tourne seul
 
@@ -51,13 +55,24 @@
 
 ## 4. Prochain geste — un seul
 
-1. **Relancer les réserves 2025 de Sakura et Happy Pound.** Les deux passes du 21/09 ont été
-   lancées mais n'ont produit aucun rapport (le log dit lui-même à 02:31 : « REFUS : aucun rapport
-   après l'attente — ne rien conclure de ce passage »). Leurs verdicts d'origine PASS et *validé*
+**Décidé par Denis le 21/09 : les corrélations d'abord.** C'est la seule mesure qui tranche
+encore quelque chose ; le reste est du rattrapage.
+
+1. **Corrélations de GoldDaily1 et goldtrade_H contre la jambe or privée.**
+   `outils/parjeu.py` sur les rapports **n121** (UBS SetsB, compte propre) et **n132**
+   (Eagle-owl SetsB2, prop firm). Au-delà de **+0,5**, le jeu est redondant et son retrait
+   est justifié ; en deçà, le retirer reproduirait une erreur déjà réfutée.
+   **Ne peut pas se faire depuis une session infonuagique** : les rapports et `parjeu.py`
+   sont sur le PC. C'est à lancer là-bas.
+
+Ensuite, dans cet ordre, sans urgence :
+
+2. Relancer les **réserves 2025 de Sakura et Happy Pound**. Les deux passes du 21/09 ont été
+   lancées sans produire de rapport (le log dit à 02:31 : « REFUS : aucun rapport après
+   l'attente — ne rien conclure de ce passage »). Leurs verdicts d'origine PASS et *validé*
    n'ont jamais été revus alors que leur facteur de profit est 1,08 et leurs creux 42,2 % et 48,8 %.
-2. Puis : **corriger le symbole AUDUSD** — 4 blocs à 0 trade, c'est le seul test lancé sur le
-   symbole nu alors que tous les autres tournent sur les suffixes `.s`.
-3. Puis : `parjeu.py` sur n121 et n132, pour les corrélations contre la jambe or privée.
+3. Corriger le symbole **AUDUSD** — 4 blocs à 0 trade, seul test lancé sur le symbole nu alors
+   que tous les autres tournent sur les suffixes `.s`.
 
 ## 5. Ne pas refaire
 
