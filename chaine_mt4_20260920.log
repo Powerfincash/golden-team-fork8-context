@@ -1,0 +1,878 @@
+20:58:36  LANCE m01_viper_EURAUD
+///// REFUS : EURAUD n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+20:58:37  FIN m01_viper_EURAUD (code 0)
+20:58:42  LANCE m02_viper_GBPAUD
+///// REFUS : GBPAUD n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+20:58:43  FIN m02_viper_GBPAUD (code 0)
+20:58:48  LANCE m03_viper_GBPCHF
+///// REFUS : GBPCHF n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+20:58:49  FIN m03_viper_GBPCHF (code 0)
+20:58:55  LANCE m04_viper_EURCHF
+///// REFUS : EURCHF n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+20:58:56  FIN m04_viper_EURCHF (code 0)
+20:59:01  LANCE m05_viper_AUDCAD
+///// REFUS : AUDCAD n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+20:59:02  FIN m05_viper_AUDCAD (code 0)
+20:59:07  LANCE m06_viper_AUDUSD
+symbole present dans la Market Watch : AUDUSD
+ticks reels : AUDUSD -> AUDUSD
+TDS actif pour cette installation
+controles passes : AUDUSD  modele 0  rapport m06_viper_AUDUSD  EA Market\The Viper EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+outils/lancer_mt4.sh: line 184: e.: command not found
+21:30:35  CHAINE v2 (chemins absolus)
+21:30:35  LANCE m06_viper_AUDUSD
+symbole present dans la Market Watch : AUDUSD
+ticks reels : AUDUSD -> AUDUSD
+TDS actif pour cette installation
+controles passes : AUDUSD  modele 0  rapport m06_viper_AUDUSD  EA Market\The Viper EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD.htm'
+ticks modelises : 
+=== m06_viper_AUDUSD.htm ===
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Depot initial            3000.00
+   Facteur de profit        Remuneration esperee
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Qualite du modelage      99.90%
+   Ticks modeles            74802320
+   Depot initial            3000.00
+   Profit total net         0.00
+   Facteur de profit        Remuneration esperee
+   Chute maximale           0.00 (0.00%)
+   Total des Trades         0
+21:49:02  FIN m06_viper_AUDUSD (code 0)
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD.htm'
+ticks modelises : 
+=== m06_viper_AUDUSD.htm ===
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Depot initial            3000.00
+   Facteur de profit        Remuneration esperee
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Qualite du modelage      99.90%
+   Ticks modeles            74802320
+   Depot initial            3000.00
+   Profit total net         0.00
+   Facteur de profit        Remuneration esperee
+   Chute maximale           0.00 (0.00%)
+   Total des Trades         0
+21:49:04  FIN m06_viper_AUDUSD (code 0)
+21:49:07  LANCE m07_sakura_USDJPY
+symbole present dans la Market Watch : USDJPY
+ticks reels : USDJPY -> USDJPY
+TDS actif pour cette installation
+controles passes : USDJPY  modele 0  rapport m07_sakura_USDJPY  EA Market\Sakura mt4
+21:49:09  LANCE m07_sakura_USDJPY
+   journal fige mais le PID 40944 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   sante : ORDRES=2744 ERREURS=4 CODES={'130': 4} VERDICT=OK
+///// REFUS : rapport m07_sakura_USDJPY.htm deja present — choisir un autre prefixe
+22:23:44  FIN m07_sakura_USDJPY (code 0)
+22:23:49  LANCE m08_happypound_GBPUSD
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m07_sakura_USDJPY.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m07_sakura_USDJPY.htm'
+ticks modelises : 
+=== m07_sakura_USDJPY.htm ===
+   Symbole                  USDJPY (US Dollar vs Japanese Yen)
+   Depot initial            3000.00
+   Facteur de profit        1.08
+   Symbole                  USDJPY (US Dollar vs Japanese Yen)
+   Qualite du modelage      99.90%
+   Ticks modeles            127971109
+   Depot initial            3000.00
+   Profit total net         8176.25
+   Facteur de profit        1.08
+   Chute maximale           5666.59 (42.16%)
+   Total des Trades         5826
+22:23:52  FIN m07_sakura_USDJPY (code 0)
+22:23:57  LANCE m08_happypound_GBPUSD
+   journal fige mais le PID 37028 travaille (CPU 104%) — je patiente
+configuration prise en compte
+   sante : ORDRES=291 ERREURS=0 CODES={} VERDICT=OK
+///// REFUS : rapport m08_happypound_GBPUSD.htm deja present — choisir un autre prefixe
+22:30:37  FIN m08_happypound_GBPUSD (code 0)
+22:30:43  LANCE m01_viper_EURAUD_2025
+symbole present dans la Market Watch : EURAUD.s
+ticks reels : EURAUD.s -> EURAUD
+TDS actif pour cette installation
+controles passes : EURAUD.s  modele 0  rapport m01_viper_EURAUD_2025  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m08_happypound_GBPUSD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m08_happypound_GBPUSD.htm'
+ticks modelises : 
+=== m08_happypound_GBPUSD.htm ===
+   Symbole                  GBPUSD (Great Britan Pound vs US Do
+   Depot initial            3000.00
+   Facteur de profit        1.08
+   Symbole                  GBPUSD (Great Britan Pound vs US Do
+   Qualite du modelage      99.90%
+   Ticks modeles            114493018
+   Depot initial            3000.00
+   Profit total net         4138.59
+   Facteur de profit        1.08
+   Chute maximale           3793.38 (48.80%)
+   Total des Trades         1217
+22:30:46  FIN m08_happypound_GBPUSD (code 0)
+22:30:51  LANCE m01_viper_EURAUD
+   journal fige mais le PID 7356 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 7356 travaille (CPU 102%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 7356 travaille (CPU 104%) — je patiente
+   journal fige mais le PID 7356 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 7356 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 7356 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 7356 travaille (CPU 104%) — je patiente
+symbole present dans la Market Watch : EURAUD.s
+ticks reels : EURAUD.s -> EURAUD
+TDS actif pour cette installation
+controles passes : EURAUD.s  modele 0  rapport m01_viper_EURAUD  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m01_viper_EURAUD_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m01_viper_EURAUD_2025.htm'
+ticks modelises : 
+=== m01_viper_EURAUD_2025.htm ===
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Depot initial            3000.00
+   Facteur de profit        0.69
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Qualite du modelage      99.90%
+   Ticks modeles            44077536
+   Depot initial            3000.00
+   Profit total net         -625.01
+   Facteur de profit        0.69
+   Chute maximale           999.85 (29.93%)
+   Total des Trades         361
+22:42:18  FIN m01_viper_EURAUD_2025 (code 0)
+22:42:23  LANCE m02_viper_GBPAUD_2025
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 107%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 104%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 102%) — je patiente
+   journal fige mais le PID 12456 travaille (CPU 102%) — je patiente
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m01_viper_EURAUD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m01_viper_EURAUD.htm'
+ticks modelises : 
+=== m01_viper_EURAUD.htm ===
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Depot initial            3000.00
+   Facteur de profit        1.49
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Qualite du modelage      99.90%
+   Ticks modeles            143277582
+   Depot initial            3000.00
+   Profit total net         1627.61
+   Facteur de profit        1.49
+   Chute maximale           500.05 (10.33%)
+   Total des Trades         1221
+23:16:00  FIN m01_viper_EURAUD (code 0)
+symbole present dans la Market Watch : GBPAUD.s
+ticks reels : GBPAUD.s -> GBPAUD
+TDS actif pour cette installation
+controles passes : GBPAUD.s  modele 0  rapport m02_viper_GBPAUD_2025  EA Market\The Viper EA
+23:16:05  LANCE m02_viper_GBPAUD
+   journal fige mais le PID 32508 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 32508 travaille (CPU 109%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 32508 travaille (CPU 102%) — je patiente
+symbole present dans la Market Watch : GBPAUD.s
+ticks reels : GBPAUD.s -> GBPAUD
+TDS actif pour cette installation
+controles passes : GBPAUD.s  modele 0  rapport m02_viper_GBPAUD  EA Market\The Viper EA
+configuration prise en compte
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m02_viper_GBPAUD_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m02_viper_GBPAUD_2025.htm'
+ticks modelises : 
+=== m02_viper_GBPAUD_2025.htm ===
+   Symbole                  GBPAUD.s (Great Britain Pound vs Au
+   Depot initial            3000.00
+   Facteur de profit        1.76
+   Symbole                  GBPAUD.s (Great Britain Pound vs Au
+   Qualite du modelage      99.90%
+   Ticks modeles            29589738
+   Depot initial            3000.00
+   Profit total net         612.60
+   Facteur de profit        1.76
+   Chute maximale           738.87 (22.47%)
+   Total des Trades         289
+23:23:46  FIN m02_viper_GBPAUD_2025 (code 0)
+23:23:51  LANCE m03_viper_GBPCHF_2025
+   journal fige mais le PID 17720 travaille (CPU 84%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 17720 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 17720 travaille (CPU 104%) — je patiente
+symbole present dans la Market Watch : GBPCHF.s
+ticks reels : GBPCHF.s -> GBPCHF
+TDS actif pour cette installation
+controles passes : GBPCHF.s  modele 0  rapport m03_viper_GBPCHF_2025  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m02_viper_GBPAUD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m02_viper_GBPAUD.htm'
+ticks modelises : 
+=== m02_viper_GBPAUD.htm ===
+   Symbole                  GBPAUD.s (Great Britain Pound vs Au
+   Depot initial            3000.00
+   Facteur de profit        1.55
+   Symbole                  GBPAUD.s (Great Britain Pound vs Au
+   Qualite du modelage      99.90%
+   Ticks modeles            129913717
+   Depot initial            3000.00
+   Profit total net         1681.82
+   Facteur de profit        1.55
+   Chute maximale           1438.28 (33.06%)
+   Total des Trades         1046
+23:54:08  FIN m02_viper_GBPAUD (code 0)
+23:54:13  LANCE m03_viper_GBPCHF
+   journal fige mais le PID 38408 travaille (CPU 79%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 38408 travaille (CPU 104%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 38408 travaille (CPU 102%) — je patiente
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m03_viper_GBPCHF_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m03_viper_GBPCHF_2025.htm'
+ticks modelises : 
+=== m03_viper_GBPCHF_2025.htm ===
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Depot initial            3000.00
+   Facteur de profit        1.52
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Qualite du modelage      99.90%
+   Ticks modeles            24731651
+   Depot initial            3000.00
+   Profit total net         528.04
+   Facteur de profit        1.52
+   Chute maximale           1358.07 (38.90%)
+   Total des Trades         196
+00:01:03  FIN m03_viper_GBPCHF_2025 (code 0)
+symbole present dans la Market Watch : GBPCHF.s
+ticks reels : GBPCHF.s -> GBPCHF
+TDS actif pour cette installation
+controles passes : GBPCHF.s  modele 0  rapport m03_viper_GBPCHF  EA Market\The Viper EA
+00:01:08  LANCE m04_viper_EURCHF_2025
+   journal fige mais le PID 1472 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 1472 travaille (CPU 108%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+symbole present dans la Market Watch : EURCHF.s
+ticks reels : EURCHF.s -> EURCHF
+TDS actif pour cette installation
+controles passes : EURCHF.s  modele 0  rapport m04_viper_EURCHF_2025  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m03_viper_GBPCHF.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m03_viper_GBPCHF.htm'
+ticks modelises : 
+=== m03_viper_GBPCHF.htm ===
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Depot initial            3000.00
+   Facteur de profit        0.80
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Qualite du modelage      99.90%
+   Ticks modeles            93247709
+   Depot initial            3000.00
+   Profit total net         -1091.99
+   Facteur de profit        0.80
+   Chute maximale           3803.32 (82.76%)
+   Total des Trades         686
+00:24:49  FIN m03_viper_GBPCHF (code 0)
+configuration prise en compte
+00:24:54  LANCE m04_viper_EURCHF
+   journal fige mais le PID 34040 travaille (CPU 103%) — je patiente
+   journal fige mais le PID 34040 travaille (CPU 106%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 34040 travaille (CPU 106%) — je patiente
+symbole present dans la Market Watch : EURCHF.s
+ticks reels : EURCHF.s -> EURCHF
+TDS actif pour cette installation
+controles passes : EURCHF.s  modele 0  rapport m04_viper_EURCHF  EA Market\The Viper EA
+configuration prise en compte
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m04_viper_EURCHF_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m04_viper_EURCHF_2025.htm'
+ticks modelises : 
+=== m04_viper_EURCHF_2025.htm ===
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Depot initial            3000.00
+   Facteur de profit        1.98
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Qualite du modelage      99.90%
+   Ticks modeles            20319263
+   Depot initial            3000.00
+   Profit total net         569.85
+   Facteur de profit        1.98
+   Chute maximale           348.16 (10.48%)
+   Total des Trades         284
+00:30:37  FIN m04_viper_EURCHF_2025 (code 0)
+00:30:42  LANCE m05_viper_AUDCAD_2025
+   journal fige mais le PID 40656 travaille (CPU 76%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 40656 travaille (CPU 105%) — je patiente
+symbole present dans la Market Watch : AUDCAD.s
+ticks reels : AUDCAD.s -> AUDCAD
+TDS actif pour cette installation
+controles passes : AUDCAD.s  modele 0  rapport m05_viper_AUDCAD_2025  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m04_viper_EURCHF.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m04_viper_EURCHF.htm'
+ticks modelises : 
+=== m04_viper_EURCHF.htm ===
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Depot initial            3000.00
+   Facteur de profit        0.67
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Qualite du modelage      99.90%
+   Ticks modeles            63370122
+   Depot initial            3000.00
+   Profit total net         -1907.35
+   Facteur de profit        0.67
+   Chute maximale           2335.07 (75.82%)
+   Total des Trades         1087
+00:46:38  FIN m04_viper_EURCHF (code 0)
+00:46:43  LANCE m05_viper_AUDCAD
+   journal fige mais le PID 43364 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 43364 travaille (CPU 105%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+symbole present dans la Market Watch : AUDCAD.s
+ticks reels : AUDCAD.s -> AUDCAD
+TDS actif pour cette installation
+controles passes : AUDCAD.s  modele 0  rapport m05_viper_AUDCAD  EA Market\The Viper EA
+configuration prise en compte
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m05_viper_AUDCAD_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m05_viper_AUDCAD_2025.htm'
+ticks modelises : 
+=== m05_viper_AUDCAD_2025.htm ===
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Depot initial            3000.00
+   Facteur de profit        1.82
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Qualite du modelage      99.90%
+   Ticks modeles            24623225
+   Depot initial            3000.00
+   Profit total net         419.77
+   Facteur de profit        1.82
+   Chute maximale           412.37 (13.02%)
+   Total des Trades         234
+00:53:28  FIN m05_viper_AUDCAD_2025 (code 0)
+00:53:33  LANCE m06_viper_AUDUSD_2025
+   journal fige mais le PID 26548 travaille (CPU 78%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 26548 travaille (CPU 105%) — je patiente
+   journal fige mais le PID 26548 travaille (CPU 108%) — je patiente
+symbole present dans la Market Watch : AUDUSD
+ticks reels : AUDUSD -> AUDUSD
+TDS actif pour cette installation
+controles passes : AUDUSD  modele 0  rapport m06_viper_AUDUSD_2025  EA Market\The Viper EA
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m05_viper_AUDCAD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m05_viper_AUDCAD.htm'
+ticks modelises : 
+=== m05_viper_AUDCAD.htm ===
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Depot initial            3000.00
+   Facteur de profit        1.17
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Qualite du modelage      99.90%
+   Ticks modeles            114231039
+   Depot initial            3000.00
+   Profit total net         377.97
+   Facteur de profit        1.17
+   Chute maximale           1422.65 (39.88%)
+   Total des Trades         754
+01:21:35  FIN m05_viper_AUDCAD (code 0)
+01:21:40  LANCE m06_viper_AUDUSD_2025
+   journal fige mais le PID 6576 travaille (CPU 94%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 6576 travaille (CPU 106%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+///// REFUS : rapport m06_viper_AUDUSD_2025.htm deja present — choisir un autre prefixe
+01:25:49  FIN m06_viper_AUDUSD_2025 (code 0)
+01:25:54  LANCE m07_sakura_USDJPY_2025
+symbole present dans la Market Watch : USDJPY
+ticks reels : USDJPY -> USDJPY
+TDS actif pour cette installation
+controles passes : USDJPY  modele 0  rapport m07_sakura_USDJPY_2025  EA Market\Sakura mt4
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/m06_viper_AUDUSD_2025.htm'
+ticks modelises : 
+=== m06_viper_AUDUSD_2025.htm ===
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Depot initial            3000.00
+   Facteur de profit        Remuneration esperee
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Qualite du modelage      99.90%
+   Ticks modeles            16377518
+   Depot initial            3000.00
+   Profit total net         0.00
+   Facteur de profit        Remuneration esperee
+   Chute maximale           0.00 (0.00%)
+   Total des Trades         0
+01:25:57  FIN m06_viper_AUDUSD_2025 (code 0)
+01:26:02  LANCE m07_sakura_USDJPY_2025
+   journal fige mais le PID 41392 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   instance inactive (journal fige, CPU 3%), fermeture du PID 41392
+symbole present dans la Market Watch : USDJPY
+ticks reels : USDJPY -> USDJPY
+TDS actif pour cette installation
+controles passes : USDJPY  modele 0  rapport m07_sakura_USDJPY_2025  EA Market\Sakura mt4
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+///// REFUS : aucun rapport apres l'attente (etat: non) — ne rien conclure de ce passage
+02:29:50  FIN m07_sakura_USDJPY_2025 (code 0)
+02:29:55  LANCE m08_happypound_GBPUSD_2025
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+///// REFUS : aucun rapport apres l'attente (etat: non) — ne rien conclure de ce passage
+02:31:35  FIN m07_sakura_USDJPY_2025 (code 0)
+02:31:40  LANCE m08_happypound_GBPUSD_2025
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 7%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 7%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 7%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 13%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 12%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 11%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 7%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 11%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 12%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 11%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 5%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 12356 travaille (CPU 6%) — je patiente
+   instance inactive (journal fige, CPU 1%), fermeture du PID 12356
+symbole present dans la Market Watch : GBPUSD
+ticks reels : GBPUSD -> GBPUSD
+TDS actif pour cette installation
+controles passes : GBPUSD  modele 0  rapport m08_happypound_GBPUSD_2025  EA Market\Happy Pound MT4
+symbole present dans la Market Watch : GBPUSD
+ticks reels : GBPUSD -> GBPUSD
+TDS actif pour cette installation
+controles passes : GBPUSD  modele 0  rapport m08_happypound_GBPUSD_2025  EA Market\Happy Pound MT4
+configuration prise en compte
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+///// REFUS : aucun rapport apres l'attente (etat: non) — ne rien conclure de ce passage
+04:02:43  FIN m08_happypound_GBPUSD_2025 (code 0)
+///// REFUS : aucun rapport apres l'attente (etat: non) — ne rien conclure de ce passage
+04:02:43  FIN m08_happypound_GBPUSD_2025 (code 0)
+04:02:48  LANCE m01_viper_EURAUD_2025
+   journal fige mais le PID 5312 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 11%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 9%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 10%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 6%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 8%) — je patiente
+   journal fige mais le PID 5312 travaille (CPU 6%) — je patiente
+   instance inactive (journal fige, CPU 0%), fermeture du PID 5312
+///// REFUS : rapport m01_viper_EURAUD_2025.htm deja present — choisir un autre prefixe
+04:19:59  FIN m01_viper_EURAUD_2025 (code 0)
+04:20:04  LANCE m02_viper_GBPAUD_2025
+///// REFUS : rapport m02_viper_GBPAUD_2025.htm deja present — choisir un autre prefixe
+04:20:05  FIN m02_viper_GBPAUD_2025 (code 0)
+04:20:10  LANCE m03_viper_GBPCHF_2025
+///// REFUS : rapport m03_viper_GBPCHF_2025.htm deja present — choisir un autre prefixe
+04:20:11  FIN m03_viper_GBPCHF_2025 (code 0)
+04:20:16  LANCE m04_viper_EURCHF_2025
+///// REFUS : rapport m04_viper_EURCHF_2025.htm deja present — choisir un autre prefixe
+04:20:17  FIN m04_viper_EURCHF_2025 (code 0)
+04:20:22  LANCE m05_viper_AUDCAD_2025
+///// REFUS : rapport m05_viper_AUDCAD_2025.htm deja present — choisir un autre prefixe
+04:20:23  FIN m05_viper_AUDCAD_2025 (code 0)
+04:20:28  FIN DE CHAINE MT4
+04:20:34  CHAINE B : Viper croisees .s
+04:20:34  LANCE m01_viper_EURAUD
+///// REFUS : rapport m01_viper_EURAUD.htm deja present — choisir un autre prefixe
+04:20:35  FIN m01_viper_EURAUD (code 0)
+04:20:41  LANCE m02_viper_GBPAUD
+///// REFUS : rapport m02_viper_GBPAUD.htm deja present — choisir un autre prefixe
+04:20:42  FIN m02_viper_GBPAUD (code 0)
+04:20:47  LANCE m03_viper_GBPCHF
+///// REFUS : rapport m03_viper_GBPCHF.htm deja present — choisir un autre prefixe
+04:20:48  FIN m03_viper_GBPCHF (code 0)
+04:20:53  LANCE m04_viper_EURCHF
+///// REFUS : rapport m04_viper_EURCHF.htm deja present — choisir un autre prefixe
+04:20:54  FIN m04_viper_EURCHF (code 0)
+04:20:55  CHAINE C : Viper sans grille
+04:20:55  LANCE v06_viper_AUDUSD_sansgrille
+symbole present dans la Market Watch : AUDUSD
+ticks reels : AUDUSD -> AUDUSD
+TDS actif pour cette installation
+controles passes : AUDUSD  modele 0  rapport v06_viper_AUDUSD_sansgrille  EA Market\The Viper EA
+04:20:59  LANCE m05_viper_AUDCAD
+   journal fige mais le PID 36740 travaille (CPU 103%) — je patiente
+configuration prise en compte
+   journal fige mais le PID 36740 travaille (CPU 108%) — je patiente
+   sante : ORDRES=0 ERREURS=1227 CODES={'131': 1227} VERDICT=MALADE
+///// REFUS : le passage refuse ses ordres (ORDRES=0 ERREURS=1227 CODES={'131': 1227} VERDICT=MALADE) — arrete au bout de 90 s
+04:22:53  FIN v06_viper_AUDUSD_sansgrille (code 0)
+04:22:58  LANCE v01_viper_EURAUD_sansgrille
+symbole present dans la Market Watch : EURAUD.s
+ticks reels : EURAUD.s -> EURAUD
+TDS actif pour cette installation
+controles passes : EURAUD.s  modele 0  rapport v01_viper_EURAUD_sansgrille  EA Market\The Viper EA
+configuration prise en compte
+   journal fige mais le PID 23944 travaille (CPU 102%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 106%) — je patiente
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+   journal fige mais le PID 23944 travaille (CPU 109%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 109%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 109%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 106%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 106%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 105%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 107%) — je patiente
+   journal fige mais le PID 23944 travaille (CPU 110%) — je patiente
+///// REFUS : rapport m05_viper_AUDCAD.htm deja present — choisir un autre prefixe
+04:56:53  FIN m05_viper_AUDCAD (code 0)
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v01_viper_EURAUD_sansgrille.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v01_viper_EURAUD_sansgrille.htm'
+ticks modelises : 
+=== v01_viper_EURAUD_sansgrille.htm ===
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Depot initial            3000.00
+   Facteur de profit        1.49
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Qualite du modelage      99.90%
+   Ticks modeles            143277582
+   Depot initial            3000.00
+   Profit total net         1638.08
+   Facteur de profit        1.49
+   Chute maximale           506.29 (10.43%)
+   Total des Trades         1228
+04:56:55  FIN v01_viper_EURAUD_sansgrille (code 0)
+04:56:58  FIN DE CHAINE MT4 B
+04:57:00  LANCE v05_viper_AUDCAD_sansgrille
+symbole present dans la Market Watch : AUDCAD.s
+ticks reels : AUDCAD.s -> AUDCAD
+TDS actif pour cette installation
+controles passes : AUDCAD.s  modele 0  rapport v05_viper_AUDCAD_sansgrille  EA Market\The Viper EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v05_viper_AUDCAD_sansgrille.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v05_viper_AUDCAD_sansgrille.htm'
+ticks modelises : 
+=== v05_viper_AUDCAD_sansgrille.htm ===
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Depot initial            3000.00
+   Facteur de profit        1.18
+   Symbole                  AUDCAD.s (Australian Dollar vs Cana
+   Qualite du modelage      99.90%
+   Ticks modeles            114231039
+   Depot initial            3000.00
+   Profit total net         400.17
+   Facteur de profit        1.18
+   Chute maximale           1421.40 (39.66%)
+   Total des Trades         761
+05:25:26  FIN v05_viper_AUDCAD_sansgrille (code 0)
+05:25:31  LANCE v06_viper_AUDUSD_sansgrille_2025
+symbole present dans la Market Watch : AUDUSD
+ticks reels : AUDUSD -> AUDUSD
+TDS actif pour cette installation
+controles passes : AUDUSD  modele 0  rapport v06_viper_AUDUSD_sansgrille_2025  EA Market\The Viper EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v06_viper_AUDUSD_sansgrille_2025.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/v06_viper_AUDUSD_sansgrille_2025.htm'
+ticks modelises : 
+=== v06_viper_AUDUSD_sansgrille_2025.htm ===
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Depot initial            3000.00
+   Facteur de profit        Remuneration esperee
+   Symbole                  AUDUSD (Australian Dollar vs US Dol
+   Qualite du modelage      99.90%
+   Ticks modeles            16377518
+   Depot initial            3000.00
+   Profit total net         0.00
+   Facteur de profit        Remuneration esperee
+   Chute maximale           0.00 (0.00%)
+   Total des Trades         0
+05:30:02  FIN v06_viper_AUDUSD_sansgrille_2025 (code 0)
+05:30:07  FIN DE CHAINE MT4 C
+05:30:13  CHAINE D : R Factor (jeux vendeur, lot fixe)
+05:30:13  LANCE r_EURAUD
+symbole present dans la Market Watch : EURAUD.s
+ticks reels : EURAUD.s -> EURAUD
+TDS actif pour cette installation
+controles passes : EURAUD.s  modele 0  rapport r_EURAUD  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=247 ERREURS=0 CODES={} VERDICT=OK
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURAUD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURAUD.htm'
+ticks modelises : 
+=== r_EURAUD.htm ===
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Depot initial            3000.00
+   Facteur de profit        0.89
+   Symbole                  EURAUD.s (Euro vs Australian Dollar
+   Qualite du modelage      99.90%
+   Ticks modeles            143277582
+   Depot initial            3000.00
+   Profit total net         -197.16
+   Facteur de profit        0.89
+   Chute maximale           635.79 (18.55%)
+   Total des Trades         643
+05:42:38  FIN r_EURAUD (code 0)
+05:42:43  LANCE r_EURCAD
+symbole present dans la Market Watch : EURCAD.s
+ticks reels : EURCAD.s -> EURCAD
+TDS actif pour cette installation
+controles passes : EURCAD.s  modele 0  rapport r_EURCAD  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=354 ERREURS=0 CODES={} VERDICT=OK
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURCAD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURCAD.htm'
+ticks modelises : 
+=== r_EURCAD.htm ===
+   Symbole                  EURCAD.s (Euro vs Canadian Dollar)
+   Depot initial            3000.00
+   Facteur de profit        0.84
+   Symbole                  EURCAD.s (Euro vs Canadian Dollar)
+   Qualite du modelage      99.90%
+   Ticks modeles            94957523
+   Depot initial            3000.00
+   Profit total net         -185.96
+   Facteur de profit        0.84
+   Chute maximale           427.89 (13.20%)
+   Total des Trades         567
+05:51:22  FIN r_EURCAD (code 0)
+05:51:27  LANCE r_EURCHF
+symbole present dans la Market Watch : EURCHF.s
+ticks reels : EURCHF.s -> EURCHF
+TDS actif pour cette installation
+controles passes : EURCHF.s  modele 0  rapport r_EURCHF  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=600 ERREURS=0 CODES={} VERDICT=OK
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURCHF.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURCHF.htm'
+ticks modelises : 
+=== r_EURCHF.htm ===
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Depot initial            3000.00
+   Facteur de profit        1.01
+   Symbole                  EURCHF.s (Euro vs Swiss Franc)
+   Qualite du modelage      99.90%
+   Ticks modeles            63370122
+   Depot initial            3000.00
+   Profit total net         7.56
+   Facteur de profit        1.01
+   Chute maximale           302.21 (9.27%)
+   Total des Trades         653
+05:57:31  FIN r_EURCHF (code 0)
+05:57:36  LANCE r_EURGBP
+symbole present dans la Market Watch : EURGBP.s
+ticks reels : EURGBP.s -> EURGBP
+TDS actif pour cette installation
+controles passes : EURGBP.s  modele 0  rapport r_EURGBP  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=517 ERREURS=0 CODES={} VERDICT=OK
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURGBP.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_EURGBP.htm'
+ticks modelises : 
+=== r_EURGBP.htm ===
+   Symbole                  EURGBP.s (Euro vs Great Britain Pou
+   Depot initial            3000.00
+   Facteur de profit        1.44
+   Symbole                  EURGBP.s (Euro vs Great Britain Pou
+   Qualite du modelage      99.90%
+   Ticks modeles            73832142
+   Depot initial            3000.00
+   Profit total net         360.52
+   Facteur de profit        1.44
+   Chute maximale           221.71 (6.28%)
+   Total des Trades         638
+06:04:31  FIN r_EURGBP (code 0)
+06:04:36  LANCE r_GBPCHF
+symbole present dans la Market Watch : GBPCHF.s
+ticks reels : GBPCHF.s -> GBPCHF
+TDS actif pour cette installation
+controles passes : GBPCHF.s  modele 0  rapport r_GBPCHF  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=323 ERREURS=0 CODES={} VERDICT=OK
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_GBPCHF.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_GBPCHF.htm'
+ticks modelises : 
+=== r_GBPCHF.htm ===
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Depot initial            3000.00
+   Facteur de profit        0.49
+   Symbole                  GBPCHF.s (Great Britain Pound vs Sw
+   Qualite du modelage      99.90%
+   Ticks modeles            93247709
+   Depot initial            3000.00
+   Profit total net         -1230.04
+   Facteur de profit        0.49
+   Chute maximale           1308.88 (43.18%)
+   Total des Trades         572
+06:13:05  FIN r_GBPCHF (code 0)
+06:13:10  LANCE r_NZDCHF
+///// REFUS : NZDCHF.s n'est pas dans la Market Watch du terminal (symbols.sel) : le testeur repondrait « symbol not found » — l'ajouter dans l'interface du MT4 d'abord
+06:13:11  FIN r_NZDCHF (code 0)
+06:13:16  LANCE r_USDCAD
+symbole present dans la Market Watch : USDCAD.s
+ticks reels : USDCAD.s -> USDCAD
+TDS actif pour cette installation
+controles passes : USDCAD.s  modele 0  rapport r_USDCAD  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_USDCAD.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_USDCAD.htm'
+ticks modelises : 
+=== r_USDCAD.htm ===
+   Symbole                  USDCAD.s (US Dollar vs Canadian Dol
+   Depot initial            3000.00
+   Facteur de profit        1.44
+   Symbole                  USDCAD.s (US Dollar vs Canadian Dol
+   Qualite du modelage      99.90%
+   Ticks modeles            78683609
+   Depot initial            3000.00
+   Profit total net         337.71
+   Facteur de profit        1.44
+   Chute maximale           64.17 (2.11%)
+   Total des Trades         599
+06:22:16  FIN r_USDCAD (code 0)
+06:22:21  LANCE r_USDCHF
+symbole present dans la Market Watch : USDCHF.s
+ticks reels : USDCHF.s -> USDCHF
+TDS actif pour cette installation
+controles passes : USDCHF.s  modele 0  rapport r_USDCHF  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=0 ERREURS=0 CODES={} VERDICT=VIDE
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=io.open(r'/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_USDCHF.htm',encoding='cp1252',errors='replace').read()[:9000]
+      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/c/Users/User/AppData/Roaming/MetaQuotes/Terminal/F1BBCAACDA8825381C125EAF07296C41/r_USDCHF.htm'
+ticks modelises : 
+=== r_USDCHF.htm ===
+   Symbole                  USDCHF.s (US Dollar vs Swiss Franc)
+   Depot initial            3000.00
+   Facteur de profit        1.29
+   Symbole                  USDCHF.s (US Dollar vs Swiss Franc)
+   Qualite du modelage      99.90%
+   Ticks modeles            61353281
+   Depot initial            3000.00
+   Profit total net         304.64
+   Facteur de profit        1.29
+   Chute maximale           160.74 (4.93%)
+   Total des Trades         631
+06:29:58  FIN r_USDCHF (code 0)
+06:30:03  LANCE r_EURAUD_1ordre
+symbole present dans la Market Watch : EURAUD.s
+ticks reels : EURAUD.s -> EURAUD
+TDS actif pour cette installation
+controles passes : EURAUD.s  modele 0  rapport r_EURAUD_1ordre  EA Market\R Factor EA
+configuration prise en compte
+   sante : ORDRES=247 ERREURS=0 CODES={} VERDICT=OK

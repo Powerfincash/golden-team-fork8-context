@@ -1,0 +1,79 @@
+## Consignes de travail (feedback)
+- [Protocole de mesure unique](protocole-mesure-unique.md) — **06/09 soir** : une seule hypothèse d'exécution pour tout le livre, une seule prise de parole
+- [Bruit du délai aléatoire](bruit-delai-aleatoire.md) — **10/09** : ±24 % sur le rapport ; comparer sans délai, estimer le réalisme avec
+- [Garde-fous de mesure](garde-fous-mesure.md) — la vérification va dans l'outil, pas dans une règle ; **19/09 : un agrégat qui tombe juste ne prouve rien** (mesurer communes / manquées / inventées, `fidelite_entrees.py`)
+- [Portefeuille de réserve : ne plus comparer à UBS](portefeuille-de-reserve.md) — **sa consigne du 20/09 soir** : une brique de réserve se juge sur ses critères propres (1,8, réserve 2025, crible, creux de fonds, indépendance), jamais « moins bon que le livre »
+- [Écarts rentables à garder](ecarts-rentables-a-garder.md) — **sa consigne du 19/09** : une version écartée pour infidélité à UBS peut être un bon robot autonome ; garder les rapports, dire fidélité ET rentabilité à chaque adoption
+- [Kestrel, profil de rendement](kestrel-profil-rendement.md) — **19/09** : MÊME binaire qu'Eagle-owl, trois réglages qui débranchent la fidélité ; sert un jeu isolé, pas le portefeuille ; lit encore les jeux d'UBS (13,4 % d'écart) donc pas encore autonome
+- [Méthode de travail](methode-de-travail.md) — efficacité d'abord, une chose à la fois, protocole avant lancement
+- [Critères d'acceptation backtest](backtest-acceptance-criteria.md) — seuils fixés d'avance, règle d'arrêt
+- [Contrôle sur le premier résultat](controle-premier-resultat.md) — vérifier au premier résultat, pas en fin de file
+- [Inventorier avant de lancer](inventorier-avant-de-lancer.md) — lire ce qui est sur le disque avant de produire
+- [Un backtest réfute, il ne confirme pas](backtest-refute-ne-confirme-pas.md) — il sert à éliminer
+- [Portefeuille = sport d'équipe](portefeuille-sport-collectif.md) — **06/09** : juger la contribution à creux égal, pas la valeur individuelle ; prudent sans dogme
+- [Pas de formule de portefeuille](pas-de-formule-de-portefeuille.md) — une jambe se mesure à creux égal
+- [Deux livrables attendus](deux-livrables-attendus.md) — meilleur rendement ET meilleur rapport, vérifiés
+- [Prévenir avant un changement de session](prevenir-changement-session.md) — le dire avant, avec ce qui continue seul
+- [Audit d'efficacité récurrent](audit-efficacite-recurrent.md) — tâche du lundi 08h, actions proposées, il décide
+- [Template des standards : rien ne se retire](feedback-template-standards.md) — **13/09** : toutes les rubriques du `.txt` et de l'outil, sinon le dire
+- [MT4 : un seul chemin de lancement](mt4-lancement-un-seul-chemin.md) — **18/09, erreur répétée** : `/config:` est MT5, le MT4 l'ignore en silence ; le lanceur existant est `outils/lancer_mt4.sh` (TDS + ticks Dukascopy exigés) — chercher l'outil avant d'en écrire un
+- [Modèle conseillé en tête](modele-conseille-en-tete.md) — première ligne de chaque réponse : Haiku / Sonnet / Opus / Fable
+- [Pine sans compilateur](pine-sans-compilateur.md) — relire, contrôler, numéroter
+- [Rappels en attente](rappels-en-attente.md) — NordLocker/Documents, Obsidian
+
+## Repères et pièges d'outillage
+- [Pièges MT5 / MQL5](mt5-pieges-outillage.md) — ticks réels décident tout ; disque plein et mise à jour UAC (06/09) ; **15/09** : `.ini` en UTF-16 (double-encodage), `-Inis a,b` via `-Command`, guetteurs `enchaine_apres` orphelins ; **17/09** : jamais `tail -f` sur `chaine_*.log` (bloque l'écriture du lanceur) ; **18/09** : MT4 = `terminal.exe chemin.ini` en argument NU, `/config:` est MT5 et le MT4 l'ignore en silence (terminal ouvert sans test)
+- [Sauvegarde du code](sauvegarde-code.md) — git, .bundle, backtest MT4 à ne jamais tuer, contention du testeur
+- [Repères chiffrés or](reperes-chiffres-or.md) — sa référence : 45 %/an pour max 25 % de creux
+- [Repères M15 PU Prime](reperes-m15-puprime.md) — ATR, friction 1,8 %, seuil 27,5 %
+- [Friction et timeframe](trading-friction-timeframe.md) — 0,36 pip, M1 à stop serré hostile
+- [Friction or par régime](or-friction-regime.md) — M1 or n'existe que depuis 2025, ATR ×9,6 en 8 ans
+- [Levier et plafond de concentration](levier-et-plafond.md) — le rendement s'achète en lots, le creux non
+- [MaxAllowedDD est un lot](maxalloweddd-est-un-lot.md) — divise les lots, ne plafonne pas le creux
+- [Clôture partielle neutre](cloture-partielle-neutre.md) — espérance inchangée, seuils q > 50 %, p > 36,7 %
+
+## État des robots et des pistes
+- [Jambe or par compte](jambe-or-par-compte.md) — **17/09, règle ferme** : TOUT prop firm (classique ou Axi, UBS ou Eagle-owl) = SetsB2 pour brouiller les pistes ; compte propre seul = SetsB ; relire avant tout TER/chantier
+- [Tests à réaliser](tests-a-realiser.md) — **12/09** : file ouverte dans `outils/TESTS-A-REALISER.md` — Range Breakout, Vol Breakout hors indices, Luna AI, AOT
+- [Meilleur résultat à ce jour](meilleur-a-ce-jour.md) — Reaper 83,4 %/an pour 12,5/17,1 % ; `outils/MEILLEUR-A-CE-JOUR.md`
+- [VPS NY4 et Londres](vps-ny4.md) — **13/09** : `ssh vps-ny4` / `ssh vps-london`, même clé ; carte des serveurs (Londres : Ultima, Darwinex ; NY : Vantage, Axi, PU Prime) ; jeux déposés sur les deux
+- [Accès VPS et chien de garde](vps-acces-chien-de-garde.md) — **FAIT 13/09** : SSH par clé sur les deux VPS, chien de garde en alerte seule toutes les 5 min ; Telegram à renseigner par lui
+- [Banc de mesure Ultima](banc-mesure-ultima.md) — **20/09 soir : argent Till retiré du live (−455 USC en 9 jours, dossiers `_retire_20260920` sur le VPS), Vantage RÉEL 34803874 créé par lui le 18/09 sur VPS Londres, revue live = +28 USC hors argent** ; 09/09 : compte cent, on y mesure le glissement, pas le rendement
+- [Couplage des pivots de Zebra](zebra-couplage-pivots.md) — **10/09** : un pivot franchi annule les DEUX ordres ; découpler a été mesuré et **réfuté**
+- [Vantage : SEPT ANS d'historique indices](vantage-cent-indices.md) — **10/09** : `DJ30.r` depuis 2018, krach 2020 et baisse 2022 inclus ; trois dossiers débloqués
+- [Advanced Scalper sur MT5](clone-advanced-scalper.md) — **RÉSOLU 10/09 sans clone** : UBS est le même moteur, trois lignes de traduction ont suffi
+- [Anonymiser UBS](ubs-anonymisation.md) — **sa consigne du 09/09** : après le banc, changer commentaires, sets et magics ; table dans `outils/UBS-ANONYMISATION.md`
+- [Luna AI Pro mesuré](luna-ai-pro-banc.md) — **19/09, CLOS** : vrais ticks 7 paires, pas une grille, 0,91 en échantillon mais **réserve 2025 −40 $/an, 5 paires sur 7 négatives** ; le poste retour à la moyenne reste vacant (Heron seul)
+- [EA commerciaux or](ea-commerciaux-or.md) — Gold Phantom validé 31/08 ; il n'a que la démo
+- [Profalgo : un seul moteur](profalgo-un-seul-moteur.md) — quatre robots or = un moteur ; UBS est l'ouvert
+- [Choix de la maison prop firm](propfirm-choix-maison.md) — **06/09** : Axi Select et Darwinex Zero ; le danger classique est le refus de paiement, pas le creux
+- [Les quatre standards, corrigés](quatre-standards-corriges-10-09.md) — **10/09** : rapport HORS TIRAGE ; compte propre 13,80 (annoncé 17,38 à tort)
+- [Les quatre standards (historique)](quatre-standards.md) — 07/09, dépassé par la version du 10/09
+- [Clone Wolf sur or et GBPUSD](clone-wolf-or-gbpusd.md) — **06/09** : le clone maison sur l'or vaut les 14 jeux UBS et n'y corrèle qu'à +0,16
+- [Portefeuille trois jambes](portefeuille-trois-jambes.md) — **06/09** : or + AS USDJPY + Wolf au dosage 30/15 = **+96 % à creux égal**, validé en croisé
+- [À compléter après UBS](a-completer-apres-ubs.md) — **sa consigne du 06/09** : rôle exact du Bitcoin, rôle des indices, et **terminer le clone Wolf EURUSD en MQL5**
+- [UBS hors or mesuré](ubs-hors-or-mesure.md) — **06/09** : les 17 jeux hors indices ajoutent **+74 % à creux égal**, les 13 jeux indices détruisent tout
+- [UBS or en ticks réels](ubs-or-ticks-reels.md) — mélange dominé par Reaper, +5 % sur Phantom seul
+- [Moteur multi-jeux](moteur-multi-jeux.md) — **20/09 12:45 : v1.47, fidélité globale pondérée 96,5 % (`fidelite_globale.py` : or 98,5 %, argent 95,8 %, AdvSc 94,3 %, JPY D1 92,9 %), page des standards v1.44 (2ter-a 21,14, 3a 21,31)** — v1.47 : consommation permanente portée par le swing ; réserve 2025 AdvSc perdante pour tous ; six démos FXAutomater à mesurer (Recovery PRO éliminé) ; — v1.46 : sortie à swing intact ne consomme pas (`consomme_swing_intact.py`) ; — v1.45 : fenêtre de repose retirée partout (mesurée nulle sur les livres hors or, nuisible or/argent) ; (v1.42 : 32 swings pour les ordres en deçà sur l'or, `rang_swings_d1.py` ; v1.43 : pas de fenêtre de repose sur l'or ; v1.44 : fausse cassure or au seuil du prix d'entrée, `fc_or_seuil.py` ; sonde CAND avec motifs de rejet REJ) ; reste DaytradePro, R6/R7 résidu, GoldDaily1 ; **19/09 soir : v1.41, livre or 92,9 % de communes, erreur 952 → 301 en onze versions** (sondes CAND = la méthode qui trouve : règle du toucher v1.39, plafond par niveau v1.41) ; reste un déficit sur trois jeux D1 (DaytradePro, goldtrade_D/E) ; **19/09 11 h : v1.32, livre or à 100,1 % des positions d'UBS** (la règle « swing dépassé = mort » vaut aussi pour l'or ; le « Reaper 75 % » inscrit dans le code venait d'une reconstruction de niveau sans les valeurs variables) ; **18/09 15 h** : Eagle-owl **v1.28** (v1.27 swing dépassé = mort au-delà ; v1.28 sorties ea = fausse cassure au-delà à la cadence d'Exit_Timing, `fc_audela.py`) : or 104 %, argent 114 %, USO 91 %, **EUR 98 %**, CHFJPY 164 %, **JPY 90 %**, AdvSc 90 % des positions ; page des standards en v1.28 : **Axi 18,03, classique 18,04 = livre UBS (17,5 / 17,9)**, sans or 10,04 ; **18/09 18 h : FEUILLE DE ROUTE UNIQUE (19 points, six blocs) dans `outils/TESTS-A-REALISER.md`** — à relire avant tout chantier ; **v1.29 adoptée** (NFP 8 h 30 New York) ; banc Luna AI Pro MT4 lancé le soir (8 paires, `luna_prep.py`)
+- [EA maison cassure or](ea-maison-cassure-or.md) — fermée 04/09 : un jeu seul ne porte pas
+- [EA maison retour à la moyenne](ea-maison-retour-moyenne.md) — close 03/09
+- [Retour à la moyenne sur croisées](retour-moyenne-croisees.md) — AUDNZD/AUDCAD/NZDCAD, ouverte 06/09, friction éliminatoire
+- [Moulinette des propriétés](moulinette-proprietes.md) — `outils/moulinette.py`, P7 candidate
+- [Robots achetés](robots-achetes.md) — **sa liste MQL5 fait foi** : Wolf, Sakura, Happy Pound, Advanced Scalper, Luna AI ; + le gisement acheté jamais testé
+- [Projet Wolf Scalper](wolf-scalper-projet.md) — avantage 1,05 pip ; acheté 20/04/2025, MT4 seul ; démo PU Prime 05/09
+- [Revert Edge retiré](revert-edge-retire.md) — PF < 1 chez ses acheteurs
+- [Crible des signaux MQL5](crible-signaux-mql5.md) — 0/11 hors or
+- [Straddle or éliminé](straddle-or-elimine.md) — limites valent 14 points, straddle perd
+- [SMC_FVG éliminé](smc-fvg-elimine.md) — −88,5 % sur 962 trades
+- [SMC structural éliminé](smc-structural-elimine.md) — −0,04 R sur 451 trades
+- [Mesure LuxAlgo](luxalgo-mesure.md) — clos 23/08, filtrer dégradait
+- [État LazyAlgo / MultiStrategyEA](lazyalgo-multistrategy-state.md) — où en sont les deux EA
+
+## Goldinghedge et TradingView
+- [Exploitation Goldinghedge](goldinghedge-exploitation.md) — protection manuelle, coupures vendredi/lundi
+- [Feuille de route du clone](feuille-de-route-clone.md) — 25,1 %/an pour 40-50 % ; la coupure est le levier
+- [Sources Goldinghedge](sources-goldinghedge.md) — code rebadgé « Larry Fx EA »
+- [Cadence du clone et compte réel](clone-cadence-et-reel.md) — cadence inexpliquée, chiffres PU Prime
+- [Règle d'entrée TradingView Powerfin](regle-entree-tradingview-powerfin.md) — confluence 4 indicateurs, 1 %
+- [Claude vs TradingView](claudeverstradingview.md) — pont MCP installé 04/09, port 9222
+- [Zebra sur indices](zebra-indices.md) — **trois fermes, NAS100 candidat non admis** : le classement des quatre indices reproduit exactement leur ecart/ATR, et l historique commence fin 2023
