@@ -99,3 +99,24 @@ ticks réels, 2021-2024. CSV bruts dans `mesures/parjeu_n121..._v147_mensuel.csv
 individuellement (net négatif sur les deux comptes) mais le crible ne retire pas sur faiblesse,
 seulement sur redondance. Retirer ces jeux sur leur résultat en échantillon reproduirait
 l'erreur du dosage par jeu déjà réfutée (mémoire `moteur-multi-jeux.md`, 08/09).
+
+## 21/09 21h15 — Corrélation Daily HighLow Breakout / jambe or, mesurée : exception levée
+
+Série mensuelle 2025 extraite (`diag_sorties.positions`) pour n66 (jambe or, réserve 2025) et
+d01_dailyhlbreakout_2025 (NAS100.r). Script : `outils/correlation_dailyhl_portefeuille.py`.
+
+| Mois | Or (n66) | Daily HighLow Breakout |
+|------|----------|--------------------------|
+| 2025-02 | −155 $ | **−54 $** |
+| 2025-07 | −40 $ | **−38 $** |
+| (10 autres mois) | positifs pour l'or | négatifs pour DHL sauf un quasi-nul |
+
+Corrélation mensuelle : **−0,225**. Trompeuse : ne vient pas d'un effet protecteur mais du fait
+que DHL est négatif quasi tout le temps (11/12 mois) pendant que l'or a de gros mois positifs.
+**Dans les deux mois où l'or perd, DHL perd aussi** — aucune protection du creux, effet
+inverse (drain constant qui aggraverait légèrement le max DD).
+
+**Verdict : l'exception posée le 21/09 (gardé « au cas où ») ne tient pas à la mesure. Daily
+HighLow Breakout EA est éliminé, comme les deux Ichimoku, sur la règle négatif 2025 = éliminé.**
+
+**Conclusion de la session du 21/09 : les trois démos Vantage sont toutes éliminées.**

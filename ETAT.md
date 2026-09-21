@@ -42,9 +42,12 @@
   (EURUSD, 270 deals, −0,0 %/an, creux 0,03 %). Les deux Ichimoku ont un profil quasi
   identique (probablement même moteur, comme UBS/Advanced Scalper) et un creux si faible
   que les réglages par défaut semblent sous-trader — **éliminés sur la règle 2025 négatif**.
-  **Daily HighLow Breakout gardé en observation par décision explicite de Denis** (21/09,
-  exception à la règle, à ne pas généraliser) : creux très faible, corrélation au
-  portefeuille pas encore mesurée — nécessite l'historique M1 du portefeuille, absent du dépôt.
+  **Daily HighLow Breakout : exception levée après mesure** (21/09 21h15). Corrélation
+  mensuelle 2025 avec la jambe or (n66) : −0,225, mais trompeuse — dans les deux mois où
+  l'or perd (février, juillet), Daily HighLow perd aussi. Pas d'effet protecteur, juste un
+  drain constant (11/12 mois négatifs). **Éliminé, comme les deux Ichimoku.**
+
+**Les trois démos Vantage MT5 testées le 21/09 sont toutes éliminées.**
 - **Mécanisme de reprise de session en place** (PR n°1 fusionnée le 21/09) : `ETAT.md`,
   ordre de lecture en tête de `CLAUDE.md`, et `./sauver.sh` comme unique commande de sauvegarde.
 
@@ -70,25 +73,20 @@
   (`parjeu.py --csv` tourne en local en quelques secondes) — le blocage était propre aux sessions
   cloud, pas structurel.
 
-## 4. Prochain geste — un seul en attente
+## 4. Prochain geste — le poste retour à la moyenne reste vacant
 
-1. **Corrélation de Daily HighLow Breakout EA (NAS100.r) avec le portefeuille**, pour juger
-   l'exception posée le 21/09 au soir (négatif seul sur 2025, gardé quand même pour un possible
-   effet diversifiant). Nécessite l'historique M1 du portefeuille — absent du dépôt, à lancer
-   sur le PC. Sans cette mesure, l'exception reste une hypothèse, pas une décision.
+Plus aucun candidat en cours d'évaluation. Sept échecs d'affilée sur la réserve 2025 (Luna AI,
+Viper, R Factor, trois démos Vantage). Aucune piste ouverte au 21/09 22h — **le prochain geste
+est d'en chercher une nouvelle**, pas de retester ce qui vient d'échouer.
 
-Ensuite, dans cet ordre, sans urgence :
+Dans cet ordre, sans urgence :
 
-3. Relancer les **réserves 2025 de Sakura et Happy Pound**. Les deux passes du 21/09 ont été
+1. Relancer les **réserves 2025 de Sakura et Happy Pound**. Les deux passes du 21/09 ont été
    lancées sans produire de rapport (le log dit à 02:31 : « REFUS : aucun rapport après
    l'attente — ne rien conclure de ce passage »). Leurs verdicts d'origine PASS et *validé*
    n'ont jamais été revus alors que leur facteur de profit est 1,08 et leurs creux 42,2 % et 48,8 %.
-4. Corriger le symbole **AUDUSD** — 4 blocs à 0 trade, seul test lancé sur le symbole nu alors
+2. Corriger le symbole **AUDUSD** — 4 blocs à 0 trade, seul test lancé sur le symbole nu alors
    que tous les autres tournent sur les suffixes `.s`.
-
-**Note** : ces deux mesures (corrélations et Daily HighLow) sont faisables depuis une session
-sur le PC — la session du 21/09 au soir en avait l'accès (Bash local, MetaTrader). Non faites
-faute de temps, pas faute d'accès ; à reprendre en priorité par la prochaine session sur le PC.
 
 ## 5. Ne pas refaire
 
