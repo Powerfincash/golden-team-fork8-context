@@ -56,3 +56,26 @@ NZDCHF/USDCAD/USDCHF 2025 : échec technique, aucun rapport produit.
 **Verdict final : R Factor mort comme candidat réserve.** Même EURGBP et USDCAD (seuls
 positifs, faible creux en échantillon) s'inversent en négatif sur la réserve 2025. Aucune
 paire ne passe le critère minimal "positif sur les deux périodes".
+
+## 21/09 20h58 — Trois démos Vantage MT5, réserve 2025 mesurée en premier
+
+Crible d'entrée passé par les trois (aucune grille comme moteur, symboles cohérents,
+aucun vendeur douteux identifié) — voir palmarès/symbole/grille dans `memory/`.
+
+| Robot | Symbole | Deals 2025 | Rendement/an | Creux |
+|-------|---------|-----------|---------------|-------|
+| Daily HighLow Breakout EA | NAS100.r | 886 | −0,7 % | 0,72 % |
+| Ichimoku Strategies EA MT5 | EURUSD | 258 | −0,0 % | 0,04 % |
+| Ichimoku Cloud Pro | EURUSD | 270 | −0,0 % | 0,03 % |
+
+**Tous négatifs sur 2025.** Règle du protocole : négatif sur 2025 = éliminé sans autre passe.
+
+- **Ichimoku Strategies EA MT5** et **Ichimoku Cloud Pro** : éliminés. Profils quasi
+  identiques (deals proches, creux quasi nul, rendement quasi nul) — probablement le
+  même moteur sous deux noms, comme UBS/Advanced Scalper. Réglages par défaut : sous-trading
+  suspect (creux 0,03-0,04 % sur un an), pas un vrai test de la stratégie.
+- **Daily HighLow Breakout EA** : décision de Denis (21/09) — gardé en observation malgré
+  le résultat négatif, pour mesurer sa corrélation avec le portefeuille (creux très faible,
+  0,72 %, pourrait diversifier même en étant légèrement perdant seul). **Exception explicite
+  à la règle "négatif 2025 = éliminé sans autre passe", à ne pas généraliser.**
+  Mesure de corrélation non encore faite — nécessite l'historique M1 du portefeuille.
