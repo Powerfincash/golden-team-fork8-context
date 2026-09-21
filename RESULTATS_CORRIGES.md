@@ -41,3 +41,18 @@ Aucune série de trades ni sortie parjeu.py dans ce dépôt pour calculer les co
 **M5_H** : déjà tranché par la mémoire moteur-multi-jeux du 08/09 — retrait tient hors échantillon (6,78 contre 6,71 en réserve), seul jeu négatif sur les deux moitiés (−0,32 / −0,32). **Échoue un critère d'admission, ce n'est pas un retrait pour faiblesse.** Pas besoin de corrélation.
 
 **GoldDaily1 et goldtrade_H** : rien d'équivalent. La même mémoire dit que le dosage par jeu a été réfuté (rapport ne s'améliore pas par sélection). **Les retirer sur leur résultat en échantillon reproduirait une erreur déjà réfutée.**
+
+## Mise à jour 21/09 12h20 — Chaîne D terminée (1-ordre + réserve 2025)
+
+**R Factor 1-ordre** (NZDCHF ajouté à Market Watch, testé pour la première fois) :
+EURAUD −198 $/18,6 %, EURCAD −186 $/13,2 %, EURCHF +8 $/9,3 %, EURGBP +361 $/6,3 %,
+GBPCHF −1 234 $/43,3 %, **NZDCHF −2 269 $/76,1 %**, USDCAD +338 $/2,1 %, USDCHF +305 $/4,9 %.
+Panier total : **−2 875 $** (NZDCHF catastrophique, pire que la grille normale).
+
+**R Factor réserve 2025** : TOUT négatif sur les 5 paires avec résultat —
+EURAUD −427 $, EURCAD −265 $, EURCHF −48 $, EURGBP −106 $, GBPCHF −566 $.
+NZDCHF/USDCAD/USDCHF 2025 : échec technique, aucun rapport produit.
+
+**Verdict final : R Factor mort comme candidat réserve.** Même EURGBP et USDCAD (seuls
+positifs, faible creux en échantillon) s'inversent en négatif sur la réserve 2025. Aucune
+paire ne passe le critère minimal "positif sur les deux périodes".
