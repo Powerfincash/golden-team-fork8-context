@@ -23,13 +23,17 @@
   deux périodes, et leurs creux en échantillon (33,1 % / 39,9 %) dépassent la référence 25 %.
   EURAUD éliminé par sa réserve 2025 négative. GBPCHF et EURCHF éliminés (creux 76-83 %).
   **La grille n'est pas le moteur** : sans elle, l'écart est sous le seuil de bruit de 15 %.
-- **R Factor** : panier perdant, −603 $ sur 7 croisées (9 lancées). Non comme retour à la moyenne.
+- **R Factor : mort comme candidat** (chaîne D terminée le 21/09 à 12h20). Panier 1-ordre
+  **−2 875 $** sur 8 croisées, NZDCHF à lui seul −2 269 $ pour 76,1 % de creux. Et surtout :
+  **réserve 2025 négative sur les cinq paires mesurées** — EURGBP et USDCAD, les seuls positifs
+  en échantillon, s'inversent. Aucune paire ne passe « positif sur les deux périodes ».
 - **Le poste retour à la moyenne reste vacant** (Heron seul). Le portefeuille est 100 % cassure.
 
 ## 2. En cours — ce qui tourne seul
 
-- **Rien ne tourne.** La dernière chaîne MT4 s'est arrêtée le 21/09 à 06:30:03,
-  `r_EURAUD_1ordre` lancé sans ligne FIN. Chaîne non terminée.
+- **Rien ne tourne.** La chaîne D (R Factor 1-ordre + réserve 2025) est terminée depuis le
+  21/09 12h20 ; ses résultats sont versés dans `RESULTATS_CORRIGES.md`. NZDCHF, qui avait été
+  refusé faute de présence en Market Watch, a été ajouté et testé.
 
 > *Tenir cette section à jour est le point le plus important du fichier : une session
 > qui reprend doit savoir en une ligne si une mesure est en vol.*
