@@ -1,5 +1,48 @@
 # Consignes de processus (chargées à chaque session)
 
+## À LIRE EN PREMIER, DANS CET ORDRE (avant toute réponse, toute mesure, toute recherche)
+
+1. **`ETAT.md`** — où on en est : décidé, en cours, bloqué, prochain geste, ne pas refaire.
+   C'est le seul fichier qui fait foi sur l'état vivant du chantier.
+2. **`memory/MEMORY.md`** — l'index des mémoires. Suivre les liens qui concernent le sujet du jour,
+   pas les 70 fiches.
+3. **`RESULTATS_CORRIGES.md`** — les chiffres vérifiés des chaînes MT4. Il corrige des erreurs
+   d'attribution réelles : il l'emporte sur tout artefact ou résumé plus ancien.
+
+Ne rien lire d'autre pour démarrer. Le log `chaine_mt4_*.log` se consulte quand une ligne précise
+est contestée, pas pour se mettre au courant.
+
+### Trois règles de lecture
+
+- **Le dépôt fait foi, jamais un artefact.** Un artefact vivant, un résumé de session ou une
+  capture se périment sans prévenir et peuvent contenir des erreurs d'attribution — il y en a
+  eu trois le 21/09. En cas de désaccord entre un artefact et ce dépôt, le dépôt gagne.
+- **Un chiffre sans date est un chiffre périmé.** Le dater ou le remesurer, jamais le reprendre tel quel.
+- **Ce qui n'est pas dans le dépôt n'existe pas pour la session suivante.** Une session infonuagique
+  n'a aucun accès au PC : le dépôt est le seul pont.
+
+## SAUVEGARDE : « sauvé » veut dire « disponible partout »
+
+- La seule commande : **`./sauver.sh "ce qui a changé"`**. Elle date `ETAT.md`, commite, pousse,
+  et **vérifie que le dépôt distant a bien reçu le commit** avant d'annoncer quoi que ce soit.
+- **Ne jamais dire « sauvé » ni « commité » sans le lien du commit** rendu par le script.
+  Un commit local n'est pas une sauvegarde : fork 7 a été perdu exactement comme ça.
+- **Quand la lancer** : à chaque décision prise, à chaque mesure terminée, avant tout changement
+  de session, et à la fin de chaque session. Pas une seule fois à la fin.
+- Il suffit qu'il écrive **« sauve »** pour la déclencher — mais c'est à la session d'y penser,
+  pas à lui.
+- **Mettre `ETAT.md` à jour d'abord, pousser ensuite.** Un push qui ne change pas `ETAT.md`
+  après une décision ou une mesure ne sauve rien d'utile à la session suivante.
+
+## AVANT DE QUITTER (ou d'annoncer un changement de session)
+
+Trois lignes, dans cet ordre :
+1. Mettre `ETAT.md` à jour — en particulier la section **En cours** : ce qui tourne seul et
+   continuera sans surveillance.
+2. `./sauver.sh "fin de session — <ce qui a changé>"`.
+3. Le lui dire avec le lien du commit, et nommer ce qui reprend tout seul.
+
+
 ## Lancement d'un test MT5 : un seul chemin
 - Tout test MT5 se lance par `C:\Users\User\OneDrive\Documents\forex\outils\lance_chaine.ps1 -Inis <nom1>,<nom2>` (noms des .ini dans `Documents\forex`, sans extension), en arrière-plan et fenêtre cachée. Jamais `Start-Process terminal64` à la main, jamais un `jourXX.ps1` écrit à la volée.
 - Le lanceur appelle `prelance.py` (refus = pas de lancement), retire une mise à jour MT5 en attente (sinon blocage UAC), coupe si le disque < 3 Go ou si le journal du testeur > 1 Go, et vérifie que le rapport n'est pas vide avec `mesure.py`. Lire son journal `chaine_*.log` avant de dire quoi que ce soit sur un test.
