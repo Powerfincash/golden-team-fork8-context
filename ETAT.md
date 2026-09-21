@@ -19,6 +19,11 @@
   L'argent à 62 $ pèse ~2,5 fois son modèle 2021-2024 : problème de dosage et de régime.
 - **M5_H retiré** : tient hors échantillon (6,78 contre 6,71 en réserve), seul jeu négatif
   sur les deux moitiés. C'est un **critère d'admission manqué**, pas un retrait pour faiblesse.
+- **GoldDaily1 et goldtrade_H gardés** (mesuré le 21/09 au soir, `parjeu.py --csv` sur n121
+  et n132, corrélation de Pearson mensuelle contre le reste de la jambe or) : GoldDaily1
+  corr 0,199/0,297, net −113/−262 $ sur 4 ans ; goldtrade_H corr 0,067/0,301, net +91/+89 $.
+  Toutes bien sous le seuil +0,5 — **aucune redondance, aucun retrait justifié**. GoldDaily1
+  reste faible individuellement mais faiblesse n'est pas un disqualifiant du crible.
 - **Viper** : aucun candidat réserve solide. Seuls GBPAUD et AUDCAD sont positifs sur les
   deux périodes, et leurs creux en échantillon (33,1 % / 39,9 %) dépassent la référence 25 %.
   EURAUD éliminé par sa réserve 2025 négative. GBPCHF et EURCHF éliminés (creux 76-83 %).
@@ -58,21 +63,16 @@
 - **Dossier argent** : suspendu à la réserve 2025 des trois jeux Till. 94 % de leur net a été
   réalisé en 2023-2024 et la fenêtre d'optimisation de Till est inconnue. C'est le vrai risque,
   pas les 12 trades live.
-- **Corrélations GoldDaily1 et goldtrade_H** : impossibles à calculer ici. Le dépôt ne contient
-  **aucune série de trades ni sortie de `parjeu.py`**. À lancer sur le PC.
 - **Infrastructure** : une session cloud n'a aucun accès à MetaTrader ni au PC. Recommandation
   posée : un runner sur le VPS piloté par le dépôt (job commité, rapport et série de trades
   repoussés). Reste à dimensionner : quel VPS, quel OS, quel terminal, quels ticks déjà installés.
+  **Correction du 21/09 au soir** : une session AVEC accès PC n'a aucun blocage pour ces mesures
+  (`parjeu.py --csv` tourne en local en quelques secondes) — le blocage était propre aux sessions
+  cloud, pas structurel.
 
-## 4. Prochain geste — deux en attente, aucun urgent
+## 4. Prochain geste — un seul en attente
 
-1. **Corrélations de GoldDaily1 et goldtrade_H contre la jambe or privée** (décidé par Denis
-   le 21/09). `outils/parjeu.py` sur les rapports **n121** (UBS SetsB, compte propre) et
-   **n132** (Eagle-owl SetsB2, prop firm). Au-delà de **+0,5**, le jeu est redondant et son
-   retrait est justifié ; en deçà, le retirer reproduirait une erreur déjà réfutée.
-   **Ne peut pas se faire depuis une session infonuagique** : les rapports et `parjeu.py`
-   sont sur le PC. C'est à lancer là-bas.
-2. **Corrélation de Daily HighLow Breakout EA (NAS100.r) avec le portefeuille**, pour juger
+1. **Corrélation de Daily HighLow Breakout EA (NAS100.r) avec le portefeuille**, pour juger
    l'exception posée le 21/09 au soir (négatif seul sur 2025, gardé quand même pour un possible
    effet diversifiant). Nécessite l'historique M1 du portefeuille — absent du dépôt, à lancer
    sur le PC. Sans cette mesure, l'exception reste une hypothèse, pas une décision.

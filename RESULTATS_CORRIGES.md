@@ -79,3 +79,23 @@ aucun vendeur douteux identifié) — voir palmarès/symbole/grille dans `memory
   0,72 %, pourrait diversifier même en étant légèrement perdant seul). **Exception explicite
   à la règle "négatif 2025 = éliminé sans autre passe", à ne pas généraliser.**
   Mesure de corrélation non encore faite — nécessite l'historique M1 du portefeuille.
+
+## 21/09 21h05 — Corrélations GoldDaily1 / goldtrade_H, mesurées
+
+Contrairement à ce que pensait l'artifact précédent, le dépôt contenait déjà des sorties
+`parjeu.py` (dossier `mesures/`), mais dans le mauvais format (résumé annuel par jeu, pas la
+série mensuelle nécessaire à une corrélation). Relancé proprement : `outils/parjeu.py <rapport>
+--csv` sur **n121** (EagleOwl_v1, XAUUSD.p, compte propre SetsB) et **n132** (SetsB2, prop firm),
+ticks réels, 2021-2024. CSV bruts dans `mesures/parjeu_n121..._v147_mensuel.csv` et
+`..._n132..._v147_mensuel.csv`. Script de corrélation : `outils/correlation_golddaily1_goldtradeh.py`
+(Pearson mensuel, jeu agrégé sur tous ses sous-niveaux de prix contre le reste du panier).
+
+| Jeu | n121 (compte propre) | n132 (prop firm) |
+|-----|----------------------|-------------------|
+| GoldDaily1 | corr **0,199**, net −113 $ (48 mois actifs/48) | corr **0,297**, net −262 $ |
+| goldtrade_H | corr **0,067**, net +91 $ (47/48) | corr **0,301**, net +89 $ |
+
+**Verdict : aucune redondance (seuil +0,5), aucun retrait justifié.** GoldDaily1 reste faible
+individuellement (net négatif sur les deux comptes) mais le crible ne retire pas sur faiblesse,
+seulement sur redondance. Retirer ces jeux sur leur résultat en échantillon reproduirait
+l'erreur du dosage par jeu déjà réfutée (mémoire `moteur-multi-jeux.md`, 08/09).
