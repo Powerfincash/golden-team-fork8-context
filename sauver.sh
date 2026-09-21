@@ -75,6 +75,13 @@ fi
 
 # ------------------------------------------------------------------ push
 branche=$(git rev-parse --abbrev-ref HEAD)
+
+# Un clone `--depth 1` ne suit que sa branche d'origine : les autres branches
+# n'ont alors aucune reference de suivi, et tout controle base sur @{u} annonce
+# « non pousse » a tort. On elargit le refspec une fois pour toutes.
+if [ "$(git config --get remote.origin.fetch)" != '+refs/heads/*:refs/remotes/origin/*' ]; then
+  git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+fi
 attente=2
 pousse=1
 for essai in 1 2 3 4 5; do
