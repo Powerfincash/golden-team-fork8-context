@@ -5,8 +5,10 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 22/09/2026**
-**Dernier geste : réserve 2025 argent Till mesurée en entier, profil fidèle v1.47 — tous les
-seuils du protocole franchis, voir section 1. Geste précédent : rapatriement du PC outillé.**
+**Dernier geste : plan d'infrastructure écrit et posé au dépôt (`PLAN-INFRA.md`), en attente de
+son accord — calcul sur le PC, surveillance seule sur le VPS du compte réel. Geste précédent :
+réserve 2025 argent Till mesurée en entier, profil fidèle v1.47 — tous les seuils du protocole
+franchis, voir section 1.**
 
 ---
 
@@ -95,8 +97,24 @@ seuils du protocole franchis, voir section 1. Geste précédent : rapatriement d
   protocole franchis. Reste ouvert : la **décision de remise en live**, qui n'est pas dans le
   périmètre de ce protocole — c'est à Denis de trancher, avec la tension live/backtest en tête.
 - **Infrastructure** : une session cloud n'a aucun accès à MetaTrader ni au PC. Recommandation
-  posée : un runner sur le VPS piloté par le dépôt (job commité, rapport et série de trades
-  repoussés). Reste à dimensionner : quel VPS, quel OS, quel terminal, quels ticks déjà installés.
+  posée le 21/09 : un runner sur le VPS piloté par le dépôt. **Renversée le 22/09, et c'est une
+  règle, pas une préférence : le VPS ForexVPS (Edge, 6 Go, Windows) porte le COMPTE RÉEL de Denis.
+  Aucun backtest, aucune mesure, aucun outil lourd ne doit y tourner.** Un backtest occupe un cœur
+  des heures durant et fait traiter ses ticks en retard au terminal réel ; le gain est du confort,
+  le risque est une entrée ratée sur de l'argent réel. L'asymétrie tranche seule.
+  **Le PC devient la machine de calcul** — il a plus de mémoire que le VPS et les ticks y sont
+  déjà, donc il n'y a rien à copier : le chantier du transfert des ticks est annulé, pas reporté.
+  **Plan des deux chantiers, durées et garde-fous : `PLAN-INFRA.md`. Rien n'est installé, rien
+  n'est codé : le plan attend son accord.** Deux points qu'il porte et qui valent d'ici :
+  le dépôt ne contient toujours ni `pc/` ni `index/`, donc les lanceurs et `mesure.py` ne sont
+  nulle part hors du PC — la ligne 1 de `COMMANDE.md` est le préalable à tout, pas une option ;
+  et l'accès au VPS se fait **sans aucun identifiant chez nous** : le VPS pousse ses journaux,
+  positions et erreurs dans le dépôt toutes les 15 minutes et y ramasse les EA et `.set` déposés,
+  aucun port ouvert, aucune connexion entrante. Le MCP exposé en HTTPS qui était au programme du
+  22/09 est **déconseillé** : il ouvrirait un port entrant sur la machine du compte réel pour un
+  service que le dépôt rend déjà. Ce que nous ne ferons pas sur le VPS : toucher une position
+  ouverte, changer les paramètres d'un robot en cours, attacher un robot à un graphique,
+  redémarrer le terminal. On signale, Denis décide.
   **Correction du 21/09 au soir** : une session AVEC accès PC n'a aucun blocage pour ces mesures
   (`parjeu.py --csv` tourne en local en quelques secondes) — le blocage était propre aux sessions
   cloud, pas structurel.
