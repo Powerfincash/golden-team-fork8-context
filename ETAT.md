@@ -74,7 +74,12 @@ Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir
 
 ## 3. Bloqué — et sur quoi exactement
 
-- **Dossier argent** : suspendu à la réserve 2025 des trois jeux Till. 94 % de leur net a été
+- **Dossier argent** : la réserve 2025 est LANCÉE (sa décision du 22/09). Attention, une partie
+  existe déjà — 19/09, jambe agrégée en profil Kestrel, v1.34-35 : **2,78 → 1,86, net +840 $**.
+  Manquent le détail **jeu par jeu** (AGA04/06/09), le profil **fidèle**, la **v1.47** (fidélité
+  argent passée à 95,8 % le 20/09) et surtout le **redosage sur la volatilité courante avant de
+  lire le creux**. Protocole et seuils : `outils/PROTOCOLE-ARGENT-RESERVE2025.md`.
+  Reste à connaître le nom du `.ini` pour rendre la commande. 94 % de leur net a été
   réalisé en 2023-2024 et la fenêtre d'optimisation de Till est inconnue. C'est le vrai risque,
   pas les 12 trades live.
 - **Infrastructure** : une session cloud n'a aucun accès à MetaTrader ni au PC. Recommandation
