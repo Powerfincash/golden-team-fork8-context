@@ -5,9 +5,8 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 22/09/2026**
-**Dernier geste : rapatriement du PC outillé — `COMMANDE.md` (une commande à coller dans Git Bash),
-`INVENTAIRE.md` (ce qui entre et ce qui reste dehors), `gabarits/` (la page Quatre Standards).
-Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir section 1.**
+**Dernier geste : réserve 2025 argent Till mesurée en entier, profil fidèle v1.47 — tous les
+seuils du protocole franchis, voir section 1. Geste précédent : rapatriement du PC outillé.**
 
 ---
 
@@ -19,6 +18,15 @@ Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir
   crible, creux, indépendance). **Jamais comparé au livre UBS** (consigne du 20/09).
 - **Argent de Till** : retiré du live le 20/09 après −455 USC sur 12 trades, 0 gagnant.
   L'argent à 62 $ pèse ~2,5 fois son modèle 2021-2024 : problème de dosage et de régime.
+- **Réserve 2025 argent Till mesurée en entier, profil fidèle v1.47** (22/09, `r25f_eagleowl_xag.ini`,
+  n150 relancé pour garantir la même version). **Tous les seuils du protocole franchis** :
+  jeu par jeu positif (AGA04 +237 $, AGA06 +231 $, AGA09 +84 $), creux redosé ×2,5 (facteur
+  mesuré en live, pas supposé) = 1 242 $ (1,24 % du dépôt) tenable, corrélation à l'or −0,247
+  (substitué n66 réserve 2025 au lieu de n132 2021-2024, sinon aucun mois commun — écart au
+  protocole signalé), concentration 2023-2024 baisse 89,1 % → 79,4 % (pas un artefact de fenêtre).
+  **Tension non résolue** : le live du 13-18/09 était 100 % perdant sur 12 trades (5 jours,
+  échantillon trop petit pour trancher seul) — à surveiller si l'argent est remis en live.
+  Détail : `RESULTATS_CORRIGES.md`.
 - **M5_H retiré** : tient hors échantillon (6,78 contre 6,71 en réserve), seul jeu négatif
   sur les deux moitiés. C'est un **critère d'admission manqué**, pas un retrait pour faiblesse.
 - **GoldDaily1 et goldtrade_H gardés** (mesuré le 21/09 au soir, `parjeu.py --csv` sur n121
@@ -64,24 +72,18 @@ Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir
 
 ## 2. En cours — ce qui tourne seul
 
-- **Rien ne tourne.** La chaîne des trois démos Vantage (réserve 2025) est terminée depuis le
-  21/09 20h58 ; ses résultats sont versés dans `RESULTATS_CORRIGES.md`. Terminal Vantage MT5
-  local refermé après le test (le lanceur ne ferme jamais un terminal existant : c'est à
-  l'utilisateur, il l'a fait deux fois ce soir — avant le premier essai refusé, puis confirmé).
+- **Rien ne tourne.** La réserve 2025 argent Till (profil fidèle v1.47) est terminée depuis le
+  22/09 14h ; résultats dans `RESULTATS_CORRIGES.md`. Terminal PU Prime refermé (`ShutdownTerminal=1`
+  dans le `.ini`, fermeture automatique par le testeur).
 
 > *Tenir cette section à jour est le point le plus important du fichier : une session
 > qui reprend doit savoir en une ligne si une mesure est en vol.*
 
 ## 3. Bloqué — et sur quoi exactement
 
-- **Dossier argent** : la réserve 2025 est LANCÉE (sa décision du 22/09). Attention, une partie
-  existe déjà — 19/09, jambe agrégée en profil Kestrel, v1.34-35 : **2,78 → 1,86, net +840 $**.
-  Manquent le détail **jeu par jeu** (AGA04/06/09), le profil **fidèle**, la **v1.47** (fidélité
-  argent passée à 95,8 % le 20/09) et surtout le **redosage sur la volatilité courante avant de
-  lire le creux**. Protocole et seuils : `outils/PROTOCOLE-ARGENT-RESERVE2025.md`.
-  Reste à connaître le nom du `.ini` pour rendre la commande. 94 % de leur net a été
-  réalisé en 2023-2024 et la fenêtre d'optimisation de Till est inconnue. C'est le vrai risque,
-  pas les 12 trades live.
+- **Dossier argent : CLOS pour la mesure backtest** (22/09, voir section 1). Tous les seuils du
+  protocole franchis. Reste ouvert : la **décision de remise en live**, qui n'est pas dans le
+  périmètre de ce protocole — c'est à Denis de trancher, avec la tension live/backtest en tête.
 - **Infrastructure** : une session cloud n'a aucun accès à MetaTrader ni au PC. Recommandation
   posée : un runner sur le VPS piloté par le dépôt (job commité, rapport et série de trades
   repoussés). Reste à dimensionner : quel VPS, quel OS, quel terminal, quels ticks déjà installés.

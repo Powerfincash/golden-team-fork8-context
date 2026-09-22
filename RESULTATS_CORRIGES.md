@@ -120,3 +120,49 @@ inverse (drain constant qui aggraverait légèrement le max DD).
 HighLow Breakout EA est éliminé, comme les deux Ichimoku, sur la règle négatif 2025 = éliminé.**
 
 **Conclusion de la session du 21/09 : les trois démos Vantage sont toutes éliminées.**
+
+## 22/09 14h — Réserve 2025 argent Till, profil FIDÈLE v1.47, mesurée en entier
+
+Protocole complet exécuté : `outils/PROTOCOLE-ARGENT-RESERVE2025.md`. Config créée :
+`r25f_eagleowl_xag.ini` (copie de n150 avec dates 2025, sans surcharge `Fid_ReposeMaxTrades`
+= profil fidèle par défaut, confirmé v1.47 par le `#property version "1.47"` du .mq5 compilé
+le 20/09 12h04). n150 (référence 2021-2024) relancé aussi pour garantir la même version —
+il datait d'avant la compilation v1.47 (11h38 vs 12h04), risque de comparer deux versions.
+
+### A. Jeu par jeu (2025, agrégé sur tous les sous-niveaux de prix via parjeu.py --csv)
+AGA04 +237 $, AGA06 +231 $, AGA09 +84 $ — **les trois positifs, aucun ne sort**.
+
+### B. Redosage sur la volatilité courante (facteur ×2,5, mesuré en live — pas une hypothèse)
+Creux au pire des deux moitiés (S1 jan-juin 416 $, S2 juil-déc 497 $) au lot 0,01 backtest :
+**497 $**. Redosé ×2,5 : **1 242 $ (1,24 % du dépôt de référence 100 000 $)** — tenable.
+Le facteur ×2,5 vient de `memory/banc-mesure-ultima.md` (17/09) : stops réels ~2,5× plus
+gros qu'en moyenne 2021-2024, mesuré sur le glissement live, pas supposé.
+
+### C. Corrélation à la jambe or — écart au protocole signalé
+Le protocole demandait n132 (or 2021-2024) : **aucun mois commun avec l'argent 2025**,
+corrélation non interprétable sous cette forme. Substitué par n66 (or SetsB, réserve 2025,
+même fenêtre temporelle) : **corrélation de Pearson mensuelle -0,247** — bien sous le seuil
++0,50, aucune redondance.
+
+### D. Concentration 2023-2024 dans le net, avant/après ajout de 2025
+2021 +318 $, 2022 +171 $, 2023 +1 089 $, 2024 +2 913 $, 2025 +552 $.
+Avant 2025 : part 2023-2024 = **89,1 %**. Après 2025 : part 2023-2024 = **79,4 %**.
+**Baisse confirmée — pas un artefact de fenêtre réglée par le vendeur.**
+
+### Verdict : tous les seuils du protocole sont franchis
+| Critère | Seuil | Résultat | Verdict |
+|---|---|---|---|
+| Réserve 2025 agrégat | positive | +552 $ | PASS |
+| Réserve 2025 jeu par jeu | chaque jeu positif | 3/3 positifs | PASS |
+| Creux redosé | tenable | 1 242 $ (1,24 %) | PASS |
+| Corrélation à l'or | ≤ +0,50 | -0,247 | PASS |
+| Concentration 2023-2024 | doit baisser | 89,1 % → 79,4 % | PASS |
+
+**Tension non résolue, à ne pas taire** : le live du 13-18/09 (12 trades, 5 jours,
+`memory/banc-mesure-ultima.md`) était **100 % perdant** (−455 USC, percentile 0 de la
+référence n134). Le backtest 2025 fidèle passe tous les seuils sur l'année entière, mais
+l'échantillon live (5 jours) reste trop petit pour être rassurant à lui seul — surveiller si
+l'argent est remis en live.
+
+Outils : `outils/argent_reserve2025.py`. CSV mensuels : `mesures/parjeu_r25f_eagleowl_xag_v147_mensuel.csv`,
+`mesures/parjeu_n150_eagleowl_xag_v147_mensuel.csv`.
