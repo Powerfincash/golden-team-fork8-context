@@ -12,7 +12,8 @@ elle fait foi.
 - **Eagle-owl** (le grand-duc) — profil de FIDÉLITÉ : il reproduit UBS le plus exactement possible.
   Fidélité globale pondérée par les entrées : 96,5 % au 20/09 (v1.45-v1.47).
 - **Kestrel** (la crécerelle) — profil de RENDEMENT : les règles de fidélité à UBS sont
-  débranchées. Créé le 19/09/2026. Voir [[kestrel-profil-rendement]].
+  débranchées, sur l'or comme sur les devises. Créé le 19/09/2026.
+  Voir [[kestrel-profil-rendement]] pour la portée exacte des trois réglages, tranchée le 22/09.
 
 **Kestrel n'est PAS hors or — c'est l'inverse** (question posée le 22/09, vérifiée) : l'or est
 précisément là où il sert. Son gain le mieux mesuré est l'or SetsB2, rapport 3,74 en échantillon

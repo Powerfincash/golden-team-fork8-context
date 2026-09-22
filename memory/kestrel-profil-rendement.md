@@ -31,11 +31,29 @@ compris. Ce qui est hors or, c'est sa route vers l'autonomie : GBPJPY, EURJPY, A
 des symboles où UBS n'existe pas (voir le dernier paragraphe).
 
 **Les trois réglages** (v1.35, MQL5 fd0871d) : `Fid_ReposeMaxTrades` 20 → 999, `Fid_SwingMortEnDeca` true → false,
-`Fid_SwingMortAuDela` true → false. Ils n'agissent que sur les symboles à 2 décimales et sur le seuil de la fenêtre de
-repose ; sur les devises les règles restent actives, parce qu'elles y ont été mesurées et qu'elles y gagnent.
-**Incohérence à lever** : ce paragraphe dit « seulement les symboles à deux décimales », or le contrôle ci-dessous
-donne un JPY D1 différent en Kestrel (2,57) et en fidèle (2,12). L'un des deux est imprécis — à vérifier dans le code
-avant de s'appuyer sur la portée exacte des trois réglages.
+`Fid_SwingMortAuDela` true → false.
+
+**Portée réelle — tranché le 22/09/2026 ; la phrase « ils n'agissent que sur les symboles à 2 décimales » était
+FAUSSE et est retirée.** Les trois agissent sur les devises, et l'un d'eux n'agit QUE sur elles. Le contrôle JPY D1
+(2,57 en Kestrel contre 2,12 en fidèle) avait donc raison contre la fiche. Conditions telles que les notes d'adoption
+les citent, version par version :
+
+- `Fid_SwingMortAuDela` — règle adoptée en v1.27 sous la restriction `dig == 3 || dig == 5`, et **v1.32 précise que
+  les ordres AU-DELÀ ne sont pas touchés par la levée de la restriction décimale**. Elle ne vaut donc que pour les
+  symboles à 3 et 5 décimales : les devises, l'argent et l'USO. **Sur l'or (2 décimales) ce réglage ne change rien.**
+  C'est l'exact contraire de ce que disait la fiche.
+- `Fid_SwingMortEnDeca` — v1.32 (19/09 11 h, MQL5 b5b7915) lève la restriction décimale pour les ordres EN DEÇÀ aux
+  quatre endroits du code. Elle vaut donc partout, or compris. Témoins argent, USO, CHFJPY, EUR inchangés ce jour-là
+  parce qu'à 3 décimales la règle y était déjà active, pas parce qu'elle les épargne.
+- `Fid_ReposeMaxTrades` — seuil de la fenêtre de repose, indépendant du symbole. v1.43 ajoute `if(dig == 2) return
+  false;` dans `ReposeFermee` (fenêtre coupée sur l'or et l'argent pour tout le monde), puis v1.45
+  `if(Fid_ReposeMaxTrades < 999) return false;` : à 20 le profil fidèle coupe la fenêtre partout, à 999 **Kestrel la
+  garde toujours active**. C'est la différence qui se voit sur JPY D1, storyG, USO et AdvSc.
+
+**Base de la conclusion** : les notes d'adoption de [[moteur-multi-jeux]], qui citent les conditions du code
+(`dig == 2`, `dig == 3 || dig == 5`, `Fid_ReposeMaxTrades < 999`) et les témoins mesurés à chaque version. Le source
+`EagleOwl_v1.mq5` n'est PAS encore dans le dépôt — `rapatrier.sh` existe mais n'a pas été lancé, il n'y a pas de
+dossier `pc/`. À confirmer sur le source dès qu'il sera rapatrié.
 
 **Contrôles (19/09)** : JPY D1 reproduit à l'identique la cible v1.31 (1 057 positions, +1 047 $, creux 102,
 rapport 2,57 contre 2,12 en fidèle) ; or SetsB2 à 3,77 contre une cible v1.32 de 3,74 et 3,10 en fidèle — un peu mieux
