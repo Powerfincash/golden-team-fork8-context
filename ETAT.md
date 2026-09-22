@@ -27,6 +27,16 @@ seuils du protocole franchis, voir section 1. Geste précédent : rapatriement d
   **Tension non résolue** : le live du 13-18/09 était 100 % perdant sur 12 trades (5 jours,
   échantillon trop petit pour trancher seul) — à surveiller si l'argent est remis en live.
   Détail : `RESULTATS_CORRIGES.md`.
+- **Contre-vérification indépendante de cette mesure** (22/09, session cloud, recalcul depuis les
+  CSV poussés et non depuis le résumé) : nets par jeu, total 2025 (+552 $), nets annuels
+  (318 / 171 / 1 089 / 2 913 / 552) et concentration (89,1 % → 79,4 %) **retrouvés à l'identique**.
+  Non recalculables depuis un CSV mensuel : les creux S1 416 $ / S2 497 $, qui exigent le rapport.
+  **Deux réserves à porter au dossier, qui ne sont pas des seuils manqués mais des faits** :
+  (1) 2025 fait +552 $ avec **6 mois négatifs sur 12**, contre +2 913 $ pour la seule année 2024 —
+  la réserve passe, mais de très peu ; (2) en juillet 2025 l'argent perd (−48 $) dans un mois où
+  l'or perd aussi (−40 $) : c'est le motif « pas de protection quand elle sert » qui a fait écarter
+  Daily HighLow Breakout le 21/09. La corrélation −0,247 ne se lit donc pas comme protectrice à
+  elle seule. Mensuel 2025 : −223, +160, −97, −74, −95, +221, −48, +202, −42, +282, +266, 0.
 - **M5_H retiré** : tient hors échantillon (6,78 contre 6,71 en réserve), seul jeu négatif
   sur les deux moitiés. C'est un **critère d'admission manqué**, pas un retrait pour faiblesse.
 - **GoldDaily1 et goldtrade_H gardés** (mesuré le 21/09 au soir, `parjeu.py --csv` sur n121
