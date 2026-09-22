@@ -84,6 +84,28 @@ Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir
   (`parjeu.py --csv` tourne en local en quelques secondes) — le blocage était propre aux sessions
   cloud, pas structurel.
 
+## 3bis. Kestrel sur la jambe or — décidé le 22/09, protocole prêt
+
+Sa décision du 22/09 : mesurer Kestrel jambe par jambe, en commençant par l'or SetsB2, plutôt que
+comme profil global (le remplacement en bloc a été mesuré le 19/09 et recule, 19,20 → 18,29).
+
+**L'essentiel est déjà acquis** (19/09, moteur v1.35) : réserve 2025 de l'or SetsB2 en Kestrel
+3,74 → **9,76** (+3 460 $), et le livre bâti autour de cette jambe, c'est la rubrique 6 de la page
+des standards. **Ne pas le refaire.**
+
+**Ce qui manque, et c'est ce qui décide** : la jambe or Kestrel n'a jamais été mise CÔTE À CÔTE
+avec la jambe or fidèle — dans la rubrique 6 elle la remplace. Donc ni corrélation entre les deux,
+ni substitution de la seule jambe or dans le livre principal. Précédent qui pèse : Eagle-owl contre
+UBS = **+0,77**, « substitut, pas une brique de plus ». Et depuis v1.43 un seul des trois réglages
+mord encore sur l'or.
+
+**Motif de relance** : le 9,76 date de v1.35 ; le moteur or est passé en v1.47 le lendemain
+(fidélité 92,9 → 98,5 %). Un chiffre sans sa version est périmé.
+
+Protocole complet, seuils fixés d'avance : `outils/PROTOCOLE-KESTREL-OR.md`.
+Outil prêt : `outils/correlation_jambes.py` (deux sorties datées de `parjeu.py --csv`, Pearson
+mensuel, seuil +0,50).
+
 ## 4. Prochain geste — le poste retour à la moyenne reste vacant
 
 Plus aucun candidat en cours d'évaluation. Sept échecs d'affilée sur la réserve 2025 (Luna AI,
