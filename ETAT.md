@@ -120,6 +120,11 @@ sept en Kestrel, une Zebra, deux Heron ; réserve 2025 +6 058 $ (Axi), +7 128 $ 
 entre ses dix jambes** (aucune corrélation impliquant Kestrel n'existe à ce jour) puis son **rejeu en
 v1.47** — c'est la seule rubrique de la page restée en v1.34-v1.35.
 
+**Sa demande d'origine, jamais faite, à ne plus perdre** : un portefeuille maison où les QUATRE
+robots coexistent — Eagle-owl sur ses jambes fidèles ET Kestrel sur le résidu rentable, plus Zebra
+et Heron. La rubrique 6 a substitué Kestrel à Eagle-owl partout au lieu de les faire cohabiter.
+Spécification, point bloquant, ordre des mesures et seuils : `outils/PORTEFEUILLE-QUATRE-ROBOTS.md`.
+
 Protocole complet, seuils fixés d'avance : `outils/PROTOCOLE-KESTREL-OR.md`.
 Outil prêt : `outils/correlation_jambes.py` (deux sorties datées de `parjeu.py --csv`, Pearson
 mensuel, seuil +0,50).
