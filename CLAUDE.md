@@ -51,6 +51,8 @@ Trois lignes, dans cet ordre :
 
 ## Rapatrier ce qui n'est que sur le PC
 - Une seule ligne, dans `COMMANDE.md`, à coller dans Git Bash. Elle lance `./rapatrier.sh` : outils, `.set`, `.ini` sans identifiant, sources `.mq4`/`.mq5`, gabarits, journaux, index des rapports, puis commit, push et **vérification que le distant a reçu**. `INVENTAIRE.md` dit ce qui entre et ce qui reste dehors, avec les raisons.
+- Une seconde ligne, dans le même fichier, crée la tâche Windows « Rapatriement Golden Team » : elle lance `auto.sh` chaque nuit à 3 h, avec rattrapage au démarrage suivant si le PC était éteint. Un commit par jour au maximum.
+- **`AUTOMATIQUE.md` est le témoin de vie** : sa première ligne donne la date du dernier passage. Plus de deux jours = la tâche ne tourne plus, le dire à Denis. Ne jamais supposer qu'un fichier du PC est arrivé sans avoir regardé cette date.
 
 ## Lancement d'un test MT5 : un seul chemin
 - Tout test MT5 se lance par `C:\Users\User\OneDrive\Documents\forex\outils\lance_chaine.ps1 -Inis <nom1>,<nom2>` (noms des .ini dans `Documents\forex`, sans extension), en arrière-plan et fenêtre cachée. Jamais `Start-Process terminal64` à la main, jamais un `jourXX.ps1` écrit à la volée.

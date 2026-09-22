@@ -56,6 +56,11 @@ Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir
   `COMMANDE.md`, ramène outils, `.set`, `.ini` sans identifiant, sources `.mq4`/`.mq5`, gabarits
   et index des rapports, puis vérifie le push. Ce qui entre et ce qui reste dehors : `INVENTAIRE.md`.
   **Le gabarit de la page « Quatre Standards » est dans `gabarits/` : on le reprend tel quel.**
+- **Rapatriement automatique** (22/09, autorisé par Denis) : une seconde ligne de `COMMANDE.md`
+  crée la tâche Windows « Rapatriement Golden Team », qui lance `auto.sh` chaque nuit à 3 h, avec
+  rattrapage au démarrage suivant si le PC était éteint. Un commit par jour au maximum.
+  **`AUTOMATIQUE.md` est le témoin de vie** : sa première ligne donne la date du dernier passage ;
+  plus de deux jours = la tâche ne tourne plus.
 
 ## 2. En cours — ce qui tourne seul
 

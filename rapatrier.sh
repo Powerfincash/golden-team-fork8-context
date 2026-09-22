@@ -11,6 +11,10 @@
 
 set -o pipefail
 
+# --sans-commit : ramasse et ecrit, mais laisse le commit a l'appelant (auto.sh).
+SANS_COMMIT=0
+[ "${1:-}" = "--sans-commit" ] && SANS_COMMIT=1
+
 DEPOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DEPOT" || { echo "Impossible d'entrer dans $DEPOT"; exit 1; }
 
@@ -208,6 +212,13 @@ FINRAPPORT
 # =============================================================================
 # 9. Commiter, pousser, et VERIFIER que le distant a recu
 # =============================================================================
+if [ "$SANS_COMMIT" = "1" ]; then
+  echo
+  echo "Ramassage termine : $NB_COPIES fichiers sous pc/, $NB_EXCLUS ecartes, $NB_GROS trop gros."
+  echo "(mode --sans-commit : c'est l'appelant qui commite)"
+  exit 0
+fi
+
 titre "Sauvegarde vers GitHub"
 
 git config user.name  >/dev/null 2>&1 || git config user.name  "Powerfincash"

@@ -37,7 +37,11 @@ ligne de résultat fausse (une attribution inversée dans le log) que personne n
 
 Une seule commande à coller dans Git Bash, dans **[`COMMANDE.md`](COMMANDE.md)**. Elle ramène ici
 les outils, les réglages `.set`, les configurations, le code des robots maison, les gabarits de
-pages et l'index des rapports, puis vérifie que GitHub a bien reçu le commit.
+pages et l'index des rapports, puis vérifie que GitHub a bien reçu le commit. Une seconde ligne,
+dans le même fichier, **demande à Windows de recommencer tout seul chaque nuit.**
+
+**[`AUTOMATIQUE.md`](AUTOMATIQUE.md)** dit d'un coup d'œil quand le dernier passage a eu lieu.
+Si sa date a plus de deux jours, la tâche ne tourne plus : recoller la ligne.
 
 [`INVENTAIRE.md`](INVENTAIRE.md) dit ce qui entre, ce qui reste dehors, et pourquoi.
 [`gabarits/`](gabarits/) contient la page « Quatre Standards » et ses règles : **on la reprend
