@@ -9,7 +9,9 @@ metadata:
 ---
 
 **Kestrel est un ROBOT MAISON, issu de la reproduction d'UBS.** C'est sa nomenclature, corrigée le 22/09/2026, et
-elle fait foi : les robots maison sont **quatre** — Eagle-owl, **Kestrel**, Zebra, Heron. Ne plus le présenter comme
+elle fait foi : les robots maison sont **quatre** — Eagle-owl, **Kestrel**, Zebra, Heron.
+Précision du 22/09 : **Eagle-owl et Kestrel proviennent tous deux de la reproduction d'UBS ; Zebra et
+Heron sont indépendants.** Voir [[robots-maison]]. Ne plus le présenter comme
 « un simple profil » ni comme « pas un autre robot » : c'est une erreur que j'ai commise le 22/09 et qu'il a reprise.
 
 Créé le 19/09/2026 sur sa demande « tu crées le bot et tu le nommes ». Nom choisi puis validé par lui : **Kestrel**, la
