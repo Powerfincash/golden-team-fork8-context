@@ -78,6 +78,63 @@ schtasks //Create //TN "Calcul Golden Team" //SC DAILY //ST 22:00 //F //RI 10 //
 schtasks //Delete //TN "Calcul Golden Team" //F
 ```
 
+---
+
+# Sur le VPS — la surveillance, et rien d'autre
+
+> **Aucune de ces lignes ne lance de calcul.** Le VPS porte votre compte réel : on ne lui
+> demande que de raconter ce qu'il fait et de poser les fichiers qu'on lui donne.
+> Chaque passage dure quelques secondes.
+
+Avant tout, une seule installation sur le VPS : **Git pour Windows** (c'est lui qui apporte
+Git Bash). Rien d'autre n'est nécessaire.
+
+## A. Mettre en place la surveillance
+
+À coller **dans Git Bash sur le VPS**, une seule fois. Elle installe l'agent, crée la tâche,
+et fait un passage de preuve tout de suite.
+
+```bash
+cd ~ && git clone -q --single-branch --branch vps https://github.com/Powerfincash/golden-team-fork8-context agent-vps 2>/dev/null; schtasks //Create //TN "Surveillance Golden Team" //SC MINUTE //MO 15 //F //TR "\"$(cygpath -w "$(command -v bash)")\" -l \"$HOME/agent-vps/vps_agent.sh\"" && powershell -NoProfile -Command '$t = Get-ScheduledTask -TaskName "Surveillance Golden Team"; $t.Settings.StartWhenAvailable = $true; Set-ScheduledTask -InputObject $t | Out-Null' && bash ~/agent-vps/vps_agent.sh && echo "LA SURVEILLANCE EST EN PLACE"
+```
+
+### Le jeton, avant de coller
+
+La fenêtre de connexion GitHub s'ouvrira au premier envoi. **Ne pas y mettre votre mot de
+passe** : créer d'abord un jeton, et le coller comme mot de passe.
+
+1. Sur github.com : **Settings**, tout en bas **Developer settings**,
+   **Personal access tokens**, **Fine-grained tokens**, **Generate new token**.
+2. **Repository access** → *Only select repositories* → **golden-team-fork8-context**,
+   et elle seule.
+3. **Permissions** → *Repository permissions* → **Contents** → **Read and write**.
+   Ne rien cocher d'autre.
+4. Générer, copier, et le coller quand la fenêtre le demandera. Windows le retient ensuite.
+
+**Ce jeton ne donne accès qu'à ce dépôt, et à rien d'autre de votre compte.** Pour le
+retirer un jour : github.com, même page, **Delete**. Le VPS n'a plus rien, dans la seconde.
+
+## B. Poser un robot ou un réglage sur le VPS
+
+Déposer le fichier dans **`a-poser/` sur la branche `vps`** du dépôt. L'agent le place dans
+le bon dossier du terminal au passage suivant, et écrit dans `poses/` ce qu'il a fait.
+
+**Un fichier posé n'est pas actif** : il faut l'attacher à un graphique, et ce geste reste le
+vôtre. C'est volontaire — c'est le moment où vous voyez ce qui va se mettre à trader.
+
+## C. Voir si la surveillance tourne
+
+**`etat/etat.md`, sur la branche `vps`.** Première ligne : la date du dernier passage.
+**Plus d'une heure, l'agent ne tourne plus** : recoller la ligne A.
+
+## D. Pour tout arrêter un jour
+
+```bash
+schtasks //Delete //TN "Surveillance Golden Team" //F
+```
+
+---
+
 ## Voir d'un coup d'œil si ça tourne encore
 
 Deux fichiers à la racine du dépôt, un par tâche.
