@@ -54,6 +54,13 @@ Trois lignes, dans cet ordre :
 - Une seconde ligne, dans le même fichier, crée la tâche Windows « Rapatriement Golden Team » : elle lance `auto.sh` chaque nuit à 3 h, avec rattrapage au démarrage suivant si le PC était éteint. Un commit par jour au maximum.
 - **`AUTOMATIQUE.md` est le témoin de vie** : sa première ligne donne la date du dernier passage. Plus de deux jours = la tâche ne tourne plus, le dire à Denis. Ne jamais supposer qu'un fichier du PC est arrivé sans avoir regardé cette date.
 
+## L'agent de calcul : comment une mesure se demande maintenant
+- **Le calcul est sur le PC, jamais sur le VPS.** Le VPS ForexVPS porte le COMPTE RÉEL : un backtest y occuperait un cœur des heures durant et ferait traiter ses ticks en retard au terminal réel. Règle posée le 22/09, elle ne se rediscute pas. Détail : `PLAN-INFRA.md`.
+- **Pour demander une mesure, déposer un `.ini` dans `jobs/`** et ne rien faire d'autre. `runner.sh` le prend dans les dix minutes, lance **par le lanceur existant** (`lance_chaine.ps1` ou `lancer_mt4.sh`, jamais le terminal à la main), attend le rapport, appelle `mesure.py` et `parjeu.py --csv`, range dans `resultats/<nom>/`, pousse et vérifie. Mode d'emploi : `jobs/LISEZMOI.md`.
+- **L'agent ne conclut jamais rien.** Aucun chiffre ne sort de lui : ils viennent de `mesure.py`. Pas de rapport = `REFUS : aucun rapport`, et rien à conclure du passage.
+- **`RUNNER.md` est le témoin de vie** : date du dernier passage et nombre de demandes en attente. Plus de deux heures avec le PC allumé = l'agent ne tourne plus, le dire à Denis. Ne jamais supposer qu'une passe a eu lieu sans avoir regardé ce fichier.
+- **Le VPS se raconte sur la branche `vps`** (`etat/etat.md`, réécrit toutes les quinze minutes) : journaux masqués, erreurs, pertes de connexion, robots vus. Pour y poser un EA ou un `.set`, le déposer dans `a-poser/` **de cette branche**. L'agent du VPS ne touche aucune position, ne change aucun réglage en cours, n'attache aucun robot et ne relance aucun terminal — et il n'écrase jamais le fichier d'un robot qui tourne : il pose à côté et le signale.
+
 ## Lancement d'un test MT5 : un seul chemin
 - Tout test MT5 se lance par `C:\Users\User\OneDrive\Documents\forex\outils\lance_chaine.ps1 -Inis <nom1>,<nom2>` (noms des .ini dans `Documents\forex`, sans extension), en arrière-plan et fenêtre cachée. Jamais `Start-Process terminal64` à la main, jamais un `jourXX.ps1` écrit à la volée.
 - Le lanceur appelle `prelance.py` (refus = pas de lancement), retire une mise à jour MT5 en attente (sinon blocage UAC), coupe si le disque < 3 Go ou si le journal du testeur > 1 Go, et vérifie que le rapport n'est pas vide avec `mesure.py`. Lire son journal `chaine_*.log` avant de dire quoi que ce soit sur un test.

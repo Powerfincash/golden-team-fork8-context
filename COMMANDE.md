@@ -1,7 +1,11 @@
 # La commande
 
-Deux lignes à coller dans **Git Bash**, une fois pour toutes. La première rapatrie tout
-maintenant ; la seconde demande à Windows de recommencer chaque nuit, tout seul.
+Des lignes à coller dans **Git Bash**, une fois pour toutes. La première rapatrie tout
+maintenant ; la deuxième demande à Windows de recommencer chaque nuit ; la troisième met en
+place l'agent de calcul, qui lance vos mesures tout seul.
+
+**Les coller dans l'ordre.** La troisième a besoin de la première : sans elle, vos outils ne
+sont pas dans le dépôt et l'agent n'a rien à lancer.
 
 ## 1. Rapatrier maintenant
 
@@ -36,11 +40,54 @@ Ce qu'elle met en place, et rien d'autre :
 
 Elle ne fait **aucun commit s'il n'y a rien de neuf**. Au maximum un par jour.
 
+## 3. Mettre en place l'agent de calcul
+
+À coller **après les deux premières**. Elle crée la tâche, l'affiche, et fait un passage de
+preuve tout de suite.
+
+```bash
+schtasks //Create //TN "Calcul Golden Team" //SC MINUTE //MO 10 //F //TR "\"$(cygpath -w "$(command -v bash)")\" -l \"$HOME/rapatriement-auto/runner.sh\"" && powershell -NoProfile -Command '$t = Get-ScheduledTask -TaskName "Calcul Golden Team"; $t.Settings.StartWhenAvailable = $true; Set-ScheduledTask -InputObject $t | Out-Null' && bash ~/rapatriement-auto/runner.sh && echo "L AGENT DE CALCUL EST EN PLACE"
+```
+
+À partir de là, vous déposez un `.ini` dans le dossier **`jobs/`** du dépôt — depuis le
+téléphone si vous voulez — et l'agent s'en occupe dans les dix minutes. Comment faire et où
+lire le résultat : [`jobs/LISEZMOI.md`](jobs/LISEZMOI.md).
+
+Ce qu'elle met en place, et rien d'autre :
+
+- un **regard dans `jobs/` toutes les dix minutes**, sous votre compte, sans droits administrateur ;
+- **une seule passe à la fois** : tant qu'un test tourne, l'agent ne fait rien d'autre, même
+  si le test dure huit heures ;
+- **le rattrapage** : si le PC était éteint, l'agent reprend au démarrage suivant, la file
+  n'est pas perdue.
+
+Elle n'installe **rien de neuf sur le PC** : elle se sert de vos lanceurs existants,
+`lance_chaine.ps1` pour MT5 et `lancer_mt4.sh` pour MT4.
+
+### Si une passe en cours vous gêne dans la journée
+
+Pour que l'agent ne travaille qu'à partir de 22 h, coller ceci — et rien d'autre à changer :
+
+```bash
+schtasks //Create //TN "Calcul Golden Team" //SC DAILY //ST 22:00 //F //RI 10 //DU 10:00 //TR "\"$(cygpath -w "$(command -v bash)")\" -l \"$HOME/rapatriement-auto/runner.sh\"" && echo "L AGENT NE TRAVAILLERA QU A PARTIR DE 22 H"
+```
+
+### Pour arrêter l'agent de calcul un jour
+
+```bash
+schtasks //Delete //TN "Calcul Golden Team" //F
+```
+
 ## Voir d'un coup d'œil si ça tourne encore
 
-**[`AUTOMATIQUE.md`](AUTOMATIQUE.md)**, à la racine du dépôt. Sa première ligne donne la date du
-dernier passage et son résultat, suivie des quatorze derniers. **Si cette date a plus de deux
-jours, la tâche ne tourne plus** : recoller la ligne 2.
+Deux fichiers à la racine du dépôt, un par tâche.
+
+- **[`AUTOMATIQUE.md`](AUTOMATIQUE.md)** — le rapatriement. Sa première ligne donne la date du
+  dernier passage et son résultat, suivie des quatorze derniers. **Si cette date a plus de deux
+  jours, la tâche ne tourne plus** : recoller la ligne 2.
+- **[`RUNNER.md`](RUNNER.md)** — l'agent de calcul. Même principe, plus le nombre de demandes
+  en attente. **Si cette date a plus de deux heures alors que le PC est allumé**, il ne tourne
+  plus : recoller la ligne 3.
 
 ## Si GitHub demande de se connecter
 

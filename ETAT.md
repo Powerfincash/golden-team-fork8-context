@@ -5,10 +5,10 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 22/09/2026**
-**Dernier geste : plan d'infrastructure écrit et posé au dépôt (`PLAN-INFRA.md`), en attente de
-son accord — calcul sur le PC, surveillance seule sur le VPS du compte réel. Geste précédent :
-réserve 2025 argent Till mesurée en entier, profil fidèle v1.47 — tous les seuils du protocole
-franchis, voir section 1.**
+**Dernier geste : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
+`vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
+`COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle
+v1.47 — tous les seuils du protocole franchis, voir section 1.**
 
 ---
 
@@ -87,6 +87,10 @@ franchis, voir section 1.**
 - **Rien ne tourne.** La réserve 2025 argent Till (profil fidèle v1.47) est terminée depuis le
   22/09 14h ; résultats dans `RESULTATS_CORRIGES.md`. Terminal PU Prime refermé (`ShutdownTerminal=1`
   dans le `.ini`, fermeture automatique par le testeur).
+- **Les deux agents sont écrits mais pas encore installés** : ils attendent que Denis colle les
+  lignes de `COMMANDE.md` sur ses machines. Une fois collées, `RUNNER.md` (branche `main`) et
+  `etat/etat.md` (branche `vps`) sont les deux témoins de vie — **les regarder avant de supposer
+  qu'une passe a eu lieu ou que le VPS va bien.**
 
 > *Tenir cette section à jour est le point le plus important du fichier : une session
 > qui reprend doit savoir en une ligne si une mesure est en vol.*
@@ -108,9 +112,13 @@ franchis, voir section 1.**
   n'est codé : le plan attend son accord.** Deux points qu'il porte et qui valent d'ici :
   le dépôt ne contient toujours ni `pc/` ni `index/`, donc les lanceurs et `mesure.py` ne sont
   nulle part hors du PC — la ligne 1 de `COMMANDE.md` est le préalable à tout, pas une option ;
-  et l'accès au VPS se fait **sans aucun identifiant chez nous** : le VPS pousse ses journaux,
-  positions et erreurs dans le dépôt toutes les 15 minutes et y ramasse les EA et `.set` déposés,
-  aucun port ouvert, aucune connexion entrante. Le MCP exposé en HTTPS qui était au programme du
+  et l'accès au VPS se fait **sans aucun identifiant chez nous** : le VPS pousse ses journaux
+  et ses erreurs sur la branche `vps` toutes les 15 minutes et y ramasse les EA et `.set` déposés,
+  aucun port ouvert, aucune connexion entrante. **Écrit et poussé le 22/09** : `runner.sh` et
+  `jobs/` sur `main`, `vps_agent.sh` sur la branche `vps`, les lignes à coller dans `COMMANDE.md`.
+  **Limite connue de l'agent du VPS, à ne pas oublier** : les journaux disent ce qui s'est passé,
+  pas l'état instantané des positions ni le solde. Pour les avoir il faudrait attacher au terminal
+  réel un petit exportateur en lecture seule — un clic de Denis, pas encore demandé. Le MCP exposé en HTTPS qui était au programme du
   22/09 est **déconseillé** : il ouvrirait un port entrant sur la machine du compte réel pour un
   service que le dépôt rend déjà. Ce que nous ne ferons pas sur le VPS : toucher une position
   ouverte, changer les paramètres d'un robot en cours, attacher un robot à un graphique,
