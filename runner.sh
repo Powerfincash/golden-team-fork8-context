@@ -150,6 +150,17 @@ git fetch -q origin main 2>/dev/null
 git checkout -q main 2>/dev/null
 git pull -q --rebase --autostash origin main 2>/dev/null || git rebase --abort 2>/dev/null
 
+# ------- auto-deploy : copier les templates .ini vers jobs/ avant de traiter
+if [ -d "$DEPOT/templates" ]; then
+  for template in "$DEPOT"/templates/*.ini; do
+    [ -f "$template" ] && {
+      nom_template="$(basename "$template")"
+      cp -f "$template" "$DEPOT/jobs/$nom_template"
+      trace "Auto-deploy : $nom_template copie dans jobs/"
+    }
+  done
+fi
+
 # ---------------------------------------------------- la demande la plus ancienne
 JOB="$(ls -1 "$DEPOT"/jobs/*.ini 2>/dev/null | head -1)"
 if [ -z "$JOB" ]; then
