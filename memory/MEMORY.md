@@ -4,7 +4,7 @@
 - [Garde-fous de mesure](garde-fous-mesure.md) — la vérification va dans l'outil, pas dans une règle ; **19/09 : un agrégat qui tombe juste ne prouve rien** (mesurer communes / manquées / inventées, `fidelite_entrees.py`)
 - [Portefeuille de réserve : ne plus comparer à UBS](portefeuille-de-reserve.md) — **sa consigne du 20/09 soir** : une brique de réserve se juge sur ses critères propres (1,8, réserve 2025, crible, creux de fonds, indépendance), jamais « moins bon que le livre »
 - [Écarts rentables à garder](ecarts-rentables-a-garder.md) — **sa consigne du 19/09** : une version écartée pour infidélité à UBS peut être un bon robot autonome ; garder les rapports, dire fidélité ET rentabilité à chaque adoption
-- [Kestrel, profil de rendement](kestrel-profil-rendement.md) — **19/09** : MÊME binaire qu'Eagle-owl, trois réglages qui débranchent la fidélité ; sert un jeu isolé, pas le portefeuille ; lit encore les jeux d'UBS (13,4 % d'écart) donc pas encore autonome
+- [Kestrel, quatrième robot maison](kestrel-profil-rendement.md) — **19/09, nomenclature corrigée le 22/09** : robot maison issu de la reproduction d'UBS, profil de rendement (fidélité débranchée) ; partage le binaire d'Eagle-owl, activé par trois paramètres ; sert un jeu isolé, pas le portefeuille ; lit encore les jeux d'UBS (13,4 % d'écart) donc pas encore autonome
 - [Méthode de travail](methode-de-travail.md) — efficacité d'abord, une chose à la fois, protocole avant lancement
 - [Critères d'acceptation backtest](backtest-acceptance-criteria.md) — seuils fixés d'avance, règle d'arrêt
 - [Contrôle sur le premier résultat](controle-premier-resultat.md) — vérifier au premier résultat, pas en fin de file

@@ -1,6 +1,6 @@
 ---
 name: kestrel-profil-rendement
-description: "Kestrel (crécerelle), créé le 19/09/2026 — profil de RENDEMENT d'Eagle-owl : MÊME binaire, trois réglages qui débranchent la fidélité à UBS ; sert un robot autonome sur un jeu isolé, pas le portefeuille ; lit encore les jeux d'UBS donc pas encore autonome"
+description: "Kestrel (crécerelle), créé le 19/09/2026 — QUATRIÈME ROBOT MAISON, issu de la reproduction d'UBS (sa nomenclature, 22/09). Profil de rendement : fidélité à UBS débranchée. Partage le binaire d'Eagle-owl, activé par trois paramètres. Sert un jeu isolé, pas le portefeuille ; lit encore les jeux d'UBS donc pas encore autonome"
 metadata: 
   node_type: memory
   type: project
@@ -8,14 +8,19 @@ metadata:
   modified: 2026-09-19T12:24:53.503Z
 ---
 
+**Kestrel est un ROBOT MAISON, issu de la reproduction d'UBS.** C'est sa nomenclature, corrigée le 22/09/2026, et
+elle fait foi : les robots maison sont **quatre** — Eagle-owl, **Kestrel**, Zebra, Heron. Ne plus le présenter comme
+« un simple profil » ni comme « pas un autre robot » : c'est une erreur que j'ai commise le 22/09 et qu'il a reprise.
+
 Créé le 19/09/2026 sur sa demande « tu crées le bot et tu le nommes ». Nom choisi puis validé par lui : **Kestrel**, la
 crécerelle, dans la lignée d'Eagle-owl le grand-duc (il a d'abord demandé la traduction, puis accepté l'anglais
 puisqu'Eagle-owl l'est déjà).
 
-**Ce n'est pas un autre robot** — sa remarque, devenue règle : « ce qui est vrai pour Eagle-owl l'est aussi pour
-Kestrel ». Même binaire `EagleOwl_v1.ex5`, profil fait en PARAMÈTRES D'ENTRÉE et non en copie du fichier source : un
-seul code à corriger, un seul chantier, toute la feuille de route vaut pour les deux. Si un besoin n'était vrai que
-pour l'un, ce serait le signe qu'il manque un paramètre, pas qu'il faut un second fichier.
+**Précision technique, qui ne change pas ce qu'il est** : Kestrel partage le binaire `EagleOwl_v1.ex5` et s'active en
+PARAMÈTRES D'ENTRÉE, pas en copie du fichier source. La conséquence, sa remarque devenue règle de maintenance : « ce
+qui est vrai pour Eagle-owl l'est aussi pour Kestrel » — un seul code à corriger, un seul chantier, toute la feuille
+de route vaut pour les deux. Si un besoin n'était vrai que pour l'un, ce serait le signe qu'il manque un paramètre,
+pas qu'il faut un second fichier.
 
 **Les trois réglages** (v1.35, MQL5 fd0871d) : `Fid_ReposeMaxTrades` 20 → 999, `Fid_SwingMortEnDeca` true → false,
 `Fid_SwingMortAuDela` true → false. Ils n'agissent que sur les symboles à 2 décimales et sur le seuil de la fenêtre de
