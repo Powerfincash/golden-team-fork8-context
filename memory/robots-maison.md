@@ -11,8 +11,20 @@ elle fait foi.
 **Issus de la reproduction d'UBS :**
 - **Eagle-owl** (le grand-duc) — profil de FIDÉLITÉ : il reproduit UBS le plus exactement possible.
   Fidélité globale pondérée par les entrées : 96,5 % au 20/09 (v1.45-v1.47).
-- **Kestrel** (la crécerelle) — profil de RENDEMENT : les règles de fidélité sont débranchées sur
-  les symboles à deux décimales. Créé le 19/09/2026. Voir [[kestrel-profil-rendement]].
+- **Kestrel** (la crécerelle) — profil de RENDEMENT : les règles de fidélité à UBS sont
+  débranchées. Créé le 19/09/2026. Voir [[kestrel-profil-rendement]].
+
+**Kestrel n'est PAS hors or — c'est l'inverse** (question posée le 22/09, vérifiée) : l'or est
+précisément là où il sert. Son gain le mieux mesuré est l'or SetsB2, rapport 3,74 en échantillon
+contre **9,76 en réserve 2025** (+3 460 $), et c'est cette jambe qui porte plus de la moitié du
+résultat 2025 du portefeuille autonome A2. Il a été rejoué sur NEUF jambes pour la réserve 2025
+(or, argent, CHFJPY, GBPUSD, EUR volatilité, EUR storyG, JPY D1, AdvSc, USO), pas sur l'or seul.
+
+Ce qui est hors or chez Kestrel, et qui explique sans doute la confusion : **sa route vers
+l'autonomie**. Aujourd'hui il lit encore les jeux d'UBS (seules 13,4 % de ses entrées en sont
+absentes). L'autonomie passe par des jeux composés par nous sur des symboles où UBS n'existe pas
+— GBPJPY, EURJPY, AUDUSD, Brent — point 25 de la feuille de route. Ce chantier-là est hors or ;
+le robot ne l'est pas.
 
 Techniquement les deux partagent le binaire `EagleOwl_v1.ex5` : Kestrel s'active par trois
 paramètres d'entrée, pas par une copie du code. D'où la règle de maintenance — un seul code à

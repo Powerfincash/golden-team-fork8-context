@@ -24,9 +24,18 @@ qui est vrai pour Eagle-owl l'est aussi pour Kestrel » — un seul code à corr
 de route vaut pour les deux. Si un besoin n'était vrai que pour l'un, ce serait le signe qu'il manque un paramètre,
 pas qu'il faut un second fichier.
 
+**Kestrel n'est pas « hors or »** (sa question du 22/09, vérifiée dans les mesures) : l'or est au
+contraire sa meilleure justification — or SetsB2 3,74 en échantillon contre **9,76 en réserve
+2025** (+3 460 $), et neuf jambes au total rejouées en Kestrel pour cette réserve, or et argent
+compris. Ce qui est hors or, c'est sa route vers l'autonomie : GBPJPY, EURJPY, AUDUSD, Brent,
+des symboles où UBS n'existe pas (voir le dernier paragraphe).
+
 **Les trois réglages** (v1.35, MQL5 fd0871d) : `Fid_ReposeMaxTrades` 20 → 999, `Fid_SwingMortEnDeca` true → false,
 `Fid_SwingMortAuDela` true → false. Ils n'agissent que sur les symboles à 2 décimales et sur le seuil de la fenêtre de
 repose ; sur les devises les règles restent actives, parce qu'elles y ont été mesurées et qu'elles y gagnent.
+**Incohérence à lever** : ce paragraphe dit « seulement les symboles à deux décimales », or le contrôle ci-dessous
+donne un JPY D1 différent en Kestrel (2,57) et en fidèle (2,12). L'un des deux est imprécis — à vérifier dans le code
+avant de s'appuyer sur la portée exacte des trois réglages.
 
 **Contrôles (19/09)** : JPY D1 reproduit à l'identique la cible v1.31 (1 057 positions, +1 047 $, creux 102,
 rapport 2,57 contre 2,12 en fidèle) ; or SetsB2 à 3,77 contre une cible v1.32 de 3,74 et 3,10 en fidèle — un peu mieux
