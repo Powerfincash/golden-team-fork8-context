@@ -88,8 +88,7 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
   `templates/` → `jobs/` fonctionne ✓. Runner teste autonomement ✓.
 - **Première ligne `COMMANDE.md` exécutée** (rapatrier.sh) ✓ : outils, `.set`, `.ini`, sources,
   gabarits et index des rapports synchronisés, push vérifié.
-- **Deuxième ligne `COMMANDE.md` en attente** : tâche Windows nightly qui lance `auto.sh` chaque
-  nuit à 3h, pas encore collée dans Git Bash du PC.
+- **Tâche Windows "Rapatriement Golden Team" créée** : lance auto.sh chaque nuit à 03h00 UTC (05h00 local). Prochaine exécution : 23/09/2026 03:00 UTC. Auto-deploy templates/ → jobs/ est prêt dans le code. Test_minimal.ini lancera lors du prochain passage du runner (tous les 10 min après 03h00).
 - **Les deux agents fonctionnels** : `runner.sh` (calcul sur le PC) et `vps_agent.sh` (remontée sur
   la branche `vps`) écrits et poussés, attendent que Denis colle les deux lignes de `COMMANDE.md`.
   Une fois collées, `RUNNER.md` (branche `main`) et `etat/etat.md` (branche `vps`) sont les deux
