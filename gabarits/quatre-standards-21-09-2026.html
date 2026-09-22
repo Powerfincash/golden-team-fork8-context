@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Quatre Standards</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; margin: 20px; }
+.container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+h1 { text-align: center; color: #333; border-bottom: 3px solid #007acc; padding-bottom: 10px; }
+h2 { color: #007acc; margin-top: 30px; border-left: 4px solid #007acc; padding-left: 10px; }
+h3 { color: #333; margin-top: 22px; }
+.config { background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 15px 0; }
+.metric { background: #f0f7ff; padding: 12px; border-left: 3px solid #007acc; }
+.metric-label { font-size: 12px; color: #666; }
+.metric-value { font-size: 18px; font-weight: bold; color: #007acc; margin-top: 4px; }
+.dosage { background: #fffbf0; padding: 12px; margin: 10px 0; border-left: 3px solid #ff9800; font-size: 13px; }
+.dosage-item { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+th { background: #007acc; color: white; padding: 10px; text-align: left; }
+td { padding: 8px; border-bottom: 1px solid #ddd; }
+tr:nth-child(even) { background: #f9f9f9; }
+.highlight { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
+.note { color: #666; font-size: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd; }
+.tablewrap { overflow-x: auto; }
+/* 18/09 — statut des variantes : rosé = à privilégier pour ce type de compte ; jaune = alternative admise ; gris = pour info */
+.config.regle { background: #fce4ec; border: 1px solid #f8bbd0; border-left: 6px solid #e91e63; }
+.config.alt { background: #fff8e1; border: 1px solid #ffe082; border-left: 6px solid #ffb300; }
+.config.info { background: #f3f4f6; border: 1px solid #e0e0e0; border-left: 6px solid #9e9e9e; }
+.config.regle .metric { background: #fff; border-left-color: #e91e63; }
+.config.regle .metric-value { color: #c2185b; }
+.config.info .metric-value { color: #555; }
+tr.regle, tr.regle td { background: #fce4ec; }
+tr.alt, tr.alt td { background: #fff8e1; }
+tr.info, tr.info td { background: #f3f4f6; color: #555; }
+.badge { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 3px; vertical-align: middle; margin-left: 6px; }
+.badge.regle { background: #e91e63; color: #fff; }
+.badge.alt { background: #ffb300; color: #333; }
+.badge.info { background: #9e9e9e; color: #fff; }
+.legende { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; margin: 10px 0 0; }
+.legende span { padding: 4px 10px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Quatre Standards — Portefeuille 21 septembre 2026 (soir)</h1>
+<p style="text-align:center;color:#666;margin-top:-6px;font-size:12px;">Toutes les variantes d'une jambe restent dans la page ; celle à privilégier pour chaque type de compte est sur fond rosé (sa décision du 17/09).</p>
+<p style="text-align: center; color: #666; margin-top: -10px;">PU Prime 2021–2024 | ticks réels, lot 0,01 par unité, dosage au pire des deux moitiés, rapport HORS TIRAGE (tirages Zebra _d _e _f) | Indices UBS retirés le 11/09</p>
+
+<div class="highlight" style="border-left-color:#e91e63;background:#fce4ec;">
+  <strong>Règle de compte (17/09)</strong> — <strong>Compte propre : UBS, jambe or SetsB</strong> (jeu par défaut 4+5+6+7). <strong>Tout compte prop firm, classique ou Axi Select : Eagle-owl, jambe or SetsB2</strong> (Reaper 1+3+4+7+8), pour brouiller les pistes par rapport à la version commerciale par défaut. Tant qu'Eagle-owl n'est pas fidèle à UBS (87 % en fidélité de net, écart concentré sur les jambes clients JPY D1, EUR storyG, USO), les lignes UBS SetsB2 restent dans la page <strong>pour info et comme alternative prop firm</strong>.
+  <div class="legende">
+    <span style="background:#fce4ec;border-left:4px solid #e91e63;">rosé : à privilégier pour ce type de compte</span>
+    <span style="background:#fff8e1;border-left:4px solid #ffb300;">jaune : alternative admise (UBS) tant que le moteur n'est pas fidèle</span>
+    <span style="background:#f3f4f6;border-left:4px solid #9e9e9e;">gris : pour info</span>
+  </div>
+</div>
+
+<div class="highlight" style="border-left-color:#2e7d32;background:#e8f5e9;">
+  <strong>Mise à jour du 21/09 au soir — la jambe or a été mesurée jeu par jeu.</strong> Trois jeux de la jambe or étaient en question. Mesure du 21/09 (<code>parjeu.py --csv</code> sur les rapports n121 et n132, corrélation de Pearson mensuelle de chaque jeu contre le reste de la jambe) :
+  <p style="margin:8px 0 0;"><strong>M5_H retiré</strong> — seul jeu négatif sur les deux moitiés indépendamment (−0,32 et −0,32) et meilleur sans lui hors échantillon (6,78 contre 6,71 en réserve). C'est un <strong>critère d'admission manqué</strong>, pas un retrait pour faiblesse.</p>
+  <p style="margin:8px 0 0;"><strong>GoldDaily1 et goldtrade_H gardés</strong> — GoldDaily1 : corrélation 0,199 (SetsB) et 0,297 (SetsB2), net −113 $ et −262 $ sur quatre ans. goldtrade_H : corrélation 0,067 et 0,301, net +91 $ et +89 $. Toutes bien sous le seuil de redondance +0,5 : <strong>aucun retrait justifié</strong>. GoldDaily1 reste faible pris isolément, mais la faiblesse n'est pas un disqualifiant — seule la redondance l'est (sport d'équipe, pas sport individuel).</p>
+  <p style="margin:8px 0 0;"><strong>Argent Till</strong> : retiré du live le 20/09 ; le dossier reste suspendu à la réserve 2025 des trois jeux. 94 % de leur net a été fait en 2023-2024 et la fenêtre d'optimisation du vendeur est inconnue — c'est là qu'est le risque, pas dans les 12 trades live.</p>
+  <p style="margin:8px 0 0;"><strong>Le poste retour à la moyenne reste vacant</strong> (Heron seul) : le portefeuille est toujours 100 % cassure. Aucun nouveau candidat n'est entré dans la page depuis le 20/09 ; le protocole retenu est de mesurer la <strong>réserve 2025 en premier</strong>, avant toute autre mesure.</p>
+  <p style="margin:8px 0 0;">Les chiffres des rubriques 1 à 6 ci-dessous sont ceux du 20/09 au soir (moteur v1.45-v1.47) : la mesure du 21/09 porte sur la composition de la jambe or, pas sur les dosages, qui n'ont pas été rejoués.</p>
+</div>
+
+<div class="highlight" style="border-left-color:#0277bd;background:#e1f5fe;">
+  <strong>Mise à jour du 20/09 soir — toutes les jambes du moteur en v1.45-v1.47 (or SetsB2 n132 et SetsB n121, argent n150, JPY D1 n153, USO n155, storyG n154, AdvSc n120).</strong> Trois règles de plus dans la journée, mesurées avant d'être codées : plus de fenêtre de repose nulle part (v1.45), une sortie qui laisse le swing intact ne consomme pas le niveau sur l'or et l'argent (v1.46), la consommation permanente des ordres au-delà est portée par le swing et non par le prix (v1.47). <strong>Fidélité globale pondérée par les entrées UBS : 96,5 %</strong> (or 98,5 %, argent 95,8 %, AdvSc 94,3 %, USO 96,6 %, JPY D1 92,9 %, EUR vol 97,6 %, CHFJPY 96,9 %, GBPUSD 96,4 %, storyG 91,5 %). Or SetsB2 : 98,5 % de communes, net 5 451 $ pour 292 $ de creux (UBS 5 429 / 321).
+  <p style="margin:8px 0 0;">Rapports hors tirage, v1.44 → v1.47 : <strong>2ter-a 21.14 → 22.07</strong> · 2ter-b 21.11 → 21.19 · <strong>3a 21.31 → 21.66</strong> · 3b 22.04 → 21.95 · 5a 9.21 · 5b 9.73 → 7.93 · 5c 8.07 → 8.51 · 5d 5.41 (les rubriques 5 bougent par la jambe hors or, rejouée en v1.47).</p>
+  <p style="margin:8px 0 0;"><strong>Réserve 2025, Advanced Scalper</strong> (jambe dosée ×10 dans les règles prop firm) : année perdante pour UBS (−233 $, creux 299) comme pour Eagle-owl (−376 $, fidélité 95 %). L'avantage de creux d'Eagle-owl sur 2021-2024 ne tient pas hors échantillon. La jambe reste dans la règle (dosage sur quatre ans) avec cette réserve écrite ; elle est déjà exclue des portefeuilles autonomes (rubrique 6).</p>
+  <p style="margin:8px 0 0;"><strong>Live (revue du 20/09, Ultima cents, 13-18/09)</strong> : 101 positions, −427 USC dont −455 pour les trois jeux argent Till (12 trades, 0 gagnant, sous le P10 pour la deuxième revue) ; le reste, +28 USC, est dans la distribution du backtest. <strong>Les trois jeux argent sont retirés du live</strong> (dossiers de jeux renommés sur le VPS) jusqu'à leur réserve 2025.</p>
+  <strong>Mise à jour du 20/09 — l'or rejoué en v1.44 (SetsB2 n132 et SetsB n121), les autres jambes inchangées par construction.</strong> Trois règles adoptées dans la matinée, chacune mesurée sur UBS avant d'être codée : <strong>32 swings</strong> pour les ordres en deçà sur l'or (v1.42 — le premier swing vivant du bon côté peut être de rang 2 à 20), <strong>plus de fenêtre de repose sur l'or</strong> (v1.43 — UBS y repose jusqu'à 10 h après le remplissage ; la règle du toucher a pris son rôle), et <strong>fausse cassure au seuil du prix d'entrée</strong> (v1.44 — 79 sorties « ea » de Reaper 6 que le moteur tenait jusqu'au TP/SL). Fidélité du livre or : 92,9 → <strong>96,6 %</strong> d'entrées communes, erreur 301 → 176 ; or SetsB2 96,3 %.
+  <p style="margin:8px 0 0;">Rapports hors tirage, v1.34 → v1.44 : <strong>2ter-a 19.20 → 21.14</strong> · 2ter-b 18.83 → 21.11 · <strong>3a 18.31 → 21.31</strong> · 3b 18.87 → 22.04 · 5a 9.10 → 9.21 · 5b 9.15 → 9.73 · 5c 9.15 → 8.07 · 5d 6.15 → 5.41 (les rubriques 5 ne contiennent pas d'or : leur mouvement vient des versions v1.38-v1.39 de la veille au soir sur CHFJPY et GBPUSD, jamais rejouées dans la page).</p>
+  <p style="margin:8px 0 0;"><strong>La fidélité ne coûte pas en rapport.</strong> Sur le livre or SetsB, le net brut passe de 5 789 $ (v1.38, 428 entrées inventées) à 5 499 $ (v1.44) mais le creux de 465 à 350 $ : rapport 12,4 → 15,7, UBS 16,4. Les entrées inventées étaient du rendement acheté avec du creux.</p>
+  <p style="margin:8px 0 0;"><strong>Édition du 19/09 (v1.34), pour mémoire.</strong> Quatre règles adoptées ce jour-là : NFP à 8 h 30 New York (v1.29), fenêtre de repose (v1.31), « swing dépassé = mort » étendu à l'or (v1.32 et v1.33), fenêtre réservée aux budgets d'entrées finis (v1.34). Rapports hors tirage v1.28 → v1.34 : 2ter-a 18.03 → 19.20 · 2ter-b 19.68 → 18.83 · 3a 18.04 → 18.31 · 3b 15.90 → 18.87 · 5a 10.04 → 9.10 · 5b 9.26 → 9.15 · 5c 8.15 → 9.15 · 5d 5.53 → 6.15.</p>
+  <p style="margin:8px 0 0;"><strong>Le moteur est à la fois plus fidèle et plus rentable qu'au matin.</strong> Sur le livre or il est passé de 116,9 % à 100,1 % des positions d'UBS en cessant d'inventer des entrées ; et la correction de fin de journée a rendu à la jambe CHFJPY 58 de ses entrées communes, qui valaient +337 $. Six rubriques sur huit dépassent maintenant leur niveau du 18/09.</p>
+  <p style="margin:8px 0 0;"><strong>Nouveau le 19/09 : rubrique 6, les portefeuilles autonomes</strong> — bâtis autour de Zebra, jambes Eagle-owl en profil Kestrel, et surtout <strong>passés à l'épreuve de la réserve 2025</strong>, qui a retiré quatre jambes (Advanced Scalper, USO, Zebra GBP, Zebra EUR). Leur rapport d'échantillon est plus bas que celui des livres fidèles, mais c'est le seul endroit de cette page où le dosage a été choisi sur une année jamais vue.</p>
+  <p style="margin:8px 0 0;"><strong>Ce qu'il faut retenir sur la méthode</strong> : la fenêtre de repose avait été mesurée sur un seul jeu (Reaper 6) puis appliquée à tous. Elle coûtait 59 entrées à CHFJPY et faisait tomber son rapport de 2,80 à 0,90 — moins bien qu'UBS lui-même. Elle ne vaut que là où le budget d'entrées par niveau est fini ; avec un budget illimité, UBS repose tant que le niveau vit, jusqu'à 347 h mesurées.</p>
+</div>
+
+<!-- ================= 1. COMPTE PROPRE ================= -->
+<h2>1️⃣ Compte Propre</h2>
+
+<h3>1a. UBS, jambe or SetsB — standard du 10/09 <span class="badge regle">À PRIVILÉGIER</span></h3>
+<div class="config regle">
+  <p><strong>Meilleur rendement absolu, livre complet, aucun seuil imposé</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">13.80</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">15.62</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+17 903 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">286 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">114 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">955 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">2 865 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">29</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+8.34 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+9.50 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">4 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−2.79 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">79.0</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB) × 1</div>
+    <div class="dosage-item">UBS hors or × 1</div>
+    <div class="dosage-item">AdvSc JPY (backtest MT4) × 25</div>
+    <div class="dosage-item">Zebra or × 12</div>
+    <div class="dosage-item">Zebra GBP × 40</div>
+    <div class="dosage-item">Zebra EUR × 20</div>
+    <div class="dosage-item">Heron AUDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>955 $</td><td>469 %/an</td><td>342 %/an</td><td>+28.51 %</td><td>+25.02 %</td><td>4/48</td></tr>
+    <tr><td>20 %</td><td>1 432 $</td><td>312 %/an</td><td>228 %/an</td><td>+19.01 %</td><td>+16.68 %</td><td>4/48</td></tr>
+    <tr><td>15 %</td><td>1 910 $</td><td>234 %/an</td><td>171 %/an</td><td>+14.26 %</td><td>+12.51 %</td><td>4/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>2 865 $</td><td>156 %/an</td><td><strong>114 %/an</strong></td><td>+9.50 %</td><td>+8.34 %</td><td>4/48</td></tr>
+    <tr><td>5 %</td><td>5 729 $</td><td>78 %/an</td><td>57 %/an</td><td>+4.75 %</td><td>+4.17 %</td><td>4/48</td></tr>
+  </table></div>
+  <p><strong>Années :</strong> 2021 +3 343 $ | 2022 +5 688 $ | 2023 +5 261 $ | 2024 +3 610 $</p>
+  <p><strong>Réserve sur la jambe AdvSc JPY :</strong> elle vient d'un backtest MT4 (Vantage, H1, 2003-2024) qui ne corrèle qu'à +0,37 avec le même jeu joué par UBS en ticks réels (n113) ; sa version au protocole est en 1c.</p>
+</div>
+
+<h3>1b. UBS, jambe or SetsB2 <span class="badge info">POUR INFO</span></h3>
+<div class="config info">
+  <p><strong>Même livre, jambe or SetsB2 (Reaper 1+3+4+7+8) — les deux jambes or sont corrélées à +0,97 : l'écart est dans le bruit des tirages, SetsB reste la règle du compte propre</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">14.47</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">16.21</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+17 518 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">270 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">118 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">901 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">2 702 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">29</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+8.91 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+9.86 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">5 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−3.17 %</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB2) × 1</div>
+    <div class="dosage-item">UBS hors or × 1</div>
+    <div class="dosage-item">AdvSc JPY (backtest MT4) × 30</div>
+    <div class="dosage-item">Zebra or × 12</div>
+    <div class="dosage-item">Zebra GBP × 40</div>
+    <div class="dosage-item">Heron AUDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>901 $</td><td>486 %/an</td><td>355 %/an</td><td>+29.57 %</td><td>+26.73 %</td><td>5/48</td></tr>
+    <tr><td>20 %</td><td>1 351 $</td><td>324 %/an</td><td>237 %/an</td><td>+19.72 %</td><td>+17.82 %</td><td>5/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>2 702 $</td><td>162 %/an</td><td><strong>118 %/an</strong></td><td>+9.86 %</td><td>+8.91 %</td><td>5/48</td></tr>
+    <tr><td>5 %</td><td>5 405 $</td><td>81 %/an</td><td>59 %/an</td><td>+4.93 %</td><td>+4.45 %</td><td>5/48</td></tr>
+  </table></div>
+  <p>À dosage identique à 1a (or SetsB2 à la place de SetsB) : hors tirage 13.76 contre 13.80.</p>
+</div>
+
+<h3>1c. UBS, jambe or SetsB, AdvSc JPY au protocole (n113) <span class="badge info">POUR INFO — À DÉCIDER</span></h3>
+<div class="config info">
+  <p><strong>La jambe AdvSc remplacée par UBS + le jeu Advanced Scalper en ticks réels 2021-2024 (n113, lot 0,10 ramené à 0,01) — seule mesure de cette jambe au protocole du livre. Si cette source est adoptée, le standard du compte propre devient cette ligne.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">15.52</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">17.44</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+22 478 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">322 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">127 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">1 074 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">3 221 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">29</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+9.01 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+10.61 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">6 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−1.45 %</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB) × 1</div>
+    <div class="dosage-item">UBS hors or × 2</div>
+    <div class="dosage-item">UBS AdvSc JPY au protocole (n113) × 20</div>
+    <div class="dosage-item">Zebra or × 16</div>
+    <div class="dosage-item">Zebra GBP × 60</div>
+    <div class="dosage-item">Zebra EUR × 20</div>
+    <div class="dosage-item">Heron AUDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>1 074 $</td><td>523 %/an</td><td>382 %/an</td><td>+31.83 %</td><td>+27.04 %</td><td>6/48</td></tr>
+    <tr><td>20 %</td><td>1 611 $</td><td>349 %/an</td><td>255 %/an</td><td>+21.22 %</td><td>+18.02 %</td><td>6/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>3 221 $</td><td>174 %/an</td><td><strong>127 %/an</strong></td><td>+10.61 %</td><td>+9.01 %</td><td>6/48</td></tr>
+    <tr><td>5 %</td><td>6 443 $</td><td>87 %/an</td><td>64 %/an</td><td>+5.31 %</td><td>+4.51 %</td><td>6/48</td></tr>
+  </table></div>
+  <p>Jambes AdvSc seules (0,01 lot, 4 ans) : backtest MT4 +107 $ / creux 8 $ / rapport 3.23 ; UBS n113 +162 $ / 20 $ / 1.99 ; Eagle-owl n120 +172 $ / 25 $ / 1.69. Même dosage ×25 que 1a avec n113 : hors tirage 12.57.</p>
+</div>
+
+<h3>1d. Compte propre TURBO (15/09) — + Argent Till + JPY D1 + EUR storyG + USO H4 <span class="badge info">EXPLORATOIRE</span></h3>
+<div class="config info">
+  <p><strong>Rappel du 15/09 : trois briques sur quatre ne sont pas confirmées sur le banc réel ; et l'Argent Till, elle, l'est maintenant — dans le mauvais sens (voir l'état live plus bas).</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">20.93</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">24.16</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+35 304 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">365 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">176 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">1 217 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">3 652 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">53</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+12.90 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+14.70 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">1 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−1.29 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">≈ 105.5 (79.0 + 26.5)</div></div>
+  </div>
+  <strong>Dosage (optimiseur, tirages d'ajustement)</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB) × 1 · UBS hors or × 3 · AdvSc JPY × 20 · Zebra or × 20 · Zebra GBP × 40 · Zebra EUR × 20 · Heron AUDCAD × 6 · Heron NZDCAD × 2</div>
+    <div class="dosage-item" style="color:#d32f2f;"><strong>Argent Till × 1 · JPY D1 × 2 · EUR storyG × 10 · USO H4 × 2</strong></div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>1 217 $</td><td>725 %/an</td><td>529 %/an</td><td>+44.10 %</td><td>1/48</td></tr>
+    <tr><td>20 %</td><td>1 826 $</td><td>483 %/an</td><td>353 %/an</td><td>+29.40 %</td><td>1/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>3 652 $</td><td>242 %/an</td><td><strong>176 %/an</strong></td><td>+14.70 %</td><td>1/48</td></tr>
+    <tr><td>5 %</td><td>7 305 $</td><td>121 %/an</td><td>88 %/an</td><td>+7.35 %</td><td>1/48</td></tr>
+  </table></div>
+  <p><strong>Années :</strong> 2021 +6 008 $ | 2022 +11 233 $ | 2023 +10 780 $ | 2024 +7 283 $</p>
+  <div class="highlight" style="margin-top:10px;">
+    <strong>⚠️ Argent Till au prix actuel (62 $)</strong> — les distances des jeux sont scalées par le prix : chaque stop vaut ~2,5× sa valeur moyenne de 2021-2024. Le creux modélisé de la jambe (407 $ à 0,01 lot) vaut ~1 000 $ aujourd'hui ; du 10 au 17/09, 12 trades à −37…−40 $ sur le banc, percentile 0 de la référence. Ne pas doser cette jambe sur un compte de moins de 5 000 $.
+  </div>
+</div>
+
+<!-- ================= 2. AXI SELECT ================= -->
+<h2>2️⃣ Axi Select (+7 % / −7 %, funded)</h2>
+
+<h3>2ter-a. Tout Eagle-owl, jambe or SetsB2, TURBO <span class="badge regle">À PRIVILÉGIER — LA RÈGLE</span></h3>
+<div class="config regle">
+  <p><strong>Toutes les jambes en code maison, rejouées en Eagle-owl v1.47 (or, 20/09) : SetsB2 (or, 15 jeux), hors or (EUR 8 + GBPUSD + CHFJPY), Advanced Scalper, argent Till, JPY D1, EUR storyG, USO H4 ; Zebra ; Heron. La jambe or SetsB2 est imposée (×1), le reste est dosé autour. En v1.19 cette rubrique valait 14.72 et en v1.28 18.03 ; les versions v1.25 à v1.47 (JPY 64 → 90 %, EUR 85 → 98 % du net d'UBS, puis fidélité de l'or) la portaient à 19.20 en v1.34 ; l'or fidèle de v1.47 la porte à 21.14, au-dessus de l'alternative UBS (17.52).</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">22.07</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">25.13</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+28 932 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">288 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+4.62 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai (médian)</div><div class="metric-value">22 j = 1.4 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">8 224 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">52</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+4.62 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+5.35 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">2 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.39 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">3.50 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.47 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">4 280 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">55.9 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage (or SetsB2 imposé, reste optimisé)</strong>
+  <div class="dosage">
+    <div class="dosage-item"><strong>Eagle-owl or (SetsB2) × 1</strong> · Eagle-owl hors or × 2 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 10 · Eagle-owl USO H4 × 2</div>
+    <div class="dosage-item">Zebra or × 12 · Zebra GBP × 40 · Zebra EUR × 40 · Heron AUDCAD × 4</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×24.3</td><td>7.00 %</td><td>4.94 %</td><td>10 j</td><td>+9.25 %</td></tr>
+    <tr><td>33 %</td><td>×16.3</td><td>4.69 %</td><td>3.31 %</td><td>16 j</td><td>+6.19 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×12.2</td><td>3.50 %</td><td>2.47 %</td><td>22 j</td><td>+4.62 %</td></tr>
+    <tr><td>60 %</td><td>×9.7</td><td>2.80 %</td><td>1.98 %</td><td>26 j</td><td>+3.70 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 1015/1015 réussis | médiane 22 j (1.0 mois) | P90 42 j (2.0 mois)</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B2 0.122 · EO hors or 0.243 · EO argent 0.122 · EO JPY D1 0.365 · EO EUR storyG 1.216 · EO USO H4 0.243 · Zebra or 1.459 · Zebra GBP 4.864 · Zebra EUR 4.864 · Heron AUDCAD 0.486</p>
+  <p><strong>Rendement annuel :</strong> 2021 +58.8 % | 2022 +107.9 % | 2023 +105.8 % | 2024 +79.2 %</p>
+  <p><strong>Réserves :</strong> sans la contrainte, l'optimiseur écarte l'or ET le hors or (15.18 hors tirage, 28 instances) : la contrainte coûte zéro, elle rapporte ; pire jour 2.17 % à la marge 50 % (2.19 % en v1.19) ; jambes argent Till, JPY D1, EUR storyG, USO au moteur non confirmées sur le banc réel ; l'argent Till à 62 $ pèse ~2,5× son modèle (voir 1d). Version v1.19 de cette rubrique : 14.72 | +21 658 $ | creux 350 $ | funded +2.59 % | 33 j | 42 instances.</p>
+</div>
+
+<h3>2ter-b. Tout Eagle-owl, jambe or SetsB, TURBO <span class="badge info">POUR INFO</span></h3>
+<div class="config info">
+  <p><strong>Même livre maison avec l'or SetsB (jeu par défaut, n121 rejoué en v1.47) — hors règle d'empreinte. Réserve levée le 19/09 : la dérive de la jambe or SetsB (8 652 deals contre 8 200) venait de poses sur des niveaux déjà dépassés ; v1.32 et v1.33 la ramènent à 6 876 deals, et le livre or complet passe de 116,9 % à 100,1 % des positions d'UBS.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">21.19</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">24.11</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+36 100 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">374 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+4.20 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai (médian)</div><div class="metric-value">23 j = 1.5 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">10 693 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">53</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+4.20 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+5.13 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">2 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.80 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">3.50 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.61 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">4 107 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">54.5 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item"><strong>Eagle-owl or (SetsB) × 1</strong> · Eagle-owl hors or × 2 · Eagle-owl AdvSc JPY × 10 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15 · Eagle-owl USO H4 × 3</div>
+    <div class="dosage-item">Zebra or × 16 · Zebra GBP × 80 · Zebra EUR × 40 · Heron AUDCAD × 4 · Heron NZDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×18.7</td><td>7.00 %</td><td>5.21 %</td><td>11 j</td><td>+8.39 %</td></tr>
+    <tr><td>33 %</td><td>×12.5</td><td>4.69 %</td><td>3.49 %</td><td>17 j</td><td>+5.62 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×9.4</td><td>3.50 %</td><td>2.61 %</td><td>23 j</td><td>+4.20 %</td></tr>
+    <tr><td>60 %</td><td>×7.5</td><td>2.80 %</td><td>2.08 %</td><td>28 j</td><td>+3.36 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 1007/1007 réussis | médiane 23 j (1.1 mois) | P90 44 j (2.1 mois)</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B 0.094 · EO hors or 0.187 · EO AdvSc 0.935 · EO argent 0.094 · EO JPY D1 0.281 · EO EUR storyG 1.403 · EO USO H4 0.281 · Zebra or 1.496 · Zebra GBP 7.481 · Zebra EUR 3.741 · Heron AUDCAD 0.374 · Heron NZDCAD 0.187</p>
+  <p><strong>Rendement annuel :</strong> 2021 +56.3 % | 2022 +114.2 % | 2023 +104.4 % | 2024 +62.7 %</p>
+</div>
+
+<h3>2ter-c. Axi avec UBS, jambe or SetsB2, TURBO, AdvSc au protocole <span class="badge alt">ALTERNATIVE ADMISE</span></h3>
+<div class="config alt">
+  <p><strong>Tant qu'Eagle-owl n'est pas fidèle à UBS. Même dosage que le turbo du 15/09, jambe AdvSc JPY prise au protocole du livre (UBS + le jeu en ticks réels, n113) au lieu du backtest MT4. RÉSERVE : Axi interdit les EA du commerce en mode algorithmique (à confirmer). Trois briques sur quatre non confirmées sur le banc réel.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">17.52</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">22.32</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+35 928 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">402 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+3.92 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai (médian)</div><div class="metric-value">24 j = 1.1 mois</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">11 497 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">53</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+3.92 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+4.75 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">2 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−1.00 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">3.50 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.63 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">≈ 105.5 (79.0 + 26.5)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB2) × 1 · UBS hors or × 2 · UBS AdvSc JPY au protocole (n113) × 10 · Zebra or × 20 · Zebra GBP × 60 · Zebra EUR × 20 · Heron AUDCAD × 6</div>
+    <div class="dosage-item" style="color:#d32f2f;"><strong>Argent Till × 1 · JPY D1 × 3 · EUR storyG × 15 · USO H4 × 2</strong></div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×17.4</td><td>7.00 %</td><td>5.26 %</td><td>12 j</td><td>+7.83 %</td></tr>
+    <tr><td>33 %</td><td>×11.7</td><td>4.69 %</td><td>3.52 %</td><td>19 j</td><td>+5.25 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×8.7</td><td>3.50 %</td><td>2.63 %</td><td>24 j</td><td>+3.92 %</td></tr>
+    <tr><td>60 %</td><td>×7.0</td><td>2.80 %</td><td>2.10 %</td><td>31 j</td><td>+3.13 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 1009/1009 réussis | médiane 24 j (1.1 mois) | P90 48 j (2.3 mois)</p>
+  <p><strong>Rendement annuel :</strong> 2021 +50.8 % | 2022 +105.1 % | 2023 +93.4 % | 2024 +63.3 %</p>
+  <h3 style="margin-top:14px;">Version du 15/09, AdvSc backtest MT4 <span class="badge info">HORS PROTOCOLE — POUR INFO</span></h3>
+  <p>Jambe AdvSc = backtest MT4 (Vantage, H1, 2003-2024), creux 8 $ en 4 ans au lot 0,01, corrélée à +0,37 avec le même jeu au protocole : hors tirage <strong>19.98</strong> | net +35 372 $ | creux 365 $ | funded +4.20 % médian / +5.15 % moyen | pire mois −0.68 % | 1 mois négatif | 23 j = 1.1 mois | 53 instances | capital min. 10 437 $ | Max DD 3.50 %, pire jour 2.74 % | années +55.8 / +113.5 / +100.3 / +69.3 % | dosage identique avec AdvSc MT4 × 10.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×19.2</td><td>7.00 %</td><td>5.48 %</td><td>11 j</td><td>+8.39 %</td></tr>
+    <tr><td>33 %</td><td>×12.8</td><td>4.69 %</td><td>3.67 %</td><td>17 j</td><td>+5.62 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×9.6</td><td>3.50 %</td><td>2.74 %</td><td>23 j</td><td>+4.20 %</td></tr>
+    <tr><td>60 %</td><td>×7.7</td><td>2.80 %</td><td>2.19 %</td><td>28 j</td><td>+3.36 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 1011/1011 réussis | médiane 23 j (1.1 mois) | P90 43 j (2.0 mois)</p>
+  <p><strong>Rendement annuel :</strong> 2021 +55.8 % | 2022 +113.5 % | 2023 +100.3 % | 2024 +69.3 %</p>
+  <p><strong>Autres lignes UBS conservées (13/09, sans les quatre briques) :</strong> 2ter SetsB2 hors tirage 13.67 (net +22 487 $, creux 368 $, funded +3.31 % médian / +3.25 % moyen, pire mois −0.99 %, 4 mois négatifs, 33 j = 2.2 mois, 30 instances, capital min. 10 524 $) ; 2ter-alt SetsB 13.29 (+24 205 $, 380 $, +3.45 / +3.39 %, −0.84 %, 4 mois nég., 32 j, 28 instances, 10 862 $).</p>
+</div>
+
+<h3>2. Axi Select maison (10/09) et 2bis. livre maison complet (13/09) <span class="badge info">POUR INFO — ANCIENNES VERSIONS DU MOTEUR</span></h3>
+<div class="config info">
+  <p><strong>2 (10/09, Eagle-owl n58 du 08/09, 13 jeux or SetsB)</strong> : hors tirage 10.32 | net +14 138 $ | creux 292 $ | funded +2.28 % médian / +2.57 % moyen | pire mois −1.37 % | 6 mois négatifs | 41 j = 2.7 mois | 18 instances | capital min. 8 361 $ | Max DD 3.50 %, pire jour 2.61 % | années +32.2 / +51.4 / +52.3 / +33.2 % | dosage Eagle-owl ×1, Zebra or ×12, GBP ×60, EUR ×20, Heron AUDCAD ×2, NZDCAD ×2 | marges : aucune ×23.9 (7.00 %, 5.23 %, 20 j, +4.57 %), 33 % ×16.0 (4.69 %, 3.50 %, 31 j, +3.06 %), 50 % ×12.0 (3.50 %, 2.61 %, 41 j, +2.28 %), 60 % ×9.6 (2.80 %, 2.09 %, 49 j, +1.83 %).</p>
+  <p><strong>2bis (13/09, + AdvSc et 7 jeux volatilité EURUSD via Eagle-owl)</strong> : hors tirage 11.11 | net +20 417 $ | creux 391 $ | funded +2.41 % / +2.78 % | pire mois −0.64 % | 5 mois négatifs | 40 j = 2.6 mois | 26 instances | capital min. 11 182 $ | Max DD 3.50 %, pire jour 2.18 % | années +32.9 / +58.3 / +57.6 / +33.7 % | dosage Eagle-owl or ×1, AdvSc maison ×20, Vol. EURUSD maison ×1, Zebra or ×16, GBP ×80, EUR ×20, Heron AUDCAD ×2, NZDCAD ×2 | marges : aucune ×17.9 (7.00 %, 4.36 %, 20 j, +4.83 %), 33 % ×12.0 (4.69 %, 2.92 %, 29 j, +3.23 %), 50 % ×8.9 (3.50 %, 2.18 %, 40 j, +2.41 %), 60 % ×7.2 (2.80 %, 1.74 %, 49 j, +1.93 %). Réserves d'alors : profil annuel AdvSc différent (2022 : 70 %, 2024 : 220 %), Daytrade Pro devises absent.</p>
+</div>
+
+<!-- ================= 3. PROP FIRM CLASSIQUE ================= -->
+<h2>3️⃣ Prop Firm Classique (5 % jour / 10 % total, deux phases)</h2>
+
+<h3>3a. Tout Eagle-owl, jambe or SetsB2, TURBO <span class="badge regle">À PRIVILÉGIER — LA RÈGLE</span></h3>
+<div class="config regle">
+  <p><strong>Même livre maison que 2ter-a, rejoué en Eagle-owl v1.47, seuils 5 % jour / 10 % total, phases +8 % puis +5 %. Jambe or SetsB2 imposée (×1), reste dosé autour ; ici l'optimiseur libre la garde de lui-même. En v1.19 : 14.87 ; v1.28 : 18.04 ; v1.34 : 18.31 ; v1.47 : 21.31, au-dessus de l'alternative UBS (17.86).</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">21.66</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">21.84</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+31 491 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">360 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+5.51 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total</div><div class="metric-value">33 j = 2.2 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">7 264 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">53</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+5.51 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+6.59 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">2 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.85 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">4.96 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.50 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">5 274 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">52.9 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage (or SetsB2 imposé, reste optimisé)</strong>
+  <div class="dosage">
+    <div class="dosage-item"><strong>Eagle-owl or (SetsB2) × 1</strong> · Eagle-owl hors or × 3 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15 · Eagle-owl USO H4 × 1</div>
+    <div class="dosage-item">Zebra or × 16 · Zebra GBP × 40 · Zebra EUR × 20 · Heron AUDCAD × 2 · Heron NZDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×27.5</td><td>9.93 %</td><td>5.00 %</td><td>10 j</td><td>+11.01 %</td></tr>
+    <tr><td>33 %</td><td>×18.4</td><td>6.65 %</td><td>3.35 %</td><td>15 j</td><td>+7.38 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×13.8</td><td>4.96 %</td><td>2.50 %</td><td>20 j</td><td>+5.51 %</td></tr>
+    <tr><td>60 %</td><td>×11.0</td><td>3.97 %</td><td>2.00 %</td><td>25 j</td><td>+4.41 %</td></tr>
+  </table></div>
+  <p><strong>Phases (marge 50 %) :</strong> phase 1 (+8 %) 1020/1020 réussis, médiane 20 j (P90 45) | phase 2 (+5 %) 1025/1025, médiane 13 j (P90 33) | total 33 j = 1.6 mois brut → 2.2 mois corrigé</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B2 0.138 · EO hors or 0.413 · EO argent 0.138 · EO JPY D1 0.413 · EO EUR storyG 2.065 · EO USO H4 0.138 · Zebra or 2.203 · Zebra GBP 5.506 · Zebra EUR 2.753 · Heron AUDCAD 0.275 · Heron NZDCAD 0.275</p>
+  <p><strong>Rendement annuel :</strong> 2021 +75.6 % | 2022 +139.4 % | 2023 +131.7 % | 2024 +86.9 %</p>
+  <p><strong>Réserves :</strong> EUR storyG à ×15 (au-delà du plafond ×10 mesuré isolément) ; jambes clients au moteur non confirmées sur le banc réel ; argent Till à 62 $ = ~2,5× son modèle. Version v1.19 : 14.87 | +31 640 $ | creux 489 $ | funded +3.96 % | 43 j = 2.8 mois.</p>
+</div>
+
+<h3>3b. Tout Eagle-owl, jambe or SetsB, TURBO <span class="badge info">POUR INFO</span></h3>
+<div class="config info">
+  <p><strong>Même livre maison avec l'or SetsB (n121 rejoué en v1.47) — hors règle d'empreinte ; même réserve qu'en 2ter-b sur la dérive de la jambe or SetsB.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">21.95</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">22.12</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+34 655 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">392 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+5.35 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total</div><div class="metric-value">33 j = 2.2 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">7 961 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">53</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+5.35 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+6.62 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">3 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.81 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">4.92 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.50 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">5 296 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">54.5 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item"><strong>Eagle-owl or (SetsB) × 1</strong> · Eagle-owl hors or × 3 · Eagle-owl AdvSc JPY × 10 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15 · Eagle-owl USO H4 × 2</div>
+    <div class="dosage-item">Zebra or × 16 · Zebra GBP × 60 · Zebra EUR × 20 · Heron AUDCAD × 2 · Heron NZDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×25.1</td><td>9.84 %</td><td>5.00 %</td><td>10 j</td><td>+10.70 %</td></tr>
+    <tr><td>33 %</td><td>×16.8</td><td>6.59 %</td><td>3.35 %</td><td>16 j</td><td>+7.17 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×12.6</td><td>4.92 %</td><td>2.50 %</td><td>20 j</td><td>+5.35 %</td></tr>
+    <tr><td>60 %</td><td>×10.0</td><td>3.94 %</td><td>2.00 %</td><td>25 j</td><td>+4.28 %</td></tr>
+  </table></div>
+  <p><strong>Phases (marge 50 %) :</strong> phase 1 (+8 %) 1014/1014 réussis, médiane 20 j (P90 45) | phase 2 (+5 %) 1025/1025, médiane 13 j (P90 33) | total 33 j = 1.6 mois brut → 2.2 mois corrigé</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B 0.126 · EO hors or 0.377 · EO AdvSc 1.256 · EO argent 0.126 · EO JPY D1 0.377 · EO EUR storyG 1.884 · EO USO H4 0.251 · Zebra or 2.010 · Zebra GBP 7.537 · Zebra EUR 2.512 · Heron AUDCAD 0.251 · Heron NZDCAD 0.251</p>
+  <p><strong>Rendement annuel :</strong> 2021 +76.5 % | 2022 +145.0 % | 2023 +133.2 % | 2024 +80.6 %</p>
+</div>
+
+<h3>3c. Prop firm classique avec UBS, jambe or SetsB2, TURBO, AdvSc au protocole <span class="badge alt">ALTERNATIVE ADMISE</span></h3>
+<div class="config alt">
+  <p><strong>Tant qu'Eagle-owl n'est pas fidèle à UBS. Même dosage que le turbo du 15/09, jambe AdvSc JPY au protocole (n113). Trois briques sur quatre non confirmées sur le banc réel.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">17.86</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">18.00</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+34 485 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">479 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+4.83 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total</div><div class="metric-value">39 j = 2.5 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">9 579 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">54</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+4.83 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+5.47 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">1 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−1.02 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">5.00 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.32 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">≈ 105.5 (79.0 + 26.5)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">UBS or (SetsB2) × 1 · UBS hors or × 3 · UBS AdvSc JPY au protocole (n113) × 20 · Zebra or × 16 · Zebra GBP × 60 · Zebra EUR × 20 · Heron AUDCAD × 2 · Heron NZDCAD × 2</div>
+    <div class="dosage-item" style="color:#d32f2f;"><strong>Argent Till × 1 · JPY D1 × 3 · EUR storyG × 10 · USO H4 × 1</strong></div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×20.9</td><td>10.00 %</td><td>4.64 %</td><td>12 j</td><td>+9.65 %</td></tr>
+    <tr><td>33 %</td><td>×14.0</td><td>6.70 %</td><td>3.11 %</td><td>19 j</td><td>+6.47 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×10.4</td><td>5.00 %</td><td>2.32 %</td><td>24 j</td><td>+4.83 %</td></tr>
+    <tr><td>60 %</td><td>×8.4</td><td>4.00 %</td><td>1.86 %</td><td>31 j</td><td>+3.86 %</td></tr>
+  </table></div>
+  <p><strong>Phases (marge 50 %) :</strong> phase 1 (+8 %) 1007/1007 réussis, médiane 24 j (P90 49) | phase 2 (+5 %) 1026/1026, médiane 15 j (P90 36) | total 39 j = 1.9 mois brut → 2.5 mois corrigé</p>
+  <p><strong>Rendement annuel :</strong> 2021 +57.7 % | 2022 +120.5 % | 2023 +108.5 % | 2024 +73.3 %</p>
+  <h3 style="margin-top:14px;">Version du 15/09, AdvSc backtest MT4 <span class="badge info">HORS PROTOCOLE — POUR INFO</span></h3>
+  <p>Hors tirage <strong>20.68</strong> | net +33 374 $ | creux 401 $ | funded +5.35 % médian / +6.16 % moyen | pire mois −0.32 % | 2 mois négatifs | 35 j = 2.3 mois corrigé | 54 instances | capital min. 8 233 $ | Max DD 4.87 %, pire jour 2.50 % | années +66.8 / +134.5 / +119.7 / +84.4 % | dosage identique avec AdvSc MT4 × 20.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×24.3</td><td>9.73 %</td><td>5.00 %</td><td>10 j</td><td>+10.69 %</td></tr>
+    <tr><td>33 %</td><td>×16.3</td><td>6.52 %</td><td>3.35 %</td><td>16 j</td><td>+7.16 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×12.1</td><td>4.87 %</td><td>2.50 %</td><td>22 j</td><td>+5.35 %</td></tr>
+    <tr><td>60 %</td><td>×9.7</td><td>3.89 %</td><td>2.00 %</td><td>27 j</td><td>+4.28 %</td></tr>
+  </table></div>
+  <p><strong>Phases :</strong> phase 1 (+8 %) 1014/1014 réussis, médiane 22 j (P90 43) | phase 2 (+5 %) 1025/1025, médiane 13 j (P90 31) | total 35 j = 1.7 mois brut → 2.3 mois corrigé</p>
+  <p><strong>Rendement annuel :</strong> 2021 +66.8 % | 2022 +134.5 % | 2023 +119.7 % | 2024 +84.4 %</p>
+  <p><strong>Autres lignes UBS conservées (13/09, sans les quatre briques) :</strong> 3 SetsB2 hors tirage 12.71 (net +19 649 $, creux 354 $, funded +4.16 % / +4.22 %, pire mois −1.42 %, 4 mois nég., 48 j = 3.1 mois, 31 instances, capital min. 7 083 $) ; 3-alt SetsB 12.87 (+18 729 $, 355 $, +3.74 / +4.01 %, −2.45 %, 3 mois nég., 48 j, 30 instances, 7 095 $).</p>
+</div>
+
+<h3>3bis. Prop firm classique maison (13/09) <span class="badge info">POUR INFO — ANCIENNE VERSION DU MOTEUR</span></h3>
+<div class="config info">
+  <p>Eagle-owl or (SetsB, n58), AdvSc et 7 jeux volatilité EURUSD via Eagle-owl, Zebra, Heron : hors tirage 10.25 (ajustement 12.97) | net +18 320 $ | creux 353 $ | funded +3.45 % médian / +3.76 % moyen | pire mois −1.91 % | 5 mois négatifs | 53 j = 3.5 mois | 25 instances | capital min. 7 400 $ | Max DD 4.77 %, pire jour 2.50 % | années +48.1 / +75.9 / +75.2 / +48.5 % | dosage Eagle-owl or ×1, AdvSc maison ×10, Vol. EURUSD maison ×2, Zebra or ×16, GBP ×60, EUR ×60, Heron NZDCAD ×2 | marges : aucune ×27.0 (9.55 %, 5.00 %, 16 j, +6.90 %), 33 % ×18.1 (6.40 %, 3.35 %, 24 j, +4.63 %), 50 % ×13.5 (4.77 %, 2.50 %, 32 j, +3.45 %), 60 % ×10.8 (3.82 %, 2.00 %, 39 j, +2.76 %) | phases 32 j (P90 72) + 21 j (P90 49).</p>
+</div>
+
+<!-- ================= 4. ZEBRA SEUL ================= -->
+<h2>4️⃣ Zebra Seul <span class="badge regle" style="font-size:11px;">SEULE VARIANTE</span></h2>
+<div class="config regle">
+  <p><strong>Trois EA cassure uniquement, 5 % jour / 10 % total — inchangé</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">6.37</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+16 994 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+1.96 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total</div><div class="metric-value">74 j = 4.8 mois</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">361 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">3</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+1.96 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+2.39 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">8 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−2.00 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">5.00 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.25 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">17.7</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Zebra or × 30 · Zebra GBP × 80 · Zebra EUR × 100</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×18.5</td><td>10.00 %</td><td>4.50 %</td><td>23 j</td><td>+3.92 %</td></tr>
+    <tr><td>33 %</td><td>×12.4</td><td>6.70 %</td><td>3.01 %</td><td>35 j</td><td>+2.63 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×9.2</td><td>5.00 %</td><td>2.25 %</td><td>45 j</td><td>+1.96 %</td></tr>
+    <tr><td>60 %</td><td>×7.4</td><td>4.00 %</td><td>1.80 %</td><td>62 j</td><td>+1.57 %</td></tr>
+  </table></div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th></tr>
+    <tr><td>5 %</td><td>10 819 $</td><td>39 %/an</td><td>29 %/an</td></tr>
+    <tr><td>10 %</td><td>5 409 $</td><td>79 %/an</td><td>57 %/an</td></tr>
+    <tr><td>20 %</td><td>2 705 $</td><td>157 %/an</td><td>115 %/an</td></tr>
+  </table></div>
+  <p><strong>Rendement annuel :</strong> 2021 +30.4 % | 2022 +63.0 % | 2023 +36.0 % | 2024 +27.7 %</p>
+</div>
+
+<!-- ================= 5. TOUT MAISON SANS OR ================= -->
+<h2>5️⃣ Tout maison, sans or (sa demande du 18/09)</h2>
+<p>Zebra or, GBPUSD, EURUSD + Heron NZDCAD, AUDCAD + Eagle-owl hors or (EURUSD n117, CHFJPY n118 et GBPUSD n119) + AdvSc USDJPY joué par Eagle-owl (n120, ×0,1), toutes les jambes moteur en <strong>v1.28</strong> (18/09 16 h ; première édition en v1.26 : 9.41 / 7.49 / 7.81). Aucune jambe or, aucun UBS : rien à brouiller, aucun jeu commercial sur le compte. Même protocole que les autres rubriques (tirages Zebra, pire des deux moitiés, rapport hors tirage), outils <code>cinquieme_maison.py</code> puis <code>standards_v128.py</code>. L'optimiseur écarte Heron NZDCAD partout ; l'AdvSc JPY entre désormais dans les trois lectures.</p>
+
+<h3>5a. Compte propre <span class="badge regle">À PRIVILÉGIER DANS CE TYPE</span></h3>
+<div class="config regle">
+  <p><strong>Sans jambe or, le livre vaut les trois quarts du compte propre standard (9.10 contre 13.80) : l'or n'est pas indispensable, mais il compte</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">9.21</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">10.80</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+9 344 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">216 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">79 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">721 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">2 163 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">14</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+5.81 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+6.57 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">6 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−2.60 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">17.7 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl hors or × 1</div>
+    <div class="dosage-item">Zebra or × 12 · Zebra GBP × 40 · Zebra EUR × 20 · Heron AUDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>721 $</td><td>324 %/an</td><td>236 %/an</td><td>+19.70 %</td><td>+17.43 %</td><td>6/48</td></tr>
+    <tr><td>25 %</td><td>865 $</td><td>270 %/an</td><td>197 %/an</td><td>+16.42 %</td><td>+14.53 %</td><td>6/48</td></tr>
+    <tr><td>20 %</td><td>1 082 $</td><td>216 %/an</td><td>158 %/an</td><td>+13.14 %</td><td>+11.62 %</td><td>6/48</td></tr>
+    <tr><td>15 %</td><td>1 442 $</td><td>162 %/an</td><td>118 %/an</td><td>+9.85 %</td><td>+8.72 %</td><td>6/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>2 163 $</td><td>108 %/an</td><td><strong>79 %/an</strong></td><td>+6.57 %</td><td>+5.81 %</td><td>6/48</td></tr>
+    <tr><td>5 %</td><td>4 326 $</td><td>54 %/an</td><td>39 %/an</td><td>+3.28 %</td><td>+2.91 %</td><td>6/48</td></tr>
+  </table></div>
+  <p><strong>Années :</strong> 2021 +4 103 $ | 2022 +8 284 $ | 2023 +6 630 $ | 2024 +3 407 $</p>
+  <p><strong>Repères :</strong> première édition (jambes v1.26, AdvSc écarté) 9.41 ; mêmes jambes en v1.19 9.49 ; Zebra ×3 + Heron ×2 seuls 7.20 (net +17 873 $, creux 524 $, 11 mois négatifs) : les jambes Eagle-owl hors or et AdvSc apportent +2.8 de rapport hors tirage.</p>
+</div>
+
+<h3>5b. Axi Select (+7 % / −7 %) <span class="badge info">VARIANTE</span></h3>
+<div class="config info">
+  <p><strong>Même livre sous la règle Axi — 9.15 contre 18.70 pour la règle 2ter-a : sans or, la moitié</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">7.93</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">10.80</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+11 058 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">256 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+1.90 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Funded moyen</div><div class="metric-value">+2.30 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Challenge +7 % médian</div><div class="metric-value">45 j = 2.1 mois (P90 102 j)</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">7 311 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">15</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">6 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.81 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">3.50 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.25 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 sur 100 k$</div><div class="metric-value">1 840 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">17.7 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl hors or × 1</div>
+    <div class="dosage-item">Zebra or × 16 · Zebra GBP × 40 · Zebra EUR × 20 · Heron AUDCAD × 2 · Heron NZDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×27.4</td><td>7.00 %</td><td>4.51 %</td><td>22 j</td><td>+3.80 %</td></tr>
+    <tr><td>33 %</td><td>×18.3</td><td>4.69 %</td><td>3.02 %</td><td>35 j</td><td>+2.55 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×13.7</td><td>3.50 %</td><td>2.25 %</td><td>45 j</td><td>+1.90 %</td></tr>
+    <tr><td>60 %</td><td>×10.9</td><td>2.80 %</td><td>1.80 %</td><td>59 j</td><td>+1.52 %</td></tr>
+  </table></div>
+  <p><strong>Rendement annuel (marge 50 %) :</strong> 2021 +30.9 % | 2022 +63.0 % | 2023 +45.6 % | 2024 +24.9 %</p>
+</div>
+
+<h3>5c. Prop firm classique (5 % jour / 10 % total) <span class="badge info">VARIANTE</span></h3>
+<div class="config info">
+  <p><strong>Même livre sous la règle classique — 9.15 contre 17.08 pour la règle 3a ; l'AdvSc JPY y pèse ×20</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">8.51</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">11.57</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+18 003 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">389 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge, médian)</div><div class="metric-value">+3.25 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Funded moyen</div><div class="metric-value">+3.35 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total (deux phases)</div><div class="metric-value">54 j = 3.5 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">3 889 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">15</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">7 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−2.72 %</div></div>
+    <div class="metric"><div class="metric-label">Max DD (marge 50 %)</div><div class="metric-value">5.00 %</div></div>
+    <div class="metric"><div class="metric-label">Pire jour (marge 50 %)</div><div class="metric-value">2.44 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 sur 100 k$</div><div class="metric-value">2 816 $/mois</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">17.7 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl hors or × 2 · Eagle-owl AdvSc JPY × 10</div>
+    <div class="dosage-item">Zebra or × 20 · Zebra GBP × 60 · Zebra EUR × 80 · Heron AUDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×25.7</td><td>10.00 %</td><td>4.87 %</td><td>17 j</td><td>+6.50 %</td></tr>
+    <tr><td>33 %</td><td>×17.2</td><td>6.70 %</td><td>3.27 %</td><td>24 j</td><td>+4.35 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×12.9</td><td>5.00 %</td><td>2.44 %</td><td>33 j</td><td>+3.25 %</td></tr>
+    <tr><td>60 %</td><td>×10.3</td><td>4.00 %</td><td>1.95 %</td><td>41 j</td><td>+2.60 %</td></tr>
+  </table></div>
+  <p><strong>Phases (marge 50 %) :</strong> phase 1 (+8 %) 971/971 réussis, médiane 33 j (P90 75) | phase 2 (+5 %) 989/989, médiane 21 j (P90 53) | total 54 j = 2.6 mois brut → 3.5 mois corrigé</p>
+  <p><strong>Rendement annuel (marge 50 %) :</strong> 2021 +40.1 % | 2022 +82.5 % | 2023 +64.6 % | 2024 +33.3 %</p>
+</div>
+
+<h3>5d. Compte propre, sans or ni Zebra or (sa demande du 18/09 soir) <span class="badge info">VARIANTE</span></h3>
+<div class="config info">
+  <p><strong>5a sans la jambe Zebra or : rien que des devises et des croisées. Le rapport tombe de moitié (6.15 contre 8.30) — Zebra or est la jambe qui porte le livre sans or, pas une jambe parmi d'autres.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">5.41</div></div>
+    <div class="metric"><div class="metric-label">Rapport d'ajustement</div><div class="metric-value">5.86</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+16 058 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">685 $</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">43 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">2 284 $ (30 %)</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">6 852 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">14</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian</div><div class="metric-value">+4.02 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+3.56 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">8 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−6.21 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">14.9 (hors Heron)</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl hors or × 3</div>
+    <div class="dosage-item">Zebra GBP × 100 · Zebra EUR × 60 · Heron AUDCAD × 6 · Heron NZDCAD × 4</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>2 284 $</td><td>176 %/an</td><td>128 %/an</td><td>+10.69 %</td><td>+12.07 %</td><td>8/48</td></tr>
+    <tr><td>25 %</td><td>2 741 $</td><td>146 %/an</td><td>107 %/an</td><td>+8.91 %</td><td>+10.06 %</td><td>8/48</td></tr>
+    <tr><td>20 %</td><td>3 426 $</td><td>117 %/an</td><td>86 %/an</td><td>+7.13 %</td><td>+8.05 %</td><td>8/48</td></tr>
+    <tr><td>15 %</td><td>4 568 $</td><td>88 %/an</td><td>64 %/an</td><td>+5.35 %</td><td>+6.04 %</td><td>8/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>6 852 $</td><td>59 %/an</td><td><strong>43 %/an</strong></td><td>+3.56 %</td><td>+4.02 %</td><td>8/48</td></tr>
+    <tr><td>5 %</td><td>13 703 $</td><td>29 %/an</td><td>21 %/an</td><td>+1.78 %</td><td>+2.01 %</td><td>8/48</td></tr>
+  </table></div>
+  <p><strong>Années :</strong> 2021 +2 669 $ | 2022 +6 157 $ | 2023 +5 484 $ | 2024 +1 732 $</p>
+  <p><strong>Lecture :</strong> les deux moitiés tiennent (7.22 / 6.85), l'optimiseur pousse Zebra GBP au plafond de sa grille (×100) et Heron NZDCAD entre pour la première fois. 2024 est faible (+1 732 $) : sans or, l'année 2024 des devises ne porte pas.</p>
+</div>
+
+<!-- ================= TABLEAU CONSOLIDÉ ================= -->
+<!-- ================= 6. PORTEFEUILLES AUTONOMES (19/09) ================= -->
+<h2>6️⃣ Portefeuilles autonomes — après l'épreuve de réserve 2025</h2>
+
+<div class="highlight" style="border-left-color:#2e7d32;background:#e8f5e9;">
+  <strong>Pourquoi cette rubrique existe (19/09)</strong> — sa demande : « créer dans Zebra avec or et Zebra sans or un portefeuille de stratégies différentes d'UBS ; si je veux du UBS, je peux l'utiliser ». Les jambes Eagle-owl y sont en <strong>profil Kestrel</strong> (règles de fidélité débranchées), Advanced Scalper et l'USO ont été retirés.
+  <p style="margin:8px 0 0;"><strong>La réserve 2025 a éliminé quatre jambes</strong> et c'est elle qui a fixé ces dosages : Advanced Scalper (rapport 2,53 → <strong>−0,98</strong>), USO (1,89 → <strong>−0,95</strong>), Zebra GBP (1,92 → <strong>−0,93</strong>), Zebra EUR (1,36 → <strong>−0,89</strong>). Les dix jambes restantes sont toutes positives en 2025.</p>
+  <p style="margin:8px 0 0;"><strong>Le point à ne pas manquer : le rapport d'échantillon BAISSE et la réserve s'envole.</strong> Avec or, le rapport passe de 19,45 à 17,01 mais 2025 passe de <strong>+431 $ à +6 058 $</strong>. Sans or, de 16,48 à 10,56 et 2025 de <strong>−3 425 $ à +2 357 $</strong>. Un dosage jugé sur le seul échantillon aurait retenu l'ancien.</p>
+</div>
+
+<div class="tablewrap"><table>
+  <tr><th>Portefeuille</th><th>Rapport hors tirage</th><th>Net 4 ans</th><th>Creux</th><th>Instances</th><th>Réserve 2025</th></tr>
+  <tr class="info"><td>ancien A (avec les 4 jambes), Axi</td><td>19.45</td><td>+26 877 $</td><td>340 $</td><td>53</td><td>+431 $</td></tr>
+  <tr class="regle"><td><strong>A2. AVEC OR — Axi Select</strong></td><td><strong>17.01</strong></td><td>+23 893 $</td><td>337 $</td><td>50</td><td><strong>+6 058 $</strong></td></tr>
+  <tr class="regle"><td><strong>A2. AVEC OR — prop firm classique</strong></td><td><strong>16.59</strong></td><td>+29 250 $</td><td>435 $</td><td>50</td><td><strong>+7 128 $</strong></td></tr>
+  <tr class="alt"><td>A2. AVEC OR — compte propre</td><td>15.26</td><td>+24 789 $</td><td>364 $</td><td>49</td><td>+6 202 $</td></tr>
+  <tr class="info"><td>ancien B (avec les 4 jambes), Axi</td><td>16.48</td><td>+19 157 $</td><td>279 $</td><td>38</td><td>−3 425 $</td></tr>
+  <tr class="regle"><td><strong>B2. SANS OR — toutes variantes</strong></td><td><strong>10.56</strong></td><td>+17 462 $</td><td>414 $</td><td>33</td><td><strong>+2 357 $</strong></td></tr>
+</table></div>
+
+<h3>6a. A2 — avec or, Axi Select <span class="badge regle">À PRIVILÉGIER</span></h3>
+<div class="config regle">
+  <p><strong>Dix jambes, toutes positives en réserve 2025. L'or SetsB2 en profil Kestrel apporte à lui seul +3 460 $ sur 2025 (rapport 9,76 contre 3,74 en échantillon).</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">17.01</div></div>
+    <div class="metric"><div class="metric-label">Réserve 2025</div><div class="metric-value">+6 058 $</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+23 893 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">337 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge)</div><div class="metric-value">+3.49 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai (médian)</div><div class="metric-value">29 j = 1.4 mois</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">9 627 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">50</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+3.77 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">2 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.70 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">3 020 $/mois</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl or (SetsB2) × 1 · Eagle-owl hors or × 1 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15</div>
+    <div class="dosage-item">Zebra or × 8 · Heron AUDCAD × 4 · Heron NZDCAD × 2</div>
+    <div class="dosage-item" style="color:#2e7d32;"><strong>Retirés par la réserve 2025 : Advanced Scalper, USO, Zebra GBP, Zebra EUR.</strong></div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×20.8</td><td>7.00 %</td><td>5.05 %</td><td>15 j</td><td>+6.99 %</td></tr>
+    <tr><td>33 %</td><td>×13.9</td><td>4.69 %</td><td>3.38 %</td><td>23 j</td><td>+4.68 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×10.4</td><td>3.50 %</td><td>2.52 %</td><td>29 j</td><td>+3.49 %</td></tr>
+    <tr><td>60 %</td><td>×8.3</td><td>2.80 %</td><td>2.02 %</td><td>36 j</td><td>+2.79 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 1014/1014 réussis | médiane 29 j (1.4 mois) | P90 65 j (3.1 mois)</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B2 0.104 · Zebra or 0.831 · EO hors or 0.104 · EO argent 0.104 · EO JPY D1 0.312 · EO EUR storyG 1.558 · Heron AUDCAD 0.416 · Heron NZDCAD 0.208</p>
+  <p><strong>Rendement annuel :</strong> 2021 +37.1 % | 2022 +72.7 % | 2023 +78.7 % | 2024 +59.7 %</p>
+  <p><strong>Réserve à garder en tête :</strong> l'or apporte 3 460 $ des 6 058 $ de 2025. Une jambe qui porte plus de la moitié du résultat est une concentration, pas une force.</p>
+</div>
+
+<h3>6b. A2 — avec or, prop firm classique <span class="badge regle">À PRIVILÉGIER</span></h3>
+<div class="config regle">
+  <p><strong>Même livre, seuils 5 % jour / 10 % total, phases +8 % puis +5 %. C'est la meilleure réserve 2025 des six variantes.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">16.59</div></div>
+    <div class="metric"><div class="metric-label">Réserve 2025</div><div class="metric-value">+7 128 $</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+29 250 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">435 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge)</div><div class="metric-value">+4.57 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai total</div><div class="metric-value">43 j = 2.8 mois corrigé</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">8 697 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">50</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+5.11 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">4 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−0.93 %</div></div>
+    <div class="metric"><div class="metric-label">Partage 80/20 (100 k$)</div><div class="metric-value">4 092 $/mois</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl or (SetsB2) × 1 · Eagle-owl hors or × 3 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15</div>
+    <div class="dosage-item">Zebra or × 16 · Heron AUDCAD × 2 · Heron NZDCAD × 2</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×23.0</td><td>10.00 %</td><td>4.89 %</td><td>13 j</td><td>+9.14 %</td></tr>
+    <tr><td>33 %</td><td>×15.4</td><td>6.70 %</td><td>3.27 %</td><td>20 j</td><td>+6.12 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×11.5</td><td>5.00 %</td><td>2.44 %</td><td>26 j</td><td>+4.57 %</td></tr>
+    <tr><td>60 %</td><td>×9.2</td><td>4.00 %</td><td>1.96 %</td><td>31 j</td><td>+3.66 %</td></tr>
+  </table></div>
+  <p><strong>Phases (marge 50 %) :</strong> phase 1 (+8 %) 1010/1010 réussis, médiane 26 j (P90 57) | phase 2 (+5 %) 1025/1025, médiane 17 j (P90 43) | total 43 j = 2.0 mois brut → 2.8 mois corrigé</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO or B2 0.115 · Zebra or 1.840 · EO hors or 0.345 · EO argent 0.115 · EO JPY D1 0.345 · EO EUR storyG 1.725 · Heron AUDCAD 0.230 · Heron NZDCAD 0.230</p>
+  <p><strong>Rendement annuel :</strong> 2021 +59.0 % | 2022 +101.4 % | 2023 +102.4 % | 2024 +73.5 %</p>
+</div>
+
+<h3>6c. B2 — sans or <span class="badge alt">VARIANTE SANS OR</span></h3>
+<div class="config alt">
+  <p><strong>Cinq jambes, aucun or ni Zebra or. Le dosage est le MÊME dans les trois régimes de compte, ce qui est inhabituel : sans or, l'optimiseur n'a plus de marge de manœuvre. L'ancienne version de ce portefeuille était à −3 425 $ en 2025 ; celle-ci est à +2 357 $.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (hors-tirage)</div><div class="metric-value">10.56</div></div>
+    <div class="metric"><div class="metric-label">Réserve 2025</div><div class="metric-value">+2 357 $</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+17 462 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">414 $</div></div>
+    <div class="metric"><div class="metric-label">Funded (50 % marge)</div><div class="metric-value">+1.92 %/mois</div></div>
+    <div class="metric"><div class="metric-label">Délai (médian)</div><div class="metric-value">45 j = 2.1 mois</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum</div><div class="metric-value">11 816 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">33</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen</div><div class="metric-value">+2.25 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">8 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois</div><div class="metric-value">−1.32 %</div></div>
+    <div class="metric"><div class="metric-label">Rendement compte propre (10 %)</div><div class="metric-value">77 %/an</div></div>
+  </div>
+  <strong>Dosage (identique en compte propre, Axi et prop firm classique)</strong>
+  <div class="dosage">
+    <div class="dosage-item">Eagle-owl hors or × 2 · Eagle-owl argent Till × 1 · Eagle-owl JPY D1 × 3 · Eagle-owl EUR storyG × 15 · Heron AUDCAD × 4</div>
+    <div class="dosage-item" style="color:#d32f2f;">Heron NZDCAD est maintenant écarté par l'optimiseur, alors qu'il entrait dans l'ancienne version.</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Marge de sécurité</th><th>Multiplicateur</th><th>Max DD (creux max)</th><th>Pire jour</th><th>Challenge médian</th><th>Funded / mois corrigé</th></tr>
+    <tr><td>aucune</td><td>×16.9</td><td>7.00 %</td><td>3.47 %</td><td>24 j</td><td>+3.84 %</td></tr>
+    <tr><td>33 %</td><td>×11.3</td><td>4.69 %</td><td>2.32 %</td><td>35 j</td><td>+2.57 %</td></tr>
+    <tr><td><strong>50 %</strong></td><td>×8.5</td><td>3.50 %</td><td>1.73 %</td><td>45 j</td><td>+1.92 %</td></tr>
+    <tr><td>60 %</td><td>×6.8</td><td>2.80 %</td><td>1.39 %</td><td>56 j</td><td>+1.54 %</td></tr>
+  </table></div>
+  <p><strong>Challenge (marge 50 %) :</strong> objectif +7 % — 996/996 réussis | médiane 45 j (2.1 mois) | P90 101 j (4.8 mois)</p>
+  <p><strong>Lots sur 100 000 $ (marge 50 %) :</strong> EO hors or 0.169 · EO argent 0.085 · EO JPY D1 0.254 · EO EUR storyG 1.270 · Heron AUDCAD 0.339</p>
+  <p><strong>Rendement annuel :</strong> 2021 +20.7 % | 2022 +49.8 % | 2023 +46.1 % | 2024 +31.2 %</p>
+  <p><strong>Réserves :</strong> capital minimum de 11 816 $ (l'argent Till passe sous 0,01 lot en dessous) ; 8 mois négatifs sur 48, contre 2 pour la variante avec or ; challenge deux fois plus long.</p>
+</div>
+
+<h3>6d. Ce que la réserve 2025 a mesuré, jambe par jambe</h3>
+<div class="config info">
+  <p><strong>Neuf jambes Eagle-owl rejouées sur 2025 en profil Kestrel, trois Zebra rejouées, deux Heron simulées. Jugées au RAPPORT net/creux, pas au net brut.</strong></p>
+  <div class="tablewrap"><table>
+    <tr><th>Jambe</th><th>Rapport échantillon</th><th>Rapport 2025</th><th>Net 2025</th><th>Verdict</th></tr>
+    <tr><td>or SetsB2 (Kestrel)</td><td>3.74</td><td><strong>9.76</strong></td><td>+3 460 $</td><td>bien mieux</td></tr>
+    <tr><td>GBPUSD</td><td>0.54</td><td><strong>6.33</strong></td><td>+33 $</td><td>bien mieux</td></tr>
+    <tr><td>EUR volatilité</td><td>1.68</td><td><strong>3.86</strong></td><td>+288 $</td><td>bien mieux</td></tr>
+    <tr><td>Zebra or</td><td>4.29</td><td>3.43</td><td>+63 $</td><td>tient</td></tr>
+    <tr><td>CHFJPY</td><td>2.80</td><td>1.96</td><td>+50 $</td><td>tient</td></tr>
+    <tr><td>argent Till</td><td>2.78</td><td>1.86</td><td>+840 $</td><td>tient</td></tr>
+    <tr><td>EUR storyG</td><td>1.00</td><td>1.60</td><td>+27 $</td><td>tient</td></tr>
+    <tr><td>Heron AUDCAD</td><td>1.65</td><td>1.17</td><td>+88 $</td><td>tient</td></tr>
+    <tr><td>Heron NZDCAD</td><td>0.52</td><td>0.64</td><td>+54 $</td><td>tient</td></tr>
+    <tr><td>JPY D1</td><td>2.57</td><td>0.04</td><td>+6 $</td><td>rapport effondré, conservé</td></tr>
+    <tr class="info"><td><strong>Advanced Scalper JPY</strong></td><td>2.53</td><td><strong>−0.98</strong></td><td>−421 $</td><td><strong>RETIRÉ</strong></td></tr>
+    <tr class="info"><td><strong>USO H4</strong></td><td>1.89</td><td><strong>−0.95</strong></td><td>−89 $</td><td><strong>RETIRÉ</strong></td></tr>
+    <tr class="info"><td><strong>Zebra GBP</strong></td><td>1.92</td><td><strong>−0.93</strong></td><td>−15 $</td><td><strong>RETIRÉ</strong></td></tr>
+    <tr class="info"><td><strong>Zebra EUR</strong></td><td>1.36</td><td><strong>−0.89</strong></td><td>−11 $</td><td><strong>RETIRÉ</strong></td></tr>
+  </table></div>
+  <p><strong>Trois leçons.</strong> (1) Advanced Scalper pesait −4 213 $ à lui seul au dosage ×10 : une jambe excellente en échantillon peut détruire un portefeuille par son poids. (2) Zebra GBP ne perd que 15 $ mais son dosage ×60 en fait −875 $ : le dosage est aussi dangereux que la stratégie. (3) L'USO était la jambe la plus éloignée d'UBS (35,7 % d'entrées qu'il ne prend pas) et la plus brillante en échantillon : négative en réserve — <strong>ce que rien ne valide hors backtest ne survit pas</strong>, même motif que Luna AI Pro.</p>
+  <p><strong>Ce qui manque encore :</strong> aucune de ces jambes n'a tourné en réel ; le point « tout le livre sur un seul graphique » n'est pas fait, et ces portefeuilles demandent 50 et 33 instances.</p>
+</div>
+
+
+<h2>7️⃣ Portefeuille de réserve (sa demande du 20/09 soir)</h2>
+
+<div class="highlight" style="border-left-color:#6a1b9a;background:#f3e5f5;">
+  <strong>Pourquoi cette rubrique.</strong> Un portefeuille « au cas où », fait de briques <em>absentes</em> des portefeuilles principaux, pour ne pas tomber en même temps qu'eux. Consigne du 20/09 : <strong>ces briques ne se comparent plus à UBS</strong> — elles se jugent sur leurs critères propres : rapport rendement annuel / creux de <em>fonds</em> contre la référence 1,8 (45 %/an pour 25 % de creux), réserve 2025 positive, les trois éliminatoires du crible (grille = moteur, symbole incohérent, palmarès antérieur), corrélation basse entre elles et avec les principaux.
+  <p style="margin:8px 0 0;"><strong>Ce qui est retenu (crible du 20/09 — ticks réels PU Prime, lot fixe 0,01, 10 000 $)</strong> : <strong>Forex GOLD Investor</strong> (rapport 1,8 sur 2021-2024, 7,3 en réserve 2025) et <strong>GOLD Scalper PRO à lot fixe</strong> (1,7 puis 8,1 ; son signal réel tourne en AutoMM 1 %, d'où les 27 % de creux affichés chez le vendeur). Les autres candidats mesurés n'ont pas tenu le rapport de référence ou la réserve 2025 ; ils ne figurent pas dans cette page, qui ne décrit que les portefeuilles retenus.</p>
+</div>
+
+<h3>7a. Réserve or — Forex GOLD Investor ×1 + GOLD Scalper PRO ×3 <span class="badge regle">RÉSERVE</span></h3>
+<div class="config regle">
+  <p><strong>Deux EA commerciaux à lot fixe 0,01, dosés au pire des deux moitiés parmi les multiples 1 à 5 (le 1:5 fait 2,39, le 1:3 2,35 avec moins de concentration sur un seul EA). Corrélation journalière entre eux +0,17 ; avec le livre or Eagle-owl +0,15 et +0,34 ; avec le hors or et le JPY D1 ≈ 0. Un seul tirage par rapport (pas de « hors tirage » ici) ; réglages par défaut du vendeur.</strong></p>
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Rapport (net annuel / creux)</div><div class="metric-value">2.35</div></div>
+    <div class="metric"><div class="metric-label">Net 4 ans</div><div class="metric-value">+5,619 $</div></div>
+    <div class="metric"><div class="metric-label">Creux</div><div class="metric-value">597 $</div></div>
+    <div class="metric"><div class="metric-label">Réserve 2025 (net / creux)</div><div class="metric-value">+4,461 $ / 354 $ = 12.6</div></div>
+    <div class="metric"><div class="metric-label">Rendement (10 % creux)</div><div class="metric-value">17 %/an</div></div>
+    <div class="metric"><div class="metric-label">Capital à 10 % de creux</div><div class="metric-value">5,972 $</div></div>
+    <div class="metric"><div class="metric-label">Capital minimum (30 %)</div><div class="metric-value">1,991 $</div></div>
+    <div class="metric"><div class="metric-label">Instances</div><div class="metric-value">2</div></div>
+    <div class="metric"><div class="metric-label">Mensuel médian (10 %)</div><div class="metric-value">+1.53 %</div></div>
+    <div class="metric"><div class="metric-label">Mensuel moyen (10 %)</div><div class="metric-value">+1.96 %</div></div>
+    <div class="metric"><div class="metric-label">Mois négatifs</div><div class="metric-value">12 / 48</div></div>
+    <div class="metric"><div class="metric-label">Pire mois (10 %)</div><div class="metric-value">−4.10 %</div></div>
+    <div class="metric"><div class="metric-label">Trades par semaine</div><div class="metric-value">23.2</div></div>
+  </div>
+  <strong>Dosage</strong>
+  <div class="dosage">
+    <div class="dosage-item">Forex GOLD Investor MT5 (XAUUSD M15, lot fixe 0,01) × 1 · GOLD Scalper PRO MT5 (XAUUSD M15, lot fixe 0,01, AutoMM 0) × 3</div>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Creux visé</th><th>Capital mini</th><th>Rendement brut</th><th>Rendement corrigé (÷1,37)</th><th>Mensuel moyen</th><th>Mensuel médian</th><th>Mois nég.</th></tr>
+    <tr><td>30 %</td><td>1 991 $</td><td>71 %/an</td><td>52 %/an</td><td>+5.88 %</td><td>+4.59 %</td><td>12/48</td></tr>
+    <tr><td>25 %</td><td>2 389 $</td><td>59 %/an</td><td>43 %/an</td><td>+4.90 %</td><td>+3.82 %</td><td>12/48</td></tr>
+    <tr><td>20 %</td><td>2 986 $</td><td>47 %/an</td><td>34 %/an</td><td>+3.92 %</td><td>+3.06 %</td><td>12/48</td></tr>
+    <tr><td>15 %</td><td>3 981 $</td><td>35 %/an</td><td>26 %/an</td><td>+2.94 %</td><td>+2.29 %</td><td>12/48</td></tr>
+    <tr><td><strong>10 %</strong></td><td>5 972 $</td><td>24 %/an</td><td><strong>17 %/an</strong></td><td>+1.96 %</td><td>+1.53 %</td><td>12/48</td></tr>
+    <tr><td>5 %</td><td>11 943 $</td><td>12 %/an</td><td>9 %/an</td><td>+0.98 %</td><td>+0.76 %</td><td>12/48</td></tr>
+  </table></div>
+  <p><strong>Rendement annuel (brut, aux lots de base) :</strong> 2021 +1126 $ | 2022 +1444 $ | 2023 +1005 $ | 2024 +2044 $ · 2025 (réserve) +4461 $</p>
+  <p><strong>Réserves :</strong> deux briques de la même famille (cassure/impulsion sur l'or M15) — la réserve n'est pas encore diversifiée, il lui manque un retour à la moyenne et une brique hors or ; démos non achetées (267 + 217 $) ; réglages du vendeur non explorés ; glissement réel non mesuré (pas encore sur le banc Ultima) ; GOLD Scalper PRO n'a que 41 avis et un compte réel de 8 mois en AutoMM ; Forex GOLD Investor n'a pas de signal public.</p>
+</div>
+
+<h2>📊 Tableau consolidé — toutes les variantes</h2>
+<div class="tablewrap"><table>
+  <tr><th>Compte / variante</th><th>Statut</th><th>Rapport hors tirage</th><th>Net 4 ans</th><th>Creux $</th><th>Max DD (50 % / visé)</th><th>Capital mini</th><th>Instances</th><th>Mensuel médian</th><th>Mensuel moyen</th><th>Mois nég.</th><th>Pire mois</th><th>Délai</th></tr>
+  <tr class="regle"><td><strong>1a. Compte propre — UBS or SetsB</strong></td><td>à privilégier</td><td><strong>13.80</strong></td><td>+17 903 $</td><td>286 $</td><td>10 % visé</td><td>955 $ (30 %)</td><td>29</td><td>+8.34 %</td><td>+9.50 %</td><td>4 / 48</td><td>−2.79 %</td><td>—</td></tr>
+  <tr class="info"><td>1b. Compte propre — UBS or SetsB2</td><td>info</td><td>14.47</td><td>+17 518 $</td><td>270 $</td><td>10 % visé</td><td>901 $ (30 %)</td><td>29</td><td>+8.91 %</td><td>+9.86 %</td><td>5 / 48</td><td>−3.17 %</td><td>—</td></tr>
+  <tr class="info"><td>1c. Compte propre — SetsB + AdvSc au protocole (n113)</td><td>info, à décider</td><td>15.52</td><td>+22 478 $</td><td>322 $</td><td>10 % visé</td><td>1 074 $ (30 %)</td><td>29</td><td>+9.01 %</td><td>+10.61 %</td><td>6 / 48</td><td>−1.45 %</td><td>—</td></tr>
+  <tr class="info"><td>1d. Compte propre TURBO (15/09)</td><td>exploratoire</td><td>20.93</td><td>+35 304 $</td><td>365 $</td><td>10 % visé</td><td>1 217 $ (30 %)</td><td>53</td><td>+12.90 %</td><td>+14.70 %</td><td>1 / 48</td><td>−1.29 %</td><td>—</td></tr>
+  <tr class="regle"><td><strong>2ter-a. Axi — tout Eagle-owl v1.47, or SetsB2 imposé, TURBO</strong></td><td>à privilégier (règle)</td><td><strong>22.07</strong></td><td>+28 932 $</td><td>288 $</td><td>3.50 %</td><td>8 224 $</td><td>52</td><td>+4.62 %</td><td>+5.35 %</td><td>2 / 48</td><td>−0.39 %</td><td>1.4 mois</td></tr>
+  <tr class="info"><td>2ter-a (v1.19, édition du matin)</td><td>remplacée</td><td>14.72</td><td>+21 658 $</td><td>350 $</td><td>3.50 %</td><td>9 990 $</td><td>42</td><td>+2.59 %</td><td>+3.30 %</td><td>3 / 48</td><td>−1.70 %</td><td>2.2 mois</td></tr>
+  <tr class="info"><td>2ter-b. Axi — tout Eagle-owl v1.47, or SetsB, TURBO</td><td>info</td><td>21.19</td><td>+36 100 $</td><td>374 $</td><td>3.50 %</td><td>10 693 $</td><td>53</td><td>+4.20 %</td><td>+5.13 %</td><td>2 / 48</td><td>−0.80 %</td><td>1.5 mois</td></tr>
+  <tr class="alt"><td>2ter-c. Axi avec UBS, or SetsB2, TURBO, AdvSc au protocole</td><td>alternative</td><td>17.52</td><td>+35 928 $</td><td>402 $</td><td>3.50 %</td><td>11 497 $</td><td>53</td><td>+3.92 %</td><td>+4.75 %</td><td>2 / 48</td><td>−1.00 %</td><td>1.1 mois</td></tr>
+  <tr class="info"><td>2ter-c (15/09). Idem, AdvSc backtest MT4 — hors protocole</td><td>info</td><td>19.98</td><td>+35 372 $</td><td>365 $</td><td>3.50 %</td><td>10 437 $</td><td>53</td><td>+4.20 %</td><td>+5.15 %</td><td>1 / 48</td><td>−0.68 %</td><td>1.1 mois</td></tr>
+  <tr class="info"><td>2ter. Axi avec UBS, SetsB2 (13/09)</td><td>info</td><td>13.67</td><td>+22 487 $</td><td>368 $</td><td>3.50 %</td><td>10 524 $</td><td>30</td><td>+3.31 %</td><td>+3.25 %</td><td>4 / 48</td><td>−0.99 %</td><td>2.2 mois</td></tr>
+  <tr class="info"><td>2ter-alt. Axi avec UBS, SetsB (13/09)</td><td>info</td><td>13.29</td><td>+24 205 $</td><td>380 $</td><td>3.50 %</td><td>10 862 $</td><td>28</td><td>+3.45 %</td><td>+3.39 %</td><td>4 / 48</td><td>−0.84 %</td><td>2.1 mois</td></tr>
+  <tr class="info"><td>2. Axi Select maison (10/09, moteur n58)</td><td>info</td><td>10.32</td><td>+14 138 $</td><td>292 $</td><td>3.50 %</td><td>8 361 $</td><td>18</td><td>+2.28 %</td><td>+2.57 %</td><td>6 / 48</td><td>−1.37 %</td><td>2.7 mois</td></tr>
+  <tr class="info"><td>2bis. Axi maison complet (13/09)</td><td>info</td><td>11.11</td><td>+20 417 $</td><td>391 $</td><td>3.50 %</td><td>11 182 $</td><td>26</td><td>+2.41 %</td><td>+2.78 %</td><td>5 / 48</td><td>−0.64 %</td><td>2.6 mois</td></tr>
+  <tr class="regle"><td><strong>3a. Classique — tout Eagle-owl v1.47, or SetsB2 imposé, TURBO</strong></td><td>à privilégier (règle)</td><td><strong>21.66</strong></td><td>+31 491 $</td><td>360 $</td><td>4.96 %</td><td>7 264 $</td><td>53</td><td>+5.51 %</td><td>+6.59 %</td><td>2 / 48</td><td>−0.85 %</td><td>2.2 mois</td></tr>
+  <tr class="info"><td>3a (v1.19, édition du matin)</td><td>remplacée</td><td>14.87</td><td>+31 640 $</td><td>489 $</td><td>5.00 %</td><td>9 783 $</td><td>53</td><td>+3.96 %</td><td>+4.92 %</td><td>4 / 48</td><td>−1.78 %</td><td>2.8 mois</td></tr>
+  <tr class="info"><td>3b. Classique — tout Eagle-owl v1.47, or SetsB, TURBO</td><td>info</td><td>21.95</td><td>+34 655 $</td><td>392 $</td><td>4.92 %</td><td>7 961 $</td><td>53</td><td>+5.35 %</td><td>+6.62 %</td><td>3 / 48</td><td>−0.81 %</td><td>2.2 mois</td></tr>
+  <tr class="alt"><td>3c. Classique avec UBS, or SetsB2, TURBO, AdvSc au protocole</td><td>alternative</td><td>17.86</td><td>+34 485 $</td><td>479 $</td><td>5.00 %</td><td>9 579 $</td><td>54</td><td>+4.83 %</td><td>+5.47 %</td><td>1 / 48</td><td>−1.02 %</td><td>2.5 mois</td></tr>
+  <tr class="info"><td>3c (15/09). Idem, AdvSc backtest MT4 — hors protocole</td><td>info</td><td>20.68</td><td>+33 374 $</td><td>401 $</td><td>4.87 %</td><td>8 233 $</td><td>54</td><td>+5.35 %</td><td>+6.16 %</td><td>2 / 48</td><td>−0.32 %</td><td>2.3 mois</td></tr>
+  <tr class="info"><td>3. Classique avec UBS, SetsB2 (13/09)</td><td>info</td><td>12.71</td><td>+19 649 $</td><td>354 $</td><td>5.00 %</td><td>7 083 $</td><td>31</td><td>+4.16 %</td><td>+4.22 %</td><td>4 / 48</td><td>−1.42 %</td><td>3.1 mois</td></tr>
+  <tr class="info"><td>3-alt. Classique avec UBS, SetsB (13/09)</td><td>info</td><td>12.87</td><td>+18 729 $</td><td>355 $</td><td>5.00 %</td><td>7 095 $</td><td>30</td><td>+3.74 %</td><td>+4.01 %</td><td>3 / 48</td><td>−2.45 %</td><td>3.1 mois</td></tr>
+  <tr class="info"><td>3bis. Classique maison (13/09, moteur n58)</td><td>info</td><td>10.25</td><td>+18 320 $</td><td>353 $</td><td>4.77 %</td><td>7 400 $</td><td>25</td><td>+3.45 %</td><td>+3.76 %</td><td>5 / 48</td><td>−1.91 %</td><td>3.5 mois</td></tr>
+  <tr class="regle"><td><strong>4. Zebra seul</strong></td><td>seule variante</td><td><strong>6.37</strong></td><td>+16 994 $</td><td>540 $</td><td>5.00 %</td><td>361 $</td><td>3</td><td>+1.96 %</td><td>+2.39 %</td><td>8 / 48</td><td>−2.00 %</td><td>4.8 mois</td></tr>
+  <tr class="regle"><td><strong>5a. Tout maison sans or — compte propre (v1.47)</strong></td><td>à privilégier dans ce type</td><td><strong>9.21</strong></td><td>+9 344 $</td><td>216 $</td><td>10 % visé</td><td>721 $ (30 %)</td><td>14</td><td>+5.81 %</td><td>+6.57 %</td><td>6 / 48</td><td>−2.60 %</td><td>—</td></tr>
+  <tr class="info"><td>5b. Tout maison sans or — Axi Select (v1.47)</td><td>variante</td><td>7.93</td><td>+11 058 $</td><td>256 $</td><td>3.50 %</td><td>7 311 $</td><td>15</td><td>+1.90 %</td><td>+2.30 %</td><td>6 / 48</td><td>−0.81 %</td><td>2.8 mois</td></tr>
+  <tr class="info"><td>5c. Tout maison sans or — classique (v1.47)</td><td>variante</td><td>8.51</td><td>+18 003 $</td><td>389 $</td><td>5.00 %</td><td>3 889 $</td><td>15</td><td>+3.25 %</td><td>+3.52 %</td><td>7 / 48</td><td>−2.72 %</td><td>3.5 mois</td></tr>
+  <tr class="info"><td>5d. Sans or ni Zebra or — compte propre (v1.47)</td><td>variante</td><td>5.41</td><td>+16 058 $</td><td>685 $</td><td>10 % visé</td><td>2 284 $ (30 %)</td><td>14</td><td>+4.02 %</td><td>+3.56 %</td><td>8 / 48</td><td>−6.21 %</td><td>—</td></tr>
+  <tr class="regle"><td><strong>7a. Réserve or — Forex GOLD Investor ×1 + GOLD Scalper PRO ×3 (20/09)</strong></td><td>réserve</td><td><strong>2.35</strong></td><td>+5 619 $</td><td>597 $</td><td>10 % visé</td><td>1 991 $ (30 %)</td><td>2</td><td>+1.53 %</td><td>+1.96 %</td><td>12 / 48</td><td>−4.10 %</td><td>2025 : +4461 $</td></tr>
+  <tr class="info"><td>5a/5b/5c (v1.26, première édition)</td><td>remplacées</td><td>9.41 / 7.49 / 7.81</td><td>+9 546 / +8 503 / +11 265 $</td><td>230 / 208 / 295 $</td><td>—</td><td>767 / 5 939 / 5 906 $</td><td>14-15</td><td>+5.97 / +2.04 / +2.63 %</td><td>+6.31 / +2.18 / +2.90 %</td><td>6 / 5 / 4</td><td>−4.27 / −1.39 / −2.46 %</td><td>— / 2.3 / 4.3 mois</td></tr>
+</table></div>
+
+<div class="highlight" style="border-left-color:#e91e63;background:#fce4ec;">
+  <strong>Lecture (édition 20/09 soir, tout le moteur en v1.47)</strong> — 2ter-a 22.07 et 3a 21.66 hors tirage ; le livre maison bat la même règle avec les jambes UBS (17.52 / 17.86) de 25 %, et le moteur est à 96,5 % des entrées d'UBS. Réserve nouvelle : AdvSc 2025 perdant pour tous.<br><br><strong>Lecture (édition 20/09, or en v1.44)</strong> — Les deux règles prop firm montent de deux points avec un moteur plus fidèle et un creux plus bas (2ter-a 21.14, 3a 21.31 hors tirage) ; les jambes or SetsB et SetsB2 sont à 96,6 et 96,3 % des entrées d'UBS. Le texte de l'édition précédente suit.<br><br><strong>Lecture (édition 19/09, jambes moteur en v1.34)</strong> — Au protocole du livre (AdvSc en ticks réels des deux côtés), le livre tout maison de la règle vaut désormais le livre UBS : <strong>18.03 contre 17.52 sur l'Axi, 18.04 contre 17.86 sur le classique</strong> (le matin, en v1.19 : 14.72 et 14.87, soit 84 % / 83 %). Ce qui a changé dans la journée, c'est le moteur, pas le dosage : Eagle-owl v1.25 à v1.28 (frontière « au-delà du niveau » à offset ≥ 0, pool de 30 swings, choix par récence, « swing dépassé = mort » aussi pour les ordres au-delà, sortie sur fausse cassure rétablie pour ces ordres à la cadence d'Exit_Timing) portent le JPY D1 de 64 % à 90 % du net d'UBS, EUR storyG à 98 % (G357 et F356 : 47 positions sur 47 identiques, sorties comprises), AdvSc USDJPY de 132 % à 90 % des positions d'UBS pour 110 % de net ; USO 91 %, CHFJPY 164 % ; or SetsB2, argent, GBPUSD inchangés. Réserves : l'alternative UBS (2ter-c, 3c) garde un pire mois et un pire jour un peu meilleurs ; la jambe or SetsB du moteur (rubriques « pour info » 2ter-b, 3b) a dérivé en creux depuis v1.19 sans que SetsB2 bouge ; les jambes clients au moteur ne sont pas confirmées sur le banc réel. Les rubriques 1 (compte propre, UBS) sont inchangées.
+</div>
+
+<!-- ================= GUIDE DE CHARGEMENT ================= -->
+<h2>🖥️ Guide de chargement des VPS (mis à jour 17/09)</h2>
+<div class="config">
+  <p><strong>Carte des serveurs, mesurée :</strong> Londres (LD4) = Ultima Markets, <strong>Vantage réel (Live 14, 72 ms depuis NY4)</strong>, Darwinex Zero · New York (NY4) = Vantage démo (7 ms), Axi, PU Prime. Le ping MT5 d'un terminal est l'aller-retour jusqu'au serveur de trading.</p>
+  <p><strong>Dans chaque terminal, une fois :</strong> Navigateur → clic droit → Actualiser ; Outils → Options → Experts → URL autorisées : <code>https://www.worldtimeserver.com/</code> et <code>https://www.tradewithwim.com/</code> (UBS) ; trading automatique activé. Tout est en 0,01 lot. Les jeux (.set des stratégies) sont dans <code>Common&#92;Files</code> du VPS, les jeux d'appel (entrées de l'EA, bouton « Charger ») dans <code>MQL5&#92;Presets</code> du terminal.</p>
+  <p><strong>Règle apprise le 17/09 :</strong> deux terminaux connectés au même compte avec les mêmes magics s'annulent mutuellement leurs ordres (au déchargement d'un EA, celui-ci annule au serveur tout ordre portant son magic). Arrêter complètement le second terminal avant de charger le premier.</p>
+
+  <h3>VPS Londres (<code>62.216.73.101</code>) — Ultima Markets, compte cent 33982313, symboles <code>.sc</code> (banc de mesure du glissement)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Graphique</th><th>EA</th><th>Jeu d'appel (Presets)</th><th>Jeux chargés (Common&#92;Files)</th></tr>
+    <tr><td>XAUUSD.sc M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_or_14jeux</td><td>SetsUltima (14 jeux or, défaut 4+5+6+7)</td></tr>
+    <tr><td>EURUSD.sc M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_eur</td><td>SetsUltima_EUR (8)</td></tr>
+    <tr><td>GBPUSD.sc M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_gbp</td><td>SetsUltima_FX2 (2)</td></tr>
+    <tr><td>USDJPY.sc H1</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_advscalp_jpy</td><td>SetsAS_JPY (Advanced Scalper converti)</td></tr>
+    <tr><td>BTCUSD.sc M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_btc_7jeux</td><td>SetsUltima_BTC (7) — Bitcoin hors livre retenu</td></tr>
+    <tr style="background:#fff3cd;"><td><strong>XAGUSD.sc M15</strong></td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_argent_3jeux</td><td><strong>SetsUltima_XAG (3, Argent Till) — déployé 15/09 ; −455 USC du 10 au 17/09</strong></td></tr>
+    <tr><td>XAUUSD.sc / EURUSD.sc / GBPUSD.sc H1</td><td>Zebra_v1</td><td>Zebra&#92;zebra_or / zebra_eurusd / zebra_gbpusd</td><td>—</td></tr>
+    <tr><td>AUDCAD.sc / NZDCAD.sc H1</td><td>Heron_v1</td><td>Heron&#92;heron_audcad / heron_nzdcad</td><td>—</td></tr>
+  </table></div>
+
+  <h3>VPS Londres — Vantage <strong>réel</strong> 34803874 (Live 14), symboles sans suffixe — chargé le 17/09 (profil « Default », 9 graphiques + argent)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Graphique</th><th>EA</th><th>Jeu d'appel</th><th>Jeux chargés</th><th>État 17/09 20:29 UTC</th></tr>
+    <tr><td>XAUUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_or_14jeux</td><td>SetsVantage (14, défaut SetsB — compte propre)</td><td>14 jeux chargés, 20 ordres stop posés</td></tr>
+    <tr><td>EURUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_eur</td><td>SetsVantage_EUR (8)</td><td>8 jeux chargés</td></tr>
+    <tr><td>GBPUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_gbp</td><td>SetsVantage_FX2 (2)</td><td>2 jeux chargés</td></tr>
+    <tr><td>USDJPY H1</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_advscalp_jpy</td><td>SetsVantage_JPY (1)</td><td>chargé</td></tr>
+    <tr style="background:#fff3cd;"><td><strong>XAGUSD M15</strong></td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_argent_3jeux</td><td>SetsVantage_XAG (3, Argent Till)</td><td><strong>chargé 20:27, 6 ordres vivants — retrait proposé (voir 1d)</strong></td></tr>
+    <tr><td>BTCUSD.bc M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_btc_7jeux</td><td>SetsVantage_BTC (7)</td><td>non chargé (graphique prêt dans le profil <code>Vantage_NY4</code>, 11 graphiques)</td></tr>
+    <tr><td>XAUUSD / EURUSD / GBPUSD H1</td><td>Zebra_v1</td><td>Zebra&#92;zebra_or / zebra_eurusd / zebra_gbpusd</td><td>—</td><td>3 chargés</td></tr>
+    <tr><td>AUDCAD / NZDCAD H1</td><td>Heron_v1</td><td>Heron&#92;heron_audcad / heron_nzdcad</td><td>—</td><td>2 chargés</td></tr>
+  </table></div>
+  <p>Compte à 1 500 $ en lots 0,01 : dosage du compte propre sur un capital sous le minimum de 2 865 $ (creux modélisé ~19 % au lieu de 10 %). Sur NY4, le terminal Vantage connecté au même compte a été neutralisé le 17/09 (auto-trading coupé, UBS déchargés) ; Zebra et Heron y restent attachés : à fermer proprement.</p>
+
+  <h3>VPS NY4 (<code>188.119.100.103</code>) — Vantage démo 26077080, symboles sans suffixe (référence de déploiement)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Graphique</th><th>EA</th><th>Jeu d'appel</th><th>Jeux chargés</th></tr>
+    <tr><td>XAUUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_or_14jeux</td><td>SetsVantage (14, défaut)</td></tr>
+    <tr><td>EURUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_eur</td><td>SetsVantage_EUR (8)</td></tr>
+    <tr><td>GBPUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_horsor_gbp</td><td>SetsVantage_FX2 (2)</td></tr>
+    <tr><td>USDJPY H1</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_advscalp_jpy</td><td>SetsVantage_JPY</td></tr>
+    <tr><td>BTCUSD M15</td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_btc_7jeux</td><td>SetsVantage_BTC (7)</td></tr>
+    <tr style="background:#fff3cd;"><td><strong>XAGUSD M15</strong></td><td>Ultimate Breakout System</td><td>UBS&#92;ubs_argent_3jeux</td><td><strong>SetsVantage_XAG (3, Argent Till) — déployé 15/09</strong></td></tr>
+  </table></div>
+
+  <h3>VPS NY4 — Axi, démo 50073328, symboles sans suffixe — livre maison (règle : Eagle-owl SetsB2)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Graphique</th><th>EA</th><th>Jeu d'appel</th><th>Jeux chargés</th></tr>
+    <tr><td>XAUUSD M15</td><td>EagleOwl_v1</td><td>EagleOwl&#92;eagleowl_or</td><td>SetsAxi (<strong>SetsB2</strong>, 15 jeux : Reaper 1+3+4+7+8)</td></tr>
+    <tr><td>EURUSD M15</td><td>EagleOwl_v1</td><td>EagleOwl&#92;eagleowl_eur</td><td>SetsAxi_EUR (8)</td></tr>
+    <tr><td>CHFJPY M15</td><td>EagleOwl_v1</td><td>EagleOwl&#92;eagleowl_chfjpy</td><td>SetsAxi_FX2, jeu CHFJPY seul</td></tr>
+    <tr><td>GBPUSD M15</td><td>EagleOwl_v1</td><td>EagleOwl&#92;eagleowl_gbpusd</td><td>SetsAxi_FX2, jeu GBPUSD seul</td></tr>
+    <tr><td>USDJPY H1</td><td>EagleOwl_v1</td><td>EagleOwl&#92;eagleowl_jpy</td><td>SetsAxi_JPY (AdvSc maison)</td></tr>
+    <tr><td>XAUUSD / EURUSD / GBPUSD H1</td><td>Zebra_v1</td><td>Zebra&#92;zebra_or / zebra_eurusd / zebra_gbpusd</td><td>—</td></tr>
+    <tr><td>AUDCAD / NZDCAD H1</td><td>Heron_v1</td><td>Heron&#92;heron_audcad / heron_nzdcad</td><td>—</td></tr>
+  </table></div>
+  <p>Variante avec UBS (alternative admise) : mêmes graphiques UBS que Vantage, jeux d'appel <code>Presets&#92;UBS</code> d'Axi → <code>SetsAxi*</code> (or = SetsB2). Les jambes argent Till, JPY D1, EUR storyG, USO H4 du turbo maison n'ont pas encore de jeux d'appel Eagle-owl déposés sur les VPS.</p>
+
+  <h3>VPS NY4 — PU Prime, démo 700023324 (<code>.p</code>) et futur compte cent (<code>.sc</code>, à confirmer)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Graphique</th><th>EA</th><th>Jeux chargés (démo)</th><th>Jeux chargés (cent)</th></tr>
+    <tr><td>XAUUSD M15</td><td>Ultimate Breakout System</td><td>SetsPUPrime (14)</td><td>SetsPUPrimeCent (14)</td></tr>
+    <tr><td>EURUSD M15</td><td>Ultimate Breakout System</td><td>SetsPUPrime_EUR (8)</td><td>SetsPUPrimeCent_EUR (8)</td></tr>
+    <tr><td>GBPUSD M15</td><td>Ultimate Breakout System</td><td>SetsPUPrime_FX2 (2)</td><td>SetsPUPrimeCent_FX2 (2)</td></tr>
+    <tr><td>BTCUSD M15</td><td>Ultimate Breakout System</td><td>SetsPUPrime_BTC (7)</td><td>SetsPUPrimeCent_BTC (7)</td></tr>
+  </table></div>
+  <p>Pour PU Prime, les jeux d'appel <code>Presets&#92;UBS</code> restent à déposer (dossiers <code>SetsPUPrime*</code>) — à faire quand le terminal servira à autre chose que la mesure.</p>
+
+  <p><strong>Chien de garde</strong> (alerte seule, toutes les 5 min, sur les deux VPS) : terminal absent · non connecté · perte flottante &gt; 5 % · perte du jour &gt; 3 % · &gt; 40 positions · marge &lt; 300 % · expert en erreur · journal muet &gt; 30 min. Alertes dans <code>C:&#92;Users&#92;Administrator&#92;chien_de_garde&#92;chien_de_garde_alertes.log</code> et sur Telegram dès que jeton et chat sont renseignés dans <code>chien_de_garde.json</code>. Aucune action sur les positions.</p>
+</div>
+
+<!-- ================= ÉTAT LIVE ================= -->
+<h2>📡 État live au 17/09 (9 jours, exports refaits le soir même)</h2>
+<div class="config">
+  <div class="tablewrap"><table>
+    <tr><th>Banc</th><th>Positions</th><th>Net</th><th>Dont argent Till (AGA04/06/09)</th><th>Sans l'argent</th><th>Percentile de la semaine (backtest)</th></tr>
+    <tr><td>Ultima, cents réels, VPS Londres</td><td>118</td><td>−458 USC</td><td>−455 USC (12 trades, 0 gagnant)</td><td>≈ −3</td><td>0 avec l'argent ; dans la distribution sans</td></tr>
+    <tr><td>Vantage, démo, VPS NY4</td><td>80</td><td>−343 $</td><td>−415 $ (11 trades, 0 gagnant)</td><td>≈ +72</td><td>0 avec l'argent ; dans la distribution sans</td></tr>
+  </table></div>
+  <p><strong>Glissement réel sur sortie stop (première mesure)</strong> — Ultima : or médiane +0.14 $ (max +1.39), Bitcoin médiane +7 $ (max +96 sur ~77 000), devises 0 exact. Vantage démo : 0 partout sur 41 stops — la démo n'exécute pas, elle ne mesure rien.</p>
+  <p><strong>Argent Till</strong> : les 12 trades sont identiques au cent près sur les deux courtiers (stops à −37…−40 $), donc déterministes ; le backtest 2021-2024 n'a jamais vu l'argent à 62 $ (pire trade −22 / −32 $, pire semaine −57 / −68 $ par jeu). Référence n134 ajoutée à la revue hebdo ; <code>revue_hebdo.cmd</code> à corriger (il ne réécrit pas les CSV).</p>
+</div>
+
+<div class="note">
+  <strong>Modifications :</strong><br>
+  • 21/09 : jambe or mesurée jeu par jeu — <strong>M5_H retiré</strong>, <strong>GoldDaily1 et goldtrade_H gardés</strong> (corrélations sous +0,5) ; argent Till hors live depuis le 20/09, dossier suspendu à sa réserve 2025. <strong>Retiré de la page à sa demande : la liste des produits écartés au crible du 20/09</strong> — la rubrique 7 ne nomme plus que les deux briques retenues. Aucun chiffre de dosage n'a été touché.<br>
+  • 18/09 : toutes les variantes de jambe conservées et étiquetées (rosé = à privilégier, jaune = alternative UBS admise tant que le moteur n'est pas fidèle, gris = info) ; règle du 17/09 « tout prop firm = Eagle-owl SetsB2 » ; comptes prop firm tout Eagle-owl v1.19 (turbo, or SetsB2 imposé) ; compte propre : SetsB2 et AdvSc au protocole pour info ; <strong>alternative UBS remise au protocole du livre</strong> (AdvSc en ticks réels n113 : Axi 17.52, classique 17.86 ; les 19.98 / 20.68 du 15/09 gardés en « hors protocole, info ») ; guide de chargement : Vantage réel sur Londres, état live 17/09 et glissement mesuré.<br>
+  • 15/09 (TER/TURBO) : Argent Till + JPY D1 (n140) + EUR storyG (n142) + USO H4 (n143) ajoutés aux trois standards UBS (1, 2ter, 3). Seule l'Argent Till est déployée sur le banc réel.<br>
+  • 13/09 : jambe or SetsB2 (Reaper 1+3+4+7+8) en standard pour les comptes prop firm (2ter et 3), jeu par défaut SetsB conservé pour le compte propre ; variantes 2bis, 2ter, 3bis ; rubriques mensuel médian/moyen, mois négatifs, pire mois, capital minimum, instances sur chaque standard.<br>
+  • 11/09 : indices UBS (DJ/NAS/SP) retirés : contribution +0.5 %/an insuffisante · 37 instances Ultima MT5 + 1 Advanced Scalper MT5 · mesure : ticks réels, lot 0,01/unité, optimisation au pire des deux moitiés · réserves : 4 ans sans crise majeure, facteur réel/backtest 1.37.<br>
+  <br>
+  <strong>État live 12/09 (rappel) :</strong> slippage mesuré 49 pts moyen (0.71 médian). Remplacé par la mesure du 17/09 ci-dessus.
+</div>
+
+</div>
+</body>
+</html>

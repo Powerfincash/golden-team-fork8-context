@@ -4,8 +4,10 @@
 > Les autres fichiers du dépôt sont des archives : ils disent ce qui a été mesuré,
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
-**À jour au : 21/09/2026**
-**Dernier geste : trois démos Vantage MT5 (Daily HighLow Breakout, Ichimoku Strategies EA MT5, Ichimoku Cloud Pro) mesurées en réserve 2025 — voir section 1.**
+**À jour au : 22/09/2026**
+**Dernier geste : rapatriement du PC outillé — `COMMANDE.md` (une commande à coller dans Git Bash),
+`INVENTAIRE.md` (ce qui entre et ce qui reste dehors), `gabarits/` (la page Quatre Standards).
+Geste précédent : trois démos Vantage MT5 mesurées en réserve 2025 — voir section 1.**
 
 ---
 
@@ -50,6 +52,10 @@
 **Les trois démos Vantage MT5 testées le 21/09 sont toutes éliminées.**
 - **Mécanisme de reprise de session en place** (PR n°1 fusionnée le 21/09) : `ETAT.md`,
   ordre de lecture en tête de `CLAUDE.md`, et `./sauver.sh` comme unique commande de sauvegarde.
+- **Rapatriement du PC outillé le 22/09** : `./rapatrier.sh`, lancé par la ligne unique de
+  `COMMANDE.md`, ramène outils, `.set`, `.ini` sans identifiant, sources `.mq4`/`.mq5`, gabarits
+  et index des rapports, puis vérifie le push. Ce qui entre et ce qui reste dehors : `INVENTAIRE.md`.
+  **Le gabarit de la page « Quatre Standards » est dans `gabarits/` : on le reprend tel quel.**
 
 ## 2. En cours — ce qui tourne seul
 

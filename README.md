@@ -33,6 +33,14 @@ Aucun chiffre ni aucun état ne doit être recopié ici : ce README a porté pen
 ligne de résultat fausse (une attribution inversée dans le log) que personne ne pouvait dater.
 **L'état vit dans `ETAT.md`, à un seul endroit.**
 
+## Rapatrier ce qui est encore sur le PC
+
+Une seule commande à coller dans Git Bash, dans **[`COMMANDE.md`](COMMANDE.md)**. Elle ramène ici
+les outils, les réglages `.set`, les configurations, le code des robots maison, les gabarits de
+pages et l'index des rapports, puis vérifie que GitHub a bien reçu le commit.
+
+[`INVENTAIRE.md`](INVENTAIRE.md) dit ce qui entre, ce qui reste dehors, et pourquoi.
+[`gabarits/`](gabarits/) contient la page « Quatre Standards » et ses règles : **on la reprend
+telle quelle, on ne réinvente jamais sa mise en page.**
+
 > Note : `fork8_context.bundle` est listé dans `.gitignore` et n'est donc **pas** dans ce dépôt.
-> Les outils (`mesure.py`, `parjeu.py`, `lancer_mt4.sh`…) restent sur le PC, dans
-> `OneDrive\Documents\forex\outils\`.

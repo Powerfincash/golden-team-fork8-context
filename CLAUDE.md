@@ -43,6 +43,15 @@ Trois lignes, dans cet ordre :
 3. Le lui dire avec le lien du commit, et nommer ce qui reprend tout seul.
 
 
+## Le gabarit de la page « Quatre Standards »
+- La page se reprend **telle quelle** depuis `gabarits/quatre-standards-*.html`. Ne jamais réinventer sa mise en page.
+- Rien ne se retire : toutes les rubriques de `QUATRE-STANDARDS-*.txt` et de `etat_portefeuilles.py tout` y sont (capital minimum, instances, mensuel médian ET moyen, mois négatifs, pire mois, délais). Si une rubrique doit disparaître, le dire, jamais en silence.
+- Toutes les variantes d'une jambe restent visibles ; fond rosé = à privilégier pour ce type de compte, jaune = alternative admise, gris = pour info.
+- La page montre les portefeuilles-type retenus et leurs chiffres, **jamais la liste des EA éliminés**. Chaque chiffre porte sa date. Détail dans `gabarits/LISEZMOI.md`.
+
+## Rapatrier ce qui n'est que sur le PC
+- Une seule ligne, dans `COMMANDE.md`, à coller dans Git Bash. Elle lance `./rapatrier.sh` : outils, `.set`, `.ini` sans identifiant, sources `.mq4`/`.mq5`, gabarits, journaux, index des rapports, puis commit, push et **vérification que le distant a reçu**. `INVENTAIRE.md` dit ce qui entre et ce qui reste dehors, avec les raisons.
+
 ## Lancement d'un test MT5 : un seul chemin
 - Tout test MT5 se lance par `C:\Users\User\OneDrive\Documents\forex\outils\lance_chaine.ps1 -Inis <nom1>,<nom2>` (noms des .ini dans `Documents\forex`, sans extension), en arrière-plan et fenêtre cachée. Jamais `Start-Process terminal64` à la main, jamais un `jourXX.ps1` écrit à la volée.
 - Le lanceur appelle `prelance.py` (refus = pas de lancement), retire une mise à jour MT5 en attente (sinon blocage UAC), coupe si le disque < 3 Go ou si le journal du testeur > 1 Go, et vérifie que le rapport n'est pas vide avec `mesure.py`. Lire son journal `chaine_*.log` avant de dire quoi que ce soit sur un test.
