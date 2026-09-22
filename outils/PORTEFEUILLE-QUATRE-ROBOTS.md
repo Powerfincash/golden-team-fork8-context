@@ -88,3 +88,65 @@ deux moitiés, rapport hors tirage. **C'est ce rapport unique qui décide**, pas
    jambes de la rubrique 6 en sont. Ce qui existe est antérieur : Eagle-owl fidèle contre les trois
    Zebra (+0,13 / −0,02 / +0,02, 08/09), Heron contre Axi Select (+0,01 à +0,07).
 2. **La rubrique 6 est restée en v1.34-v1.35.** Les rubriques 1 à 5 ont été rejouées en v1.47.
+
+---
+
+## 7. Sa règle de nomenclature (22/09) — le mode résidu sera un robot à part
+
+Ses mots : « si on décide de le faire, ok mais choisit un autre nom de robot tel que
+**Kestrel = Eagle-owl + nouveau nom**. Comme c'est fait, cela peut peut-être servir un jour ! »
+
+Donc :
+
+- **Kestrel reste tel quel**, il n'est pas remplacé ni renommé : c'est le fidèle + le résidu, et il
+  peut servir.
+- **Le mode résidu devient un cinquième robot**, avec son propre nom.
+- L'identité s'écrit : **Kestrel = Eagle-owl + \<nouveau robot\>**, aux effets d'interaction près
+  (section 2) — ce n'est pas une addition exacte, les trades en plus changent ce qui suit.
+
+Noms proposés, série des rapaces, courts et distincts des quatre existants :
+
+| Nom | Oiseau | Pourquoi |
+|---|---|---|
+| **Merlin** | l'émerillon | le plus petit faucon d'Europe. Même famille que la crécerelle : c'est le petit frère de Kestrel, ce qui dit la relation. **Recommandé.** |
+| **Harrier** | le busard | il quadrille bas et ramasse ce que les autres laissent — l'image même du résidu. |
+| **Osprey** | le balbuzard | court et très distinct, mais il pêche : le rapport au résidu est plus faible. |
+
+## 8. Le résidu chiffré — mesure du 22/09, gratuite, sur les rapports du dépôt
+
+Méthode : une version **antérieure** à l'adoption d'une règle se comporte comme cette règle
+débranchée, donc comme Kestrel sur ce point. **v1.31 → v1.32** encadre exactement l'extension à
+l'or de « swing dépassé = mort » en deçà, c'est-à-dire `Fid_SwingMortEnDeca` — et depuis v1.43
+c'est **le seul des trois réglages qui morde encore sur l'or**. Outil : `outils/residu_par_versions.py`.
+
+| | n121 SetsB (compte propre) | n132 SetsB2 (prop firm) |
+|---|---|---|
+| Règle débranchée (Kestrel) | 4 149 tr · net 5 899 $ · creux 478 $ · rapport **12,34** | 3 833 tr · net 5 741 $ · creux 437 $ · rapport **13,13** |
+| Règle posée (Eagle-owl) | 3 554 tr · net 5 508 $ · creux 409 $ · rapport **13,47** | 3 257 tr · net 5 332 $ · creux 356 $ · rapport **14,97** |
+| **Résidu** | **+595 trades · +391 $ · +69 $ de creux** | **+576 trades · +409 $ · +81 $ de creux** |
+| Part | 14 % des trades, 7 % du net | 15 % des trades, 7 % du net |
+| **Rapport marginal du résidu** | **5,7** contre 13,47 pour la jambe fidèle | **5,0** contre 14,97 |
+
+### Ce que ça dit
+
+- **Le résidu existe et il est mesurable** : ~590 trades, bien au-dessus du seuil de 300. Il passe
+  la porte de taille. Le chantier de code n'est pas absurde.
+- **Il est dilutif là où il est** : rapport marginal 5,0 à 5,7 contre 13,5 à 15,0 pour la jambe
+  fidèle. Ajouté À L'INTÉRIEUR de la même jambe, il fait baisser le rapport — c'est exactement ce
+  qu'on observe (12,34 contre 13,47). Cela ne le condamne pas comme **jambe séparée, dosée à part**,
+  et la faiblesse n'est pas un disqualifiant. Mais il devra se défendre sur sa **décorrélation**.
+- **Preuve directe que le résidu n'est pas une soustraction** : six jeux gardent le **même nombre de
+  trades** d'une version à l'autre et changent quand même de net, 193 $ et 184 $ cumulés. Les trades
+  en plus consomment des niveaux et changent ce qui suit. Un robot « résidu » produira donc une
+  jambe **nouvelle**, pas un extrait.
+
+### Ce que ça ne dit pas
+
+- Rien sur 2025 : ces rapports couvrent 2021-2024.
+- **Rien sur la corrélation** : ces fichiers sont agrégés par jeu et par niveau de prix, **sans
+  dates**. Il existe un `parjeu_n121_..._v147_mensuel.csv` et son équivalent n132 pour la jambe
+  **fidèle** ; il manque le même export **mensuel** côté règle débranchée pour lancer
+  `correlation_jambes.py`. C'est la prochaine mesure gratuite.
+- C'est une **différence de deux rapports**, donc un dégrossissage. Elle oriente le chantier, elle
+  ne décide pas : seul un rapport unique décide.
+- Mesuré en **v1.31/v1.32**. Le moteur or est en v1.47 depuis. Ordre de grandeur, pas chiffre courant.
