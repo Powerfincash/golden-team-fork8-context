@@ -4,12 +4,17 @@ Sa question du 22/09. Ce fichier ne liste que ce qui **attend quelque chose**. L
 retenus et leurs chiffres sont dans la page des standards ; les éliminés sont en bas, pour mémoire,
 afin qu'on ne les relance pas.
 
-## A. Retenus pour le portefeuille de réserve, en attente d'achat et de banc réel
+## A. Retenus pour le portefeuille de réserve — à RECONSTRUIRE, pas à acheter
 
 | Robot | Rapport 2021-2024 | Réserve 2025 | Ce qu'il attend |
 |---|---|---|---|
-| **Forex GOLD Investor** (XAUUSD M15, lot fixe 0,01) | **1,8** | **7,3** | achat (267 $), glissement réel sur le banc Ultima |
-| **GOLD Scalper PRO** (XAUUSD M15, lot fixe 0,01, AutoMM 0) | **1,7** | **8,1** | achat (217 $), glissement réel |
+| **Forex GOLD Investor** (XAUUSD M15, lot fixe 0,01) | **1,8** | **7,3** | une décision : reconstruire ou non (voir ci-dessous) |
+| **GOLD Scalper PRO** (XAUUSD M15, lot fixe 0,01, AutoMM 0) | **1,7** | **8,1** | idem |
+
+**Sa consigne du 22/09** : ces deux-là **ne sont pas destinés à être achetés mais reconstruits en
+code maison, s'ils en valent la peine** — comme UBS l'a été avec Eagle-owl. Raison de fond, au-delà
+des 484 $ : **un EA commercial est interdit en algo chez Axi Select**, une reconstruction maison ne
+l'est pas. Ce qu'il faut pour trancher est dans `outils/RECONSTRUIRE-OU-NON.md`.
 
 Réserves communes, écrites le 20/09 : deux briques de la **même famille** (cassure/impulsion sur
 l'or M15), donc la réserve n'est pas encore diversifiée — il lui manque un retour à la moyenne et

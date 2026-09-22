@@ -139,6 +139,22 @@ Protocole complet, seuils fixés d'avance : `outils/PROTOCOLE-KESTREL-OR.md`.
 Outil prêt : `outils/correlation_jambes.py` (deux sorties datées de `parjeu.py --csv`, Pearson
 mensuel, seuil +0,50).
 
+## 3ter. Réserve or : reconstruire, pas acheter — sa consigne du 22/09
+
+Forex GOLD Investor et GOLD Scalper PRO **ne sont pas destinés à être achetés mais reconstruits en
+code maison, s'ils en valent la peine**. Raison de fond au-delà des 484 $ : un EA commercial est
+interdit en algo chez Axi Select, une reconstruction maison ne l'est pas — c'est ce qui avait
+justifié Eagle-owl.
+
+**On ne sait rien de leur logique d'entrée** : personne n'a encore ouvert leurs paramètres. Premier
+geste, une heure et aucun code : exporter les paramètres d'entrée des deux démos et voir si la
+logique s'en déduit. Si elle est opaque, la question se tranche toute seule.
+
+**Réserve que je pose** : ces deux briques sont de la cassure sur l'or M15, comme un livre déjà
+100 % cassure, pendant que le poste retour à la moyenne reste vacant. C'est un coût d'opportunité.
+
+Détail, questions et seuils : `outils/RECONSTRUIRE-OU-NON.md`.
+
 ## 4. Prochain geste — le poste retour à la moyenne reste vacant
 
 Plus aucun candidat en cours d'évaluation. Sept échecs d'affilée sur la réserve 2025 (Luna AI,
