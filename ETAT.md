@@ -93,11 +93,21 @@ comme profil global (le remplacement en bloc a été mesuré le 19/09 et recule,
 3,74 → **9,76** (+3 460 $), et le livre bâti autour de cette jambe, c'est la rubrique 6 de la page
 des standards. **Ne pas le refaire.**
 
-**Ce qui manque, et c'est ce qui décide** : la jambe or Kestrel n'a jamais été mise CÔTE À CÔTE
-avec la jambe or fidèle — dans la rubrique 6 elle la remplace. Donc ni corrélation entre les deux,
-ni substitution de la seule jambe or dans le livre principal. Précédent qui pèse : Eagle-owl contre
-UBS = **+0,77**, « substitut, pas une brique de plus ». Et depuis v1.43 un seul des trois réglages
-mord encore sur l'or.
+**Sa définition du 22/09, qui fait foi** : « Kestrel reprend les trades rentables non fidèles à UBS
+lors de sa reconstruction par Eagle-owl, et retirés d'Eagle-owl pour atteindre la fidélité. » Les
+deux sont donc complémentaires par construction : la mesure à faire est un **AJOUT**, pas un
+remplacement.
+
+**Écart à lever d'abord** : le code fait de Kestrel le SUR-ENSEMBLE d'Eagle-owl, pas son résidu.
+Débrancher une règle rajoute les trades par-dessus au lieu de les isoler (livre or à 116,9 % des
+positions d'UBS règle débranchée, 100,1 % règle posée). Les jouer côte à côte doublerait les trades
+communs. **Le recouvrement Kestrel / Eagle-owl n'a jamais été mesuré** — à ne pas confondre avec la
+fidélité à UBS, qui elle est connue. `fidelite_entrees.py` le donne en prenant Eagle-owl comme
+référence : ses « inventées » sont exactement le résidu. Cette étape ne coûte rien, elle tourne sur
+des rapports déjà écrits.
+
+Précédent qui pèse : Eagle-owl contre UBS = **+0,77**, « substitut, pas une brique de plus ». Et
+depuis v1.43 un seul des trois réglages mord encore sur l'or.
 
 **Motif de relance** : le 9,76 date de v1.35 ; le moteur or est passé en v1.47 le lendemain
 (fidélité 92,9 → 98,5 %). Un chiffre sans sa version est périmé.

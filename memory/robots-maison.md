@@ -27,6 +27,11 @@ absentes). L'autonomie passe par des jeux composés par nous sur des symboles o�
 — GBPJPY, EURJPY, AUDUSD, Brent — point 25 de la feuille de route. Ce chantier-là est hors or ;
 le robot ne l'est pas.
 
+**Ils sont complémentaires par intention** (ses mots du 22/09) : Eagle-owl garde ce qui est fidèle
+à UBS, Kestrel reprend les trades rentables que la reconstruction a dû retirer pour atteindre cette
+fidélité. Réserve à lever : le code fait aujourd'hui de Kestrel un SUR-ENSEMBLE d'Eagle-owl et non
+son résidu — voir [[kestrel-profil-rendement]].
+
 Techniquement les deux partagent le binaire `EagleOwl_v1.ex5` : Kestrel s'active par trois
 paramètres d'entrée, pas par une copie du code. D'où la règle de maintenance — un seul code à
 corriger, ce qui est vrai pour l'un l'est pour l'autre. **C'est une précision d'implémentation,

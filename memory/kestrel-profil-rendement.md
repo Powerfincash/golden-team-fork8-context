@@ -8,6 +8,19 @@ metadata:
   modified: 2026-09-19T12:24:53.503Z
 ---
 
+**Son intention, dans ses mots (22/09/2026)** : « Kestrel reprend les trades rentables non fidèles
+à UBS lors de sa reconstruction par Eagle-owl, et retirés d'Eagle-owl pour atteindre la fidélité à
+UBS. » Les deux robots sont donc **complémentaires par construction, pas concurrents** : Eagle-owl
+garde ce qui est fidèle, Kestrel récupère le rentable qu'il a fallu jeter pour l'être.
+
+**Écart entre l'intention et ce que fait le code aujourd'hui — à lever avant toute décision.**
+Kestrel n'est pas le RÉSIDU d'Eagle-owl, c'est son SUR-ENSEMBLE : débrancher une règle de fidélité
+ne fait pas jouer les trades retirés *à la place* des autres, elle les rajoute *par-dessus*. Ordre
+de grandeur mesuré le 19/09 : avec la règle en deçà débranchée, le livre or était à **116,9 %** des
+positions d'UBS, contre 100,1 % une fois la règle posée. Conséquence pratique : **jouer Kestrel à
+côté d'Eagle-owl double les trades communs** au lieu d'ajouter une jambe. Réaliser son intention
+demande un mode « résidu » qui ne joue QUE les entrées que les règles de fidélité rejettent.
+
 **Kestrel est un ROBOT MAISON, issu de la reproduction d'UBS.** C'est sa nomenclature, corrigée le 22/09/2026, et
 elle fait foi : les robots maison sont **quatre** — Eagle-owl, **Kestrel**, Zebra, Heron.
 Précision du 22/09 : **Eagle-owl et Kestrel proviennent tous deux de la reproduction d'UBS ; Zebra et
@@ -29,6 +42,13 @@ contraire sa meilleure justification — or SetsB2 3,74 en échantillon contre *
 2025** (+3 460 $), et neuf jambes au total rejouées en Kestrel pour cette réserve, or et argent
 compris. Ce qui est hors or, c'est sa route vers l'autonomie : GBPJPY, EURJPY, AUDUSD, Brent,
 des symboles où UBS n'existe pas (voir le dernier paragraphe).
+
+**Deux mesures à ne jamais confondre** :
+- **fidélité à UBS** — recouvrement d'un robot avec UBS (`fidelite_entrees.py` : communes, manquées,
+  inventées). C'est elle qui vaut 96,5 % pour Eagle-owl.
+- **recouvrement Kestrel / Eagle-owl** — recouvrement des deux robots ENTRE EUX, jamais mesuré à ce
+  jour. C'est lui qui dit si les deux jambes peuvent cohabiter. Le même outil le donne en prenant
+  Eagle-owl comme référence à la place d'UBS : ses « inventées » sont alors exactement le résidu.
 
 **Les trois réglages** (v1.35, MQL5 fd0871d) : `Fid_ReposeMaxTrades` 20 → 999, `Fid_SwingMortEnDeca` true → false,
 `Fid_SwingMortAuDela` true → false.
