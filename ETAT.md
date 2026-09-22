@@ -125,6 +125,16 @@ robots coexistent — Eagle-owl sur ses jambes fidèles ET Kestrel sur le résid
 et Heron. La rubrique 6 a substitué Kestrel à Eagle-owl partout au lieu de les faire cohabiter.
 Spécification, point bloquant, ordre des mesures et seuils : `outils/PORTEFEUILLE-QUATRE-ROBOTS.md`.
 
+**Merlin, décidé le 22/09** : le robot du résidu s'appellera Merlin (son choix), et la relation
+s'écrit **Kestrel = Eagle-owl + Merlin**. Kestrel reste tel quel. Le résidu est chiffré sur l'or :
+**~590 trades, +400 $ de net pour +70 à +80 $ de creux**, rapport marginal **5,0 à 5,7** contre
+13,5 à 15,0 pour la jambe fidèle (mesure du 22/09, diff v1.31/v1.32, `outils/residu_par_versions.py`).
+Assez gros pour justifier le chantier, mais **Merlin se jugera sur sa décorrélation, pas sur son
+rendement**. Plan de code et plan de mesure : `outils/MERLIN-CHANTIER.md`. **Rien n'est codé ; le
+moteur ne sera pas touché sans son accord explicite.**
+Prochaine mesure gratuite : l'export mensuel du rapport règle débranchée, pour lancer
+`correlation_jambes.py` contre `mesures/parjeu_n121_..._v147_mensuel.csv`.
+
 Protocole complet, seuils fixés d'avance : `outils/PROTOCOLE-KESTREL-OR.md`.
 Outil prêt : `outils/correlation_jambes.py` (deux sorties datées de `parjeu.py --csv`, Pearson
 mensuel, seuil +0,50).

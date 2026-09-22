@@ -37,6 +37,12 @@ paramètres d'entrée, pas par une copie du code. D'où la règle de maintenance
 corriger, ce qui est vrai pour l'un l'est pour l'autre. **C'est une précision d'implémentation,
 pas la définition** : ce sont bien deux robots.
 
+**Décidé le 22/09, pas encore construit :**
+- **Merlin** (l'émerillon) — le **résidu** : uniquement les entrées que les règles de fidélité
+  rejettent. Nom choisi par lui. La relation s'écrit **Kestrel = Eagle-owl + Merlin**, aux effets
+  d'interaction près. Kestrel n'est ni renommé ni remplacé. Plan : `outils/MERLIN-CHANTIER.md`.
+  **Rien n'est codé, et le moteur ne sera pas touché sans son accord.**
+
 **Indépendants — aucun lien avec UBS :**
 - **Zebra** — cassure sur pivots, joué sur l'or, GBPUSD et EURUSD.
 - **Heron** — sur les croisées AUDCAD et NZDCAD.

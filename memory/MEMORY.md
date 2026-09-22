@@ -33,7 +33,7 @@
 - [Clôture partielle neutre](cloture-partielle-neutre.md) — espérance inchangée, seuils q > 50 %, p > 36,7 %
 
 ## État des robots et des pistes
-- [Les quatre robots maison](robots-maison.md) — **sa nomenclature du 22/09** : Eagle-owl et Kestrel viennent de la reproduction d'UBS, Zebra et Heron sont indépendants
+- [Les robots maison](robots-maison.md) — **sa nomenclature du 22/09** : Eagle-owl et Kestrel viennent de la reproduction d'UBS, Zebra et Heron sont indépendants ; **Merlin** décidé le 22/09 mais pas construit (le résidu, `Kestrel = Eagle-owl + Merlin`)
 - [Jambe or par compte](jambe-or-par-compte.md) — **17/09, règle ferme** : TOUT prop firm (classique ou Axi, UBS ou Eagle-owl) = SetsB2 pour brouiller les pistes ; compte propre seul = SetsB ; relire avant tout TER/chantier
 - [Tests à réaliser](tests-a-realiser.md) — **12/09** : file ouverte dans `outils/TESTS-A-REALISER.md` — Range Breakout, Vol Breakout hors indices, Luna AI, AOT
 - [Meilleur résultat à ce jour](meilleur-a-ce-jour.md) — Reaper 83,4 %/an pour 12,5/17,1 % ; `outils/MEILLEUR-A-CE-JOUR.md`

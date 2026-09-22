@@ -13,7 +13,7 @@ de sa reconstruction par Eagle-owl, et retirés d'Eagle-owl pour atteindre la fi
 | Robot | Rôle | Jambes |
 |---|---|---|
 | **Eagle-owl** | le fidèle | or SetsB2 · EUR volatilité · CHFJPY · GBPUSD · argent Till · JPY D1 · EUR storyG |
-| **Kestrel** | **le résidu seul** | les mêmes symboles, mais uniquement les entrées que les règles de fidélité rejettent |
+| **Merlin** | **le résidu seul** | les mêmes symboles, mais uniquement les entrées que les règles de fidélité rejettent |
 | **Zebra** | indépendant | or |
 | **Heron** | indépendant | AUDCAD · NZDCAD |
 
@@ -106,9 +106,12 @@ Donc :
 
 Noms proposés, série des rapaces, courts et distincts des quatre existants :
 
+**Son choix du 22/09 : Merlin.** Le chantier est spécifié dans `outils/MERLIN-CHANTIER.md`.
+Les deux autres propositions sont gardées pour mémoire.
+
 | Nom | Oiseau | Pourquoi |
 |---|---|---|
-| **Merlin** | l'émerillon | le plus petit faucon d'Europe. Même famille que la crécerelle : c'est le petit frère de Kestrel, ce qui dit la relation. **Recommandé.** |
+| **Merlin — RETENU** | l'émerillon | le plus petit faucon d'Europe. Même famille que la crécerelle : c'est le petit frère de Kestrel, ce qui dit la relation. **Recommandé.** |
 | **Harrier** | le busard | il quadrille bas et ramasse ce que les autres laissent — l'image même du résidu. |
 | **Osprey** | le balbuzard | court et très distinct, mais il pêche : le rapport au résidu est plus faible. |
 
