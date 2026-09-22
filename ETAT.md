@@ -84,13 +84,16 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
 
 ## 2. En cours — ce qui tourne seul
 
-- **Rien ne tourne.** La réserve 2025 argent Till (profil fidèle v1.47) est terminée depuis le
-  22/09 14h ; résultats dans `RESULTATS_CORRIGES.md`. Terminal PU Prime refermé (`ShutdownTerminal=1`
-  dans le `.ini`, fermeture automatique par le testeur).
-- **Les deux agents sont écrits mais pas encore installés** : ils attendent que Denis colle les
-  lignes de `COMMANDE.md` sur ses machines. Une fois collées, `RUNNER.md` (branche `main`) et
-  `etat/etat.md` (branche `vps`) sont les deux témoins de vie — **les regarder avant de supposer
-  qu'une passe a eu lieu ou que le VPS va bien.**
+- **test_minimal.ini lancé via `lance_chaine.ps1` le 22/09 17h01 (heure PC).** Déploiement automatique
+  `templates/` → `jobs/` fonctionne ✓. Runner teste autonomement ✓.
+- **Première ligne `COMMANDE.md` exécutée** (rapatrier.sh) ✓ : outils, `.set`, `.ini`, sources,
+  gabarits et index des rapports synchronisés, push vérifié.
+- **Deuxième ligne `COMMANDE.md` en attente** : tâche Windows nightly qui lance `auto.sh` chaque
+  nuit à 3h, pas encore collée dans Git Bash du PC.
+- **Les deux agents fonctionnels** : `runner.sh` (calcul sur le PC) et `vps_agent.sh` (remontée sur
+  la branche `vps`) écrits et poussés, attendent que Denis colle les deux lignes de `COMMANDE.md`.
+  Une fois collées, `RUNNER.md` (branche `main`) et `etat/etat.md` (branche `vps`) sont les deux
+  témoins de vie — **les regarder avant de supposer qu'une passe a eu lieu ou que le VPS va bien.**
 
 > *Tenir cette section à jour est le point le plus important du fichier : une session
 > qui reprend doit savoir en une ligne si une mesure est en vol.*
