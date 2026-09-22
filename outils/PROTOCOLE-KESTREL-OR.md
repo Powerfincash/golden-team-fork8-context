@@ -90,3 +90,42 @@ jambe à ajouter — et c'est l'étape A, gratuite, qui le dira.
 Rien pour l'étape A ni l'étape B : elles tournent sur le PC en quelques secondes, sur des rapports
 déjà écrits. Pour l'étape C, le `.ini` exact reste à écrire à partir de celui de la jambe or
 existante (trois paramètres d'entrée et le nom du rapport) — il n'est pas encore au dépôt.
+
+## 8. Le portefeuille maison — là, la question ne se pose pas
+
+Sa remarque du 22/09, et elle est juste : **c'était l'objet de sa question de départ.** Dans le
+portefeuille autonome bâti autour de Zebra (rubrique 6 de la page), il n'y a **aucune jambe UBS et
+aucune jambe Eagle-owl fidèle**. Kestrel y entre donc de plein droit : rien à doubler, rien à
+brouiller. Le problème de recouvrement des sections 2 et 5 ne concerne que le livre principal.
+
+**Ce portefeuille existe déjà, mesuré le 19/09.** Ne pas le refaire.
+
+Composition, dosage Axi (6a), dix jambes :
+
+| Robot | Jambes | Dosage |
+|---|---|---|
+| **Kestrel** | or SetsB2 · EUR volatilité · CHFJPY · GBPUSD · argent Till · JPY D1 · EUR storyG | ×1 · hors or ×1 · argent ×1 · JPY D1 ×3 · storyG ×15 |
+| **Zebra** | or | ×8 |
+| **Heron** | AUDCAD · NZDCAD | ×4 · ×2 |
+| **Eagle-owl fidèle** | *aucune* | — |
+
+**Eagle-owl n'est pas dans ce portefeuille** : toutes ses jambes y sont jouées par Kestrel. Le
+livre maison autonome est donc un **trois robots**, pas un quatre.
+
+Réserve 2025, par variante de compte : Axi **+6 058 $** (rapport 17,01) · prop firm classique
+**+7 128 $** (16,59) · compte propre **+6 202 $** (15,26) · sans or **+2 357 $** (10,56). Les dix
+jambes sont toutes positives en 2025 ; quatre ont été retirées par cette même réserve (Advanced
+Scalper, USO, Zebra GBP, Zebra EUR). Le détail jambe par jambe est en rubrique 6d de la page.
+
+### Ce qui manque sur ce portefeuille
+
+1. **Les corrélations croisées entre ses dix jambes n'ont jamais été mesurées.** Ce qui existe est
+   antérieur et porte sur d'autres jambes : Eagle-owl **fidèle** contre les trois Zebra
+   (**+0,13 / −0,02 / +0,02**, 08/09) et Heron contre Axi Select (**+0,01 à +0,07**, les plus
+   basses mesurées ici). **Aucune corrélation impliquant une jambe Kestrel n'existe**, et sept des
+   dix jambes sont des jambes Kestrel. C'est le trou réel.
+2. **La rubrique 6 est restée en v1.34-v1.35.** Les rubriques 1 à 5 ont été rejouées en v1.47 le
+   20/09, pas elle. Ses chiffres sont les seuls de la page à ne pas être au moteur courant.
+
+Dans cet ordre : d'abord les corrélations croisées, qui tournent sur les rapports existants et ne
+coûtent rien ; ensuite seulement le rejeu en v1.47, qui est une passe complète.

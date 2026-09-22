@@ -112,6 +112,14 @@ depuis v1.43 un seul des trois réglages mord encore sur l'or.
 **Motif de relance** : le 9,76 date de v1.35 ; le moteur or est passé en v1.47 le lendemain
 (fidélité 92,9 → 98,5 %). Un chiffre sans sa version est périmé.
 
+**Le portefeuille maison est un cas à part, et c'était sa question de départ** : dans la rubrique 6
+(autour de Zebra) il n'y a aucune jambe UBS ni Eagle-owl fidèle, donc Kestrel y entre de plein droit
+et le problème de recouvrement ne se pose pas. Ce portefeuille existe depuis le 19/09 : dix jambes,
+sept en Kestrel, une Zebra, deux Heron ; réserve 2025 +6 058 $ (Axi), +7 128 $ (classique),
++6 202 $ (compte propre), +2 357 $ (sans or). Manquent, dans cet ordre : les **corrélations croisées
+entre ses dix jambes** (aucune corrélation impliquant Kestrel n'existe à ce jour) puis son **rejeu en
+v1.47** — c'est la seule rubrique de la page restée en v1.34-v1.35.
+
 Protocole complet, seuils fixés d'avance : `outils/PROTOCOLE-KESTREL-OR.md`.
 Outil prêt : `outils/correlation_jambes.py` (deux sorties datées de `parjeu.py --csv`, Pearson
 mensuel, seuil +0,50).
