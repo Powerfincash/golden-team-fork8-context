@@ -153,7 +153,7 @@ string ReglagesGraphique(long id, string &etat)
   {
    string nom = "GT_Controle_modele_" + IntegerToString(id);
    etat = "ok";
-   if(!ChartSaveTemplate(id, nom)) { etat = "modele_non_sauve"; return "{}"; }
+   if(!ChartSaveTemplate(id, "\\Files\\" + nom)) { etat = "modele_non_sauve"; return "{}"; }
    string txt = LireFichierTexte(nom + ".tpl");
    FileDelete(nom + ".tpl");
    if(txt == "") { etat = "modele_illisible"; return "{}"; }
@@ -188,7 +188,7 @@ void RelireGraphiques()
      {
       string robot = ChartGetString(c, CHART_EXPERT_NAME);
       string etat = "aucun_robot", reglages = "{}";
-      if(robot != "" && c != ChartID()) reglages = ReglagesGraphique(c, etat);
+      if(c != ChartID()) reglages = ReglagesGraphique(c, etat);
       if(c == ChartID()) etat = "espion";
       json += (premier ? "" : ",") + "{\"id\":" + IntegerToString(c)
               + ",\"symbole\":" + Q(ChartSymbol(c))

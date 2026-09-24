@@ -54,7 +54,12 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
     sans glisser-déposer ou redémarrage. `tableau.py` tourne sur le PC sans erreur (0 compte, faute d'espion).
     **24/09 16h14 (Paris), après l'accord écrit de Denis de 16h12 : `GT_Controle.ex5` compilé sur le Vantage MT5
     démo du PC (0 erreur, 0 avertissement ; version de `main`).** Pas encore posé : un glisser-déposer de Denis.
-    **Reste** : le poser sur le Vantage MT5 démo puis vérifier fichiers et page ; compiler la version MT4 ; version MT4 (compte cent Ultima) ;
+    **24/09 16h41-16h49 (Paris) : espion posé par Denis sur DJ30.r H1 du Vantage démo, et il tourne.** Vu sur disque :
+    les 4 fichiers, historique 171 transactions, ping 108 ms, spreads EURUSD 14 / GBPUSD 15 / USDJPY 16-17 / DJ30.r 310 points,
+    `tableau.py` sans erreur. Défaut corrigé (modèle écrit dans `Profiles\Templates`, illisible ; nom « NULL » sans robot) :
+    après correction, les 4 graphiques passent de « modele_illisible » à « aucun_robot » (preuve 16h49:44).
+    **Jamais prouvé : l'extraction des réglages d'un vrai robot** (aucun robot sur ce terminal).
+    **Reste** : prouver l'extraction des réglages sur un graphique qui porte un robot ; compiler la version MT4 ; version MT4 (compte cent Ultima) ;
     remplir `attendu.csv` ; puis pose sur le VPS réel (chantier VPS en pause sur ordre de Denis).
 
 **Infrastructure**

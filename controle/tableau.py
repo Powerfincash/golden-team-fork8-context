@@ -340,6 +340,9 @@ def analyser_compte(dossier, conf, maintenant):
 
     # ---- C. graphiques, robots et réglages
     graphiques = etat['graphiques']
+    for g in graphiques:  # MT5 renvoie « NULL » comme nom quand le graphique n'a pas de robot
+        if g['etat'] == 'aucun_robot' or str(g.get('robot', '')).upper() == 'NULL':
+            g['robot'] = ''
     attendu = [a for a in conf['attendu'] if a.get('compte', '').strip() in ('', num)]
     controle_c = []
     vus = set()
@@ -585,7 +588,7 @@ def page_compte(a):
 
 
 def construire(dossier, sortie, conf):
-    maintenant = dt.datetime.utcnow().replace(microsecond=0)
+    maintenant = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None, microsecond=0)
     comptes, erreurs = [], []
     if os.path.isdir(dossier):
         for nom in sorted(os.listdir(dossier)):
