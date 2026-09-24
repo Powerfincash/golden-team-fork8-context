@@ -80,6 +80,15 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
     terminal, puis preuve de lecture des réglages.** À creuser : UBS refusé « invalid price » (sell stop EURUSD) et
     « invalid stops » (USDJPY) à 12h et 13h le 24/09 sur les deux comptes ; chien de garde de Londres en erreur
     « initialize KO (-6, Authorization failed) » pour Ultima.
+    **19h16-19h32 (Paris) : OUTIL C PROUVÉ SUR LES DEUX COMPTES RÉELS.** Espion posé par Denis sur un graphique vide EURUSD de
+    chaque terminal de Londres. Vantage (ancienne version) et Ultima (version d95f308 : lecture des modèles d'un bloc, plafond
+    1 Mo — l'ancienne restait bloquée sur le modèle de 5,4 Mo du graphique Zebra or, 13 011 objets que Zebra n'efface jamais) :
+    tous les graphiques « ok », robots, magics, paramètres et dossiers de sets IDENTIQUES aux .chr (Ultima : SetsUltima,
+    _EUR, _FX2, _BTC, SetsAS_JPY ; Vantage : SetsVantage, _EUR, _FX2, _JPY). Ping 2,1 / 1,4 ms. **Empilement DaytradePro
+    EURUSD (UBS, magic 6001)** : 4 ventes au même prix 1,13728 les 23-24/09 sur les deux comptes, déjà 3 le 14/09 ; ce
+    n'est PAS une panne : le set a `MaxTrades=99`, SL 300 / TP 100 pips, un seul ordre en attente reposé après chaque
+    exécution. À faire : pire paquet de ce jeu sur 2021-2024, puis proposer un plafond. À vérifier : fonds >> solde sur les
+    deux comptes (crédit ? fausserait le creux de l'outil B).
 
 **Infrastructure**
 11. **Rapatriement automatique PC → dépôt** : la tâche Windows n'a jamais tourné ; lancement manuel
