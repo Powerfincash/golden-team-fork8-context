@@ -5,7 +5,7 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 24/09/2026**
-**Dernier geste : plafond de perte par paquet argent proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
+**Dernier geste : plafond de perte par paquet argent ACCEPTÉ par Denis le 24/09 18h45, gardien en préparation ; proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
 `vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
 `COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle
 v1.47 — tous les seuils du protocole franchis, voir section 1.**
@@ -26,12 +26,12 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    `jobs/` (`emp_2026_xag` = 2026 jusqu'au 23/09, rejoue le jour du 16/09 ; `emp_n150_xag` =
    2021-2024), lues par `outils/empilement.py` (branché sur `runner.sh`) → `resultats/<nom>/empilement.md`.
    Les deux passes ont tourné le 24/09 matin (08h40 et 08h47).
-   **Plafond de perte par paquet proposé le 24/09 soir : 450 $ par 0,01 lot au prix actuel (≈ 7 × le prix
+   **Plafond de perte par paquet ACCEPTÉ par Denis le 24/09 à 18h45 (Paris, « oui ») ; proposé le 24/09 soir : 450 $ par 0,01 lot au prix actuel (≈ 7 × le prix
    de l'argent ; 450 USC au réel cent à 0,01)** — 597 paquets 2021-2026 rejoués minute par minute,
    positif sur les trois périodes, 6 paquets coupés en 5 ans 9 mois, aucun qui aurait fini gagnant ;
    350 est plus rentable mais à 5 $ d'un paquet gagnant (300 coûte −868 / −895). Détail :
-   `resultats/plafond_paquet_xag/PLAFOND.md`. **Reste** : sa décision, puis choisir le gardien externe
-   qui ferme le paquet (UBS n'a pas ce réglage).
+   `resultats/plafond_paquet_xag/PLAFOND.md`. **Reste** : le gardien externe qui ferme le paquet (en préparation le 24/09 soir ;
+   rien ne s'attache au compte réel sans son accord écrit). **Aucun retour en réel de l'argent sans ce gardien.**
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
    Prochain geste : exporter leurs paramètres d'entrée depuis les démos MT5 (une heure, aucun code)

@@ -1,11 +1,11 @@
 ---
 name: plafond-paquet-argent
-description: Plafond de perte par paquet pour l'argent de Till — 450 $ par 0,01 lot au prix de 64 $ (7 × le prix), proposé le 24/09/2026
+description: Plafond de perte par paquet pour l'argent de Till — 450 $ par 0,01 lot au prix de 64 $ (7 × le prix), accepté par Denis le 24/09/2026
 metadata:
   type: project
 ---
 
-Proposé le 24/09/2026 (à valider par Denis) : fermer tout le paquet d'argent quand sa perte atteint
+**Accepté par Denis le 24/09/2026 à 18h45 (Paris)** : fermer tout le paquet d'argent quand sa perte atteint
 **450 $ par 0,01 lot à 64,44 $** (≈ 7 × le prix de l'argent ; 450 USC au réel cent à 0,01).
 
 **Why:** le paquet réel du 16/09 (12 ventes) est descendu à −632 en cours avant de fermer à −475 ; le
