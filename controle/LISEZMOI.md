@@ -28,7 +28,7 @@ Dans `%APPDATA%\MetaQuotes\Terminal\Common\Files\GT_Controle\<compte>\` :
 
 - `etat.json` (toutes les 5 s) : compte, marge, ping, connexion, bouton Algo Trading, positions
   avec **perte si le stop est touché**, spreads, graphiques ouverts avec robot et réglages ;
-- `equite.csv` (chaque minute) : solde, équité, marge, ping — base du creux vécu ;
+- `equite_v2.csv` (chaque minute) : solde, équité HORS crédit du courtier, marge, ping, crédit — base du creux vécu (l'ancien `equite.csv` comptait le crédit, à ignorer) ;
 - `spreads.csv` (chaque minute) : spread min / moyen / max par symbole ;
 - `executions.csv` (à chaque exécution) : prix demandé, prix obtenu, **glissement** en points et
   en argent, **délai serveur** en ms, spread et ping au moment de l'exécution ;

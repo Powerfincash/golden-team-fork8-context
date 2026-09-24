@@ -270,7 +270,11 @@ void EcrireEtat()
       + ",\"devise\":" + Q(AccountInfoString(ACCOUNT_CURRENCY))
       + ",\"reel\":" + (AccountInfoInteger(ACCOUNT_TRADE_MODE) == ACCOUNT_TRADE_MODE_REAL ? "true" : "false")
       + ",\"solde\":" + D(AccountInfoDouble(ACCOUNT_BALANCE))
-      + ",\"equite\":" + D(AccountInfoDouble(ACCOUNT_EQUITY))
+      // equite = argent propre : le crédit (bonus) du courtier n'est pas retirable et fausserait le
+      // creux (Ultima 405 $ et Vantage 750 $ de crédit le 24/09)
+      + ",\"equite\":" + D(AccountInfoDouble(ACCOUNT_EQUITY) - AccountInfoDouble(ACCOUNT_CREDIT))
+      + ",\"credit\":" + D(AccountInfoDouble(ACCOUNT_CREDIT))
+      + ",\"equite_courtier\":" + D(AccountInfoDouble(ACCOUNT_EQUITY))
       + ",\"marge\":" + D(AccountInfoDouble(ACCOUNT_MARGIN))
       + ",\"marge_libre\":" + D(AccountInfoDouble(ACCOUNT_MARGIN_FREE))
       + ",\"niveau_marge\":" + D(AccountInfoDouble(ACCOUNT_MARGIN_LEVEL))
@@ -297,14 +301,17 @@ void EcrireEtat()
 
 void EcrireEquite()
   {
-   double flottant = AccountInfoDouble(ACCOUNT_EQUITY) - AccountInfoDouble(ACCOUNT_BALANCE);
-   AjouterLigne("equite.csv",
-                "utc;solde;equite;flottant;niveau_marge;marge_libre;positions;ping_ms;connecte",
+   double credit   = AccountInfoDouble(ACCOUNT_CREDIT);
+   double propre   = AccountInfoDouble(ACCOUNT_EQUITY) - credit;
+   double flottant = propre - AccountInfoDouble(ACCOUNT_BALANCE);
+   // nouveau fichier : equite.csv (avant le 24/09 soir) comptait le crédit dans l'équité
+   AjouterLigne("equite_v2.csv",
+                "utc;solde;equite;flottant;niveau_marge;marge_libre;positions;ping_ms;connecte;credit",
                 Horo(TimeGMT()) + ";" + D(AccountInfoDouble(ACCOUNT_BALANCE)) + ";"
-                + D(AccountInfoDouble(ACCOUNT_EQUITY)) + ";" + D(flottant) + ";"
+                + D(propre) + ";" + D(flottant) + ";"
                 + D(AccountInfoDouble(ACCOUNT_MARGIN_LEVEL)) + ";" + D(AccountInfoDouble(ACCOUNT_MARGIN_FREE)) + ";"
                 + IntegerToString(PositionsTotal()) + ";" + D(PingMs(), 1) + ";"
-                + (TerminalInfoInteger(TERMINAL_CONNECTED) ? "1" : "0"));
+                + (TerminalInfoInteger(TERMINAL_CONNECTED) ? "1" : "0") + ";" + D(credit));
    for(int i = 0; i < ArraySize(g_spSym); i++)
      {
       if(g_spN[i] == 0) continue;

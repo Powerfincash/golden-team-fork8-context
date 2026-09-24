@@ -135,7 +135,9 @@ def serie_creux(valeurs):
 def analyser_compte(dossier, conf, maintenant):
     etat = json.load(open(os.path.join(dossier, 'etat.json'), encoding='utf-8-sig'))
     histo = lire_csv(os.path.join(dossier, 'historique.csv'))
-    equite = lire_csv(os.path.join(dossier, 'equite.csv'))
+    # equite_v2.csv : équité hors crédit du courtier ; l'ancien equite.csv comptait le crédit
+    v2 = os.path.join(dossier, 'equite_v2.csv')
+    equite = lire_csv(v2 if os.path.exists(v2) else os.path.join(dossier, 'equite.csv'))
     execs = lire_csv(os.path.join(dossier, 'executions.csv'))
     spreads = lire_csv(os.path.join(dossier, 'spreads.csv'))
     coupures = lire_csv(os.path.join(dossier, 'coupures.csv'))
