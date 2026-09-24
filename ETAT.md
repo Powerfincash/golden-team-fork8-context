@@ -68,6 +68,18 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
     **Jamais prouvé : l'extraction des réglages d'un vrai robot** (aucun robot sur ce terminal).
     **Reste** : prouver l'extraction des réglages sur un graphique qui porte un robot ; compiler la version MT4 ; version MT4 (compte cent Ultima) ;
     remplir `attendu.csv` ; puis pose sur le VPS réel (chantier VPS en pause sur ordre de Denis).
+    **24/09 soir (Paris), chantier VPS relancé par Denis (« 1 et 2 », 18h32).** Accès : depuis le PC (Remote Control) par
+    `ssh vps-london` / `ssh vps-ny4` (clé du 13/09, `memory/vps-ny4.md`) — ni Git ni jeton nécessaires. Les comptes réels
+    (Ultima cent ****2313, Vantage ****3874) sont en **MT5** au VPS de Londres : la version MT4 de l'espion est inutile pour eux.
+    Inventaire Londres (lecture seule, .chr du 13/09 et 17/09) : Ultima 10 graphiques (Zebra ×3, UBS ×5, Heron ×2), Vantage 9
+    (Zebra ×3, UBS ×4, Heron ×2), aucun graphique argent. **19h06 : terminaux Ultima et Vantage du VPS NY4 arrêtés
+    (Stop-Process -Force, accord écrit de Denis 19h01), tâche « Chien de garde MT5 » du NY4 désactivée** ; contrôle 19h13 : pas
+    relancés, Londres identique avant/après (Ultima 9 pos./46 ordres, Vantage 9/32). Axi et PU Prime (démos) laissés ouverts.
+    `GT_Controle.mq5` (1c18728) et `GT_Controle.ex5` (compilé sur le PC) copiés dans `MQL5\Experts` des deux terminaux de
+    Londres (compilation sur le VPS refusée par le garde-fou). **Reste : pose par Denis sur un graphique VIDE de chaque
+    terminal, puis preuve de lecture des réglages.** À creuser : UBS refusé « invalid price » (sell stop EURUSD) et
+    « invalid stops » (USDJPY) à 12h et 13h le 24/09 sur les deux comptes ; chien de garde de Londres en erreur
+    « initialize KO (-6, Authorization failed) » pour Ultima.
 
 **Infrastructure**
 11. **Rapatriement automatique PC → dépôt** : la tâche Windows n'a jamais tourné ; lancement manuel
