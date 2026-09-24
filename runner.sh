@@ -334,6 +334,13 @@ if [ -f "$OUTILS/parjeu.py" ]; then
     > "$DEPOT/resultats/$NOM/parjeu.csv" 2>"$DEPOT/resultats/$NOM/parjeu-erreurs.txt"
   [ -s "$DEPOT/resultats/$NOM/parjeu-erreurs.txt" ] || rm -f "$DEPOT/resultats/$NOM/parjeu-erreurs.txt"
 fi
+# ------ positions empilees et paquets (24/09 : le reel du 16/09 en a empile 13)
+if [ -f "$DEPOT/outils/empilement.py" ]; then
+  trace "empilement.py..."
+  python "$DEPOT/outils/empilement.py" "$(cygpath -w "$CHEMIN_RAPPORT" 2>/dev/null || echo "$CHEMIN_RAPPORT")" \
+    --symbole "${SYMBOLE%%.*}" --jour 2026.09.16 2026.09.17 \
+    > "$DEPOT/resultats/$NOM/empilement.md" 2>&1
+fi
 
 # le HTML brut n'entre que s'il est petit (INVENTAIRE.md)
 TAILLE_R="$(stat -c %s "$CHEMIN_RAPPORT" 2>/dev/null || echo 0)"

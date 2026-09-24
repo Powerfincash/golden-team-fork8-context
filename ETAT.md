@@ -20,6 +20,12 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
 **Robots et mesures**
 1. **Argent de Till** : réserve 2025 **mesurée le 22/09, tous les seuils franchis** (section 1).
    Reste **sa décision** : remettre en live ou non (live 13-18/09 : 0 gagnant sur 12).
+   **Mais (24/09)** : ces 12-13 pertes du live sont UN SEUL paquet de ventes empilées le 16/09
+   (22h10-22h26 serveur), fermé d'un bloc le 17/09 à 03h52. Le lot n'était pas le problème,
+   l'empilement si. **Aucun retour en réel avant la mesure d'empilement** : deux demandes dans
+   `jobs/` (`emp_2026_xag` = 2026 jusqu'au 23/09, rejoue le jour du 16/09 ; `emp_n150_xag` =
+   2021-2024), lues par `outils/empilement.py` (branché sur `runner.sh`) → `resultats/<nom>/empilement.md`.
+   Elles partent quand l'agent de calcul tourne (`RUNNER.md` : dernier passage le 22/09).
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
    Prochain geste : exporter leurs paramètres d'entrée depuis les démos MT5 (une heure, aucun code)
