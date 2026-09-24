@@ -5,7 +5,7 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 24/09/2026**
-**Dernier geste : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
+**Dernier geste : plafond de perte par paquet argent proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
 `vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
 `COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle
 v1.47 — tous les seuils du protocole franchis, voir section 1.**
@@ -25,7 +25,13 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    l'empilement si. **Aucun retour en réel avant la mesure d'empilement** : deux demandes dans
    `jobs/` (`emp_2026_xag` = 2026 jusqu'au 23/09, rejoue le jour du 16/09 ; `emp_n150_xag` =
    2021-2024), lues par `outils/empilement.py` (branché sur `runner.sh`) → `resultats/<nom>/empilement.md`.
-   Elles partent quand l'agent de calcul tourne (`RUNNER.md` : dernier passage le 22/09).
+   Les deux passes ont tourné le 24/09 matin (08h40 et 08h47).
+   **Plafond de perte par paquet proposé le 24/09 soir : 450 $ par 0,01 lot au prix actuel (≈ 7 × le prix
+   de l'argent ; 450 USC au réel cent à 0,01)** — 597 paquets 2021-2026 rejoués minute par minute,
+   positif sur les trois périodes, 6 paquets coupés en 5 ans 9 mois, aucun qui aurait fini gagnant ;
+   350 est plus rentable mais à 5 $ d'un paquet gagnant (300 coûte −868 / −895). Détail :
+   `resultats/plafond_paquet_xag/PLAFOND.md`. **Reste** : sa décision, puis choisir le gardien externe
+   qui ferme le paquet (UBS n'a pas ce réglage).
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
    Prochain geste : exporter leurs paramètres d'entrée depuis les démos MT5 (une heure, aucun code)
@@ -148,7 +154,8 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
   `sauvegarde-commit-geant-2409`, jamais poussé.
 - **Empilement argent mesuré (empilement.py)** : n134 UBS 2021-2024 = 18 positions simultanées max,
   pire paquet −164,52 $ ; test 2026 (Eagle-owl, `resultats/emp_2026_xag/`) = 15 positions max,
-  pire paquet −580,54 $ (17/06/2026, 6 positions). `emp_n150_xag` (2021-2024) en file dans `jobs/`.
+  pire paquet −580,54 $ (17/06/2026, 6 positions). `emp_n150_xag` (2021-2024) terminé le 24/09 à 08h47
+  (Eagle-owl 2021-2024 : 18 positions max, pire paquet −164,92 $ à la fermeture le 18/02/2022). Plafond : section 0, point 1.
 
 - **test_minimal.ini lancé via `lance_chaine.ps1` le 22/09 17h01 (heure PC).** Déploiement automatique
   `templates/` → `jobs/` fonctionne ✓. Runner teste autonomement ✓.

@@ -22,6 +22,7 @@
 - [Rappels en attente](rappels-en-attente.md) — NordLocker/Documents, Obsidian
 
 ## Repères et pièges d'outillage
+- [Plafond par paquet, argent](plafond-paquet-argent.md) — **24/09** : 450 $ par 0,01 lot à 64 $ (7 × le prix), rejeu minute de 597 paquets ; à valider par Denis
 - [Pièges MT5 / MQL5](mt5-pieges-outillage.md) — ticks réels décident tout ; disque plein et mise à jour UAC (06/09) ; **15/09** : `.ini` en UTF-16 (double-encodage), `-Inis a,b` via `-Command`, guetteurs `enchaine_apres` orphelins ; **17/09** : jamais `tail -f` sur `chaine_*.log` (bloque l'écriture du lanceur) ; **18/09** : MT4 = `terminal.exe chemin.ini` en argument NU, `/config:` est MT5 et le MT4 l'ignore en silence (terminal ouvert sans test)
 - [Sauvegarde du code](sauvegarde-code.md) — git, .bundle, backtest MT4 à ne jamais tuer, contention du testeur
 - [Repères chiffrés or](reperes-chiffres-or.md) — sa référence : 45 %/an pour max 25 % de creux

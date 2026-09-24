@@ -1,0 +1,38 @@
+prix actuel 64.436 (2026-09-23 23:57:00) ; montants ramenes a ce prix, par 0,01 lot
+emp_n150_xag.htm: 435 paquets, somme 4490.97 (a comparer a mesure.py)
+r25f_eagleowl_xag.htm: 92 paquets, somme 551.57 (a comparer a mesure.py)
+emp_2026_xag.htm: 70 paquets, somme 4284.12 (a comparer a mesure.py)
+plafond | rapport | net | net coupe | ecart | paquets coupes | dont finis gagnants
+200 | emp_n150_xag.htm | 10627 | 10581 | -46 | 17 | 1
+200 | r25f_eagleowl_xag.htm | 608 | -6 | -615 | 9 | 1
+200 | emp_2026_xag.htm | 3666 | 3648 | -18 | 12 | 4
+250 | emp_n150_xag.htm | 10627 | 9880 | -747 | 15 | 1
+250 | r25f_eagleowl_xag.htm | 608 | -375 | -983 | 8 | 1
+250 | emp_2026_xag.htm | 3666 | 3680 | +14 | 9 | 2
+300 | emp_n150_xag.htm | 10627 | 9759 | -868 | 8 | 1
+300 | r25f_eagleowl_xag.htm | 608 | -287 | -895 | 4 | 1
+300 | emp_2026_xag.htm | 3666 | 4308 | +642 | 5 | 0
+350 | emp_n150_xag.htm | 10627 | 10850 | +223 | 3 | 0
+350 | r25f_eagleowl_xag.htm | 608 | 686 | +78 | 2 | 0
+350 | emp_2026_xag.htm | 3666 | 4058 | +392 | 5 | 0
+400 | emp_n150_xag.htm | 10627 | 10700 | +73 | 3 | 0
+400 | r25f_eagleowl_xag.htm | 608 | 586 | -22 | 2 | 0
+400 | emp_2026_xag.htm | 3666 | 3808 | +142 | 5 | 0
+450 | emp_n150_xag.htm | 10627 | 10644 | +17 | 2 | 0
+450 | r25f_eagleowl_xag.htm | 608 | 662 | +54 | 1 | 0
+450 | emp_2026_xag.htm | 3666 | 3788 | +122 | 3 | 0
+500 | emp_n150_xag.htm | 10627 | 10544 | -83 | 2 | 0
+500 | r25f_eagleowl_xag.htm | 608 | 612 | +4 | 1 | 0
+500 | emp_2026_xag.htm | 3666 | 3638 | -28 | 3 | 0
+550 | emp_n150_xag.htm | 10627 | 10444 | -183 | 2 | 0
+550 | r25f_eagleowl_xag.htm | 608 | 562 | -46 | 1 | 0
+550 | emp_2026_xag.htm | 3666 | 3566 | -100 | 2 | 0
+600 | emp_n150_xag.htm | 10627 | 10627 | +0 | 0 | 0
+600 | r25f_eagleowl_xag.htm | 608 | 512 | -96 | 1 | 0
+600 | emp_2026_xag.htm | 3666 | 3466 | -200 | 2 | 0
+650 | emp_n150_xag.htm | 10627 | 10627 | +0 | 0 | 0
+650 | r25f_eagleowl_xag.htm | 608 | 608 | +0 | 0 | 0
+650 | emp_2026_xag.htm | 3666 | 3666 | +0 | 0 | 0
+700 | emp_n150_xag.htm | 10627 | 10627 | +0 | 0 | 0
+700 | r25f_eagleowl_xag.htm | 608 | 608 | +0 | 0 | 0
+700 | emp_2026_xag.htm | 3666 | 3666 | +0 | 0 | 0
