@@ -52,7 +52,9 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
     les « trois démos » du 21/09 étaient des backtests. La lecture des réglages (outil C) ne pourra donc être
     vérifiée que sur un terminal qui porte des robots. Aucun moyen de poser un robot sur un terminal qui tourne
     sans glisser-déposer ou redémarrage. `tableau.py` tourne sur le PC sans erreur (0 compte, faute d'espion).
-    **Reste** : compiler et essayer sur le Vantage MT5 démo du PC ; version MT4 (compte cent Ultima) ;
+    **24/09 16h14 (Paris), après l'accord écrit de Denis de 16h12 : `GT_Controle.ex5` compilé sur le Vantage MT5
+    démo du PC (0 erreur, 0 avertissement ; version de `main`).** Pas encore posé : un glisser-déposer de Denis.
+    **Reste** : le poser sur le Vantage MT5 démo puis vérifier fichiers et page ; compiler la version MT4 ; version MT4 (compte cent Ultima) ;
     remplir `attendu.csv` ; puis pose sur le VPS réel (chantier VPS en pause sur ordre de Denis).
 
 **Infrastructure**
