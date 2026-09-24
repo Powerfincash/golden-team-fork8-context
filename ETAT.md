@@ -4,11 +4,44 @@
 > Les autres fichiers du dépôt sont des archives : ils disent ce qui a été mesuré,
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
-**À jour au : 22/09/2026**
+**À jour au : 24/09/2026**
 **Dernier geste : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
 `vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
 `COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle
 v1.47 — tous les seuils du protocole franchis, voir section 1.**
+
+---
+
+## 0. Chantiers en attente — la liste tenue à jour (24/09/2026)
+
+> Denis a demandé de tenir cette liste **sans avoir à la rappeler**. Toute session qui ouvre,
+> ferme ou fait avancer un chantier la corrige ici, **et** dans la mémoire du projet.
+
+**Robots et mesures**
+1. **Argent de Till** : réserve 2025 **mesurée le 22/09, tous les seuils franchis** (section 1).
+   Reste **sa décision** : remettre en live ou non (live 13-18/09 : 0 gagnant sur 12).
+2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
+   le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
+   Prochain geste : exporter leurs paramètres d'entrée depuis les démos MT5 (une heure, aucun code)
+   pour voir si la logique est lisible. Détail : section 3ter et `outils/RECONSTRUIRE-OU-NON.md`.
+3. **Jambe or sur la réserve 2025, avec et sans GoldDaily1** : à mesurer.
+4. **Sakura et Happy Pound** : réserve 2025 à relancer (le 21/09 n'a produit aucun rapport).
+5. **AUDUSD** : 0 trade, symbole nu au lieu de `.s` ; corriger puis relancer.
+6. **Kestrel / Merlin / portefeuille à quatre robots** : protocoles prêts (sections 3bis),
+   rien de codé ; première mesure gratuite = corrélation sur l'export mensuel.
+7. **Poste retour à la moyenne** : vacant, chercher un nouveau candidat (section 4).
+
+**Outils de contrôle (trois, conçus le 22/09, `PLAN-INFRA.md`)**
+8. **Agent de calcul du PC** (`runner.sh`, témoin `RUNNER.md`) : écrit, test minimal passé le 22/09 ;
+   ne se lance pas encore tout seul.
+9. **Surveillance du VPS** (`vps_agent.sh`, branche `vps`) : écrite, **pas installée** — Git bloqué par
+   le pare-feu ForexVPS, copie par clé USB à faire (seul geste qui demande ses mains).
+10. **Exportateur en lecture seule** des positions et du solde du compte réel : proposé le 22/09,
+    **pas encore écrit**, attend son oui.
+
+**Infrastructure**
+11. **Rapatriement automatique PC → dépôt** : la tâche Windows n'a jamais tourné ; lancement manuel
+    le 24/09 à 07h02 (heure de Paris) ; correctif en PR n°2 (brouillon).
 
 ---
 
