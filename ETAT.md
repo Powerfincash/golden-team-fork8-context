@@ -89,6 +89,10 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
     n'est PAS une panne : le set a `MaxTrades=99`, SL 300 / TP 100 pips, un seul ordre en attente reposé après chaque
     exécution. À faire : pire paquet de ce jeu sur 2021-2024, puis proposer un plafond. À vérifier : fonds >> solde sur les
     deux comptes (crédit ? fausserait le creux de l'outil B).
+    **Suite 24/09 soir** : crédit confirmé (Ultima 405 $, Vantage 750 $) ; espion corrigé (équité et creux hors
+    crédit, commit 3d8d9e5, `equite_v2.csv`) — **pas encore posé** (à poser à la prochaine visite du VPS, avec
+    `attendu.csv`). Empilement DaytradePro EURUSD mesuré : `resultats/emp_dtp_eur/RESUME.md`. **En attente : choix de
+    Denis sur le plafond (recommandé : Vantage MaxTrades 3, Ultima 99 en témoin).**
 
 **Infrastructure**
 11. **Rapatriement automatique PC → dépôt** : la tâche Windows n'a jamais tourné ; lancement manuel

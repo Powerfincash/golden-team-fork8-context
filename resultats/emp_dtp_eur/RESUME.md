@@ -21,3 +21,17 @@ contrôlé : entrées = sorties, total = mesure.py.
 - En cours : mêmes variantes 99 / 3 sur 2025 et 2026 (hors échantillon), avant toute proposition en réel.
 
 Fichiers sur le PC : `Documents\forex\resultats\emp_dtp_eur\` (rapports, ini, sets, journaux, paquets.py).
+
+## Hors échantillon (24/09/2026 19h59-20h05 Paris), même protocole, mesure.py VÉRIFIÉ
+
+| Fenêtre | MaxTrades | deals | net | creux solde | simultanées max | pire paquet |
+|---|---|---|---|---|---|---|
+| 2025 | 99 | 124 | +216,82 $ | 4,82 $ | 12 achats / 10 ventes (13 entrées 05-17/09/2025, +95,37) | −4,46 $ (6 achats 24/06/2025) |
+| 2025 | 3 | 64 | +107,03 $ | 2,48 $ | 3 / 3 | −2,24 $ |
+| 2026 (→ 23/09) | 99 | 106 | +197,47 $ | 4,25 $ | 5 / 7 | −3,97 $ |
+| 2026 (→ 23/09) | 3 | 74 | +125,72 $ | 3,28 $ | 3 / 3 | −3,04 $ |
+
+Aucun stop complet en 2025-2026. Le paquet réel de 4 ventes à 1,13728 (23-24/09) n'est pas reproduit
+(ticks PU Prime, ToDate 23/09) — non tranché.
+Proposition à Denis (carte du 24/09 20h1x) : Vantage plafonné à 3 (risque de paquet ≈ 90 $ au lieu de ≈ 390 $,
+26 % du compte), Ultima cent garde 99 comme témoin. Rien changé en réel.
