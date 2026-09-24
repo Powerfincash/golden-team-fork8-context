@@ -1,0 +1,7 @@
+n134_ubs_client_xag.htm — Ultimate Breakout System · XAGUSD.p · 4328 lignes de deals · sorties non attribuées : 0
+jeu                       tr    net $    PF    moy  creux$ net/cr   sl   tp |      2021      2022      2023      2024
+XAGUSD H2 AGA09          832     1461  1.85   1.76     213   6.87  474  218 |   -27/227    39/176   358/190  1090/239
+XAGUSD H2 AGA06          635     1456  2.11   2.29     193   7.55  376  210 |   155/188    93/135   333/143   875/169
+XAGUSD H2 AGA04          697      959  1.77   1.38     154   6.24  440  132 |   -14/195   -16/145   310/164   679/193
+ENSEMBLE                2164     3876  1.90   1.79     464   8.35 1290  560 |   114/610   116/456  1002/497  2644/601
+csv : C:\Users\User\OneDrive\Documents\forex\outils\parjeu_n134_ubs_client_xag.csv

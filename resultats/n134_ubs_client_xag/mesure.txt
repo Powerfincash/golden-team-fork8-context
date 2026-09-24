@@ -1,0 +1,7 @@
+VERIFIE (C1 C2 C3) — Ultimate Breakout System · XAGUSD.p · 2021-01-04 → 2024-12-31 (4.0 ans) · depot 100000 · 4328 deals
+  rendement annualise                 1.0 %/an   (solde final 103876)
+  creux max de SOLDE / pic           0.46 %      (MT5 affiche : 464.05 (0.46%))
+  rapport rendement/creux solde      2.07
+  creux solde par annee          2021: 0.35 %  2022: 0.46 %  2023: 0.14 %  2024: 0.15 %
+  aucun episode >= 1 %
+  creux de FONDS                 non mesure (pas d'historique M1 fourni)

@@ -1,0 +1,7 @@
+VERIFIE (C1 C2 C3) — EagleOwl_v1 · XAGUSD.p · 2021-01-04 → 2024-12-31 (4.0 ans) · depot 100000 · 4328 deals
+  rendement annualise                 1.1 %/an   (solde final 104491)
+  creux max de SOLDE / pic           0.41 %      (MT5 affiche : 409.13 (0.41%))
+  rapport rendement/creux solde      2.72
+  creux solde par annee          2021: 0.32 %  2022: 0.41 %  2023: 0.14 %  2024: 0.16 %
+  aucun episode >= 1 %
+  creux de FONDS                 non mesure (pas d'historique M1 fourni)
