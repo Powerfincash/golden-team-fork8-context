@@ -34,6 +34,15 @@ function JournalTerminal(){ $f="$T\logs\$(Get-Date -Format 'yyyyMMdd').log"; if(
 Trace "CHAINE $($Inis -join ', ') [terminal $Terminal]"
 $autres = AutresTerminaux
 if($autres){ Trace ("ATTENTION : {0} autre(s) terminal64 en service, NON touche(s) : {1}" -f $autres.Count, (($autres | ForEach-Object { CheminDe $_ }) -join ' ; ')) }
+# 24/09 : un terminal de test laisse ouvert a la main (PU Prime, 22/09 15h57) faisait refuser
+# toutes les chaines par prelance. S'il n'a aucun agent de test actif, il est inactif : on le ferme
+# proprement (fenetre), puis de force s'il reste. Seul CE terminal (par chemin), jamais les autres.
+if((Testeur) -and -not (Agents)){
+  Trace "terminal de test $Terminal ouvert et inactif (aucun agent de test) : fermeture"
+  Testeur | ForEach-Object { $_.CloseMainWindow() | Out-Null }
+  for($i=0; $i -lt 15 -and (Testeur); $i++){ Start-Sleep -Seconds 2 }
+  if(Testeur){ Trace "toujours la apres 30 s : arret force"; TueTesteur; Start-Sleep -Seconds 5 }
+}
 foreach($r in $Inis){
   $ini="$D\$r.ini"
   $ctrl = & python "$O\prelance.py" --exe "$exe" --data "$T" $ini 2>&1; $ctrl | ForEach-Object { Trace "  prelance: $_" }

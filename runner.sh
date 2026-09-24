@@ -150,16 +150,8 @@ git fetch -q origin main 2>/dev/null
 git checkout -q main 2>/dev/null
 git pull -q --rebase --autostash origin main 2>/dev/null || git rebase --abort 2>/dev/null
 
-# ------- auto-deploy : copier les templates .ini vers jobs/ avant de traiter
-if [ -d "$DEPOT/templates" ]; then
-  for template in "$DEPOT"/templates/*.ini; do
-    [ -f "$template" ] && {
-      nom_template="$(basename "$template")"
-      cp -f "$template" "$DEPOT/jobs/$nom_template"
-      trace "Auto-deploy : $nom_template copie dans jobs/"
-    }
-  done
-fi
+# 24/09 : l'auto-deploy templates/ -> jobs/ est retire. Il recopiait test_minimal.ini a chaque
+# passe : un test refuse (ini pas en UTF-16, expert introuvable) rejoue toutes les 10 minutes.
 
 # ---------------------------------------------------- la demande la plus ancienne
 JOB="$(ls -1 "$DEPOT"/jobs/*.ini 2>/dev/null | head -1)"
@@ -293,6 +285,11 @@ while :; do
       STABLE=0
     fi
     TAILLE_PRECEDENTE="$TAILLE"
+  elif ! kill -0 "$PID_LANCEUR" 2>/dev/null; then
+    # 24/09 : le lanceur a fini sans rapport (refus de prelance, par exemple).
+    # Attendre 24 h bloquait toute la file pour rien. Deux tours de grace, puis refus.
+    FINI=$(( ${FINI:-0} + 1 ))
+    [ "$FINI" -ge 2 ] && break
   fi
   sleep 30
 done
