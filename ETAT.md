@@ -127,6 +127,16 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
 
 ## 2. En cours — ce qui tourne seul
 
+- **24/09 matin — file de tests débloquée.** Trois causes corrigées : terminal de test PU Prime resté
+  ouvert depuis le 22/09 (lance_chaine.ps1 le ferme désormais s'il est inactif), runner qui attendait
+  24 h après un refus, runner qui ne cherchait pas le rapport dans le dossier de données MT5. L'auto-deploy
+  de `templates/test_minimal.ini` est retiré (il rejouait un test refusé toutes les 10 min).
+  Un commit géant local de 7 937 fichiers (tout OneDrive) est écarté, gardé sur la branche locale
+  `sauvegarde-commit-geant-2409`, jamais poussé.
+- **Empilement argent mesuré (empilement.py)** : n134 UBS 2021-2024 = 18 positions simultanées max,
+  pire paquet −164,52 $ ; test 2026 (Eagle-owl, `resultats/emp_2026_xag/`) = 15 positions max,
+  pire paquet −580,54 $ (17/06/2026, 6 positions). `emp_n150_xag` (2021-2024) en file dans `jobs/`.
+
 - **test_minimal.ini lancé via `lance_chaine.ps1` le 22/09 17h01 (heure PC).** Déploiement automatique
   `templates/` → `jobs/` fonctionne ✓. Runner teste autonomement ✓.
 - **Première ligne `COMMANDE.md` exécutée** (rapatrier.sh) ✓ : outils, `.set`, `.ini`, sources,
