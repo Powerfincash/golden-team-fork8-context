@@ -37,13 +37,17 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    rien de codé ; première mesure gratuite = corrélation sur l'export mensuel.
 7. **Poste retour à la moyenne** : vacant, chercher un nouveau candidat (section 4).
 
-**Outils de contrôle (trois, conçus le 22/09, `PLAN-INFRA.md`)**
-8. **Agent de calcul du PC** (`runner.sh`, témoin `RUNNER.md`) : écrit, test minimal passé le 22/09 ;
-   ne se lance pas encore tout seul.
-9. **Surveillance du VPS** (`vps_agent.sh`, branche `vps`) : écrite, **pas installée** — Git bloqué par
-   le pare-feu ForexVPS, copie par clé USB à faire (seul geste qui demande ses mains).
-10. **Exportateur en lecture seule** des positions et du solde du compte réel : proposé le 22/09,
-    **pas encore écrit**, attend son oui.
+**Outils de contrôle — trois, définis par Denis le 24/09 (sa correction : ce ne sont PAS le runner,
+l'agent du VPS ni l'exportateur). Rien n'est écrit.**
+8. **Contrôle de l'exécution des trades** : tableau de bord, surtout **latence** et **spread**.
+9. **Reporting de performance** : trades en cours, creux (DD) courant, performances, creux maximal.
+10. **Surveillance du VPS** : bonne exécution, graphiques ouverts, **bons EA et bons `.set` chargés**.
+    Préalable : l'agent `vps_agent.sh` n'est pas installé (Git bloqué par le pare-feu ForexVPS,
+    copie par clé USB à faire).
+
+**Contrôles complémentaires proposés, en attente de son choix** : glissement (prix demandé contre
+prix obtenu) ; exposition cumulée par symbole et par sens, avec alerte d'empilement ; marge
+utilisée et marge libre ; coupures de connexion au broker ; écart réel contre test ; swaps.
 
 **Infrastructure**
 11. **Rapatriement automatique PC → dépôt** : la tâche Windows n'a jamais tourné ; lancement manuel
