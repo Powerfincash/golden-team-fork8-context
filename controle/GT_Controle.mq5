@@ -127,26 +127,32 @@ void AjouterUnique(string &liste[], string s)
 //+------------------------------------------------------------------+
 // C. graphiques : robot chargé et ses réglages, lus dans un modèle
 //    sauvegardé du graphique (écrit un fichier, ne change rien au graphique)
-string LireFichierTexte(string nom)
+// Lecture d'un bloc (binaire) : un modèle peut peser plusieurs Mo quand un robot
+// accumule des objets (Zebra or : 5,4 Mo, 13 011 objets, le 24/09) ; la lecture ligne à
+// ligne par concaténation y restait bloquée. On ne lit que le début : le bloc <expert>
+// précède les fenêtres et leurs objets.
+#define GT_MAX_MODELE 1048576
+string LireFichierTexte(string nom, bool &tronque)
   {
-   string txt = "";
-   int h = FileOpen(nom, FILE_READ | FILE_TXT | FILE_UNICODE | FILE_SHARE_READ);
-   if(h != INVALID_HANDLE)
-     {
-      while(!FileIsEnding(h)) txt += FileReadString(h) + "\n";
-      FileClose(h);
-     }
-   if(StringFind(txt, "<chart>") < 0)
-     {
-      txt = "";
-      h = FileOpen(nom, FILE_READ | FILE_TXT | FILE_ANSI | FILE_SHARE_READ);
-      if(h != INVALID_HANDLE)
-        {
-         while(!FileIsEnding(h)) txt += FileReadString(h) + "\n";
-         FileClose(h);
-        }
-     }
-   return txt;
+   tronque = false;
+   int h = FileOpen(nom, FILE_READ | FILE_BIN | FILE_SHARE_READ);
+   if(h == INVALID_HANDLE) return "";
+   ulong taille = FileSize(h);
+   int n = (int)MathMin(taille, (ulong)GT_MAX_MODELE);
+   tronque = (taille > (ulong)GT_MAX_MODELE);
+   uchar b[];
+   int lus = (int)FileReadArray(h, b, 0, n);
+   FileClose(h);
+   if(lus < 2) return "";
+   // UTF-16LE (avec ou sans BOM) : un octet nul sur deux
+   bool utf16 = (b[0] == 0xFF && b[1] == 0xFE) || (lus > 3 && b[1] == 0 && b[3] == 0);
+   if(!utf16) return CharArrayToString(b, 0, lus, CP_UTF8);
+   int debut = (b[0] == 0xFF && b[1] == 0xFE) ? 2 : 0;
+   int m = (lus - debut) / 2;
+   ushort u[];
+   ArrayResize(u, m);
+   for(int k = 0; k < m; k++) u[k] = (ushort)(b[debut + 2 * k] | (b[debut + 2 * k + 1] << 8));
+   return ShortArrayToString(u, 0, m);
   }
 
 string ReglagesGraphique(long id, string &etat)
@@ -154,11 +160,12 @@ string ReglagesGraphique(long id, string &etat)
    string nom = "GT_Controle_modele_" + IntegerToString(id);
    etat = "ok";
    if(!ChartSaveTemplate(id, "\\Files\\" + nom)) { etat = "modele_non_sauve"; return "{}"; }
-   string txt = LireFichierTexte(nom + ".tpl");
+   bool tronque = false;
+   string txt = LireFichierTexte(nom + ".tpl", tronque);
    FileDelete(nom + ".tpl");
-   if(txt == "") { etat = "modele_illisible"; return "{}"; }
+   if(StringFind(txt, "<chart>") < 0) { etat = "modele_illisible"; return "{}"; }
    int e0 = StringFind(txt, "<expert>");
-   if(e0 < 0) { etat = "aucun_robot"; return "{}"; }
+   if(e0 < 0) { etat = (tronque ? "modele_trop_gros" : "aucun_robot"); return "{}"; }
    int i0 = StringFind(txt, "<inputs>", e0);
    int i1 = StringFind(txt, "</inputs>", e0);
    if(i0 < 0 || i1 < 0) return "{}";
