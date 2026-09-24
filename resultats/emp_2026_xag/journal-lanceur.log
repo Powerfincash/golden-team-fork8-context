@@ -1,0 +1,13 @@
+﻿08:27:42  CHAINE emp_2026_xag [terminal PUPrime]
+08:27:42  ATTENTION : 1 autre(s) terminal64 en service, NON touche(s) : C:\Program Files\Vantage Markets MT5 Terminal\terminal64.exe
+08:27:42  terminal de test PUPrime ouvert et inactif (aucun agent de test) : fermeture
+08:27:46    prelance: disque libre : 65.0 Go
+08:27:46    prelance: autre(s) terminal64 en service, ignore(s) par le lanceur : C:\Program Files\Vantage Markets MT5 Terminal\terminal64.exe
+08:27:46    prelance: mise ├á jour MT5 en attente dans liveupdate (1 fichiers) : le lanceur la neutralise avant le d├®marrage, sinon blocage UAC
+08:27:46    prelance:   emp_2026_xag.ini : contr├┤les pass├®s
+08:27:46    prelance: OK
+08:27:46  mise à jour MT5 en attente retirée de liveupdate (1 fichiers) pour éviter le blocage UAC
+08:27:46  LANCE emp_2026_xag (libre 60.5 Go, journaux testeur 30012 Mo)
+08:29:06  emp_2026_xag : test démarré
+08:29:07  emp_2026_xag terminé en 1 min : VERIFIE (C1 C2 C3) ÔÇö EagleOwl_v1 ┬À XAGUSD.p ┬À 2026-01-02 ÔåÆ 2026-09-23 (0.7 ans) ┬À depot 100000 ┬À 822 deals |   rendement annualise                 6.0 %/an   (solde final 104284) |   creux max de SOLDE / pic           1.30 %      (MT5 affiche : 1 357.11 (1.30%))
+08:29:07  FIN de chaine

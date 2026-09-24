@@ -1,8 +1,8 @@
 # L'agent de calcul
 
-**Dernier passage : 22/09/2026 a 15h21 — REFUS — ShutdownTerminal n'est pas a 1 : le terminal resterait ouvert et la file se bloquerait.**
+**Dernier passage : 24/09/2026 a 08h33 — REFUS — aucun rapport.**
 
-**Demandes en attente dans `jobs/` : 0.**
+**Demandes en attente dans `jobs/` : 1.**
 
 Ce fichier est le temoin de vie de l'agent. Il se reecrit tout seul a chaque passage.
 L'agent regarde dans `jobs/` toutes les dix minutes.
@@ -12,6 +12,7 @@ L'agent regarde dans `jobs/` toutes les dix minutes.
 
 | Passage | Demande | Resultat |
 |---|---|---|
+| 24/09/2026 08h33 | emp_2026_xag | REFUS — aucun rapport |
 | 22/09/2026 15h21 | test_001 | REFUS — ShutdownTerminal n'est pas a 1 : le terminal resterait ouvert et la file se bloquerait |
 
 Journaux detailles des passages : `~/.runner-journaux/` sur le PC.
