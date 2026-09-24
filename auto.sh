@@ -6,7 +6,8 @@
 #  y a du neuf ou si la trace du jour n'est pas encore ecrite. Un commit par
 #  jour au maximum, jamais plus.
 #
-#  A installer par la ligne de COMMANDE.md, jamais a lancer a la main.
+#  Installee par la ligne 2 de COMMANDE.md. Lancee a la main, elle affiche
+#  sa progression a l'ecran.
 # =============================================================================
 
 DEPOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -36,6 +37,7 @@ if ! git pull -q --rebase --autostash origin main 2>/dev/null; then
 fi
 
 # --- 2. ramasser, sans commiter -------------------------------------------
+echo "Ramassage des fichiers du PC en cours (plusieurs minutes la premiere fois, ne pas fermer la fenetre)..."
 SORTIE="$(bash "$DEPOT/rapatrier.sh" --sans-commit 2>&1)"
 CODE=$?
 echo "$SORTIE"
@@ -100,10 +102,15 @@ fi
 git commit -q -m "Rapatriement automatique — $MAINTENANT — $RESULTAT" || {
   echo "ECHEC DU COMMIT."; return 1; }
 
+echo "Envoi vers GitHub en cours..."
 ATTENTE=2
 POUSSE=0
 for essai in 1 2 3 4 5; do
   if git push -q -u origin main 2>/dev/null; then POUSSE=1; break; fi
+  echo "  envoi refuse (tentative $essai), on reprend les nouveautes de GitHub et on recommence..."
+  # si GitHub a recu un autre commit entre-temps (l'agent de calcul, une session),
+  # le push est refuse tant qu'on ne l'a pas integre : on l'integre, puis on reessaie.
+  git pull -q --rebase origin main 2>/dev/null || git rebase --abort 2>/dev/null
   sleep $ATTENTE; ATTENTE=$((ATTENTE*2))
 done
 
@@ -121,8 +128,15 @@ return 0
 
 }
 
-executer > "$JOURNAL" 2>&1
-CODE_FINAL=$?
+# lancee par la tache Windows : tout va au journal. Lancee a la main dans une
+# fenetre : on affiche aussi a l'ecran, sinon la fenetre reste vide jusqu'a la fin.
+if [ -t 1 ]; then
+  executer 2>&1 | tee "$JOURNAL"
+  CODE_FINAL=${PIPESTATUS[0]}
+else
+  executer > "$JOURNAL" 2>&1
+  CODE_FINAL=$?
+fi
 
 # menage : on garde 30 jours de journaux
 find "$JOURNAUX" -type f -name '*.log' -mtime +30 -delete 2>/dev/null
