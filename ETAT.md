@@ -46,7 +46,13 @@ un vrai terminal.** Un espion MT5 en lecture seule (`GT_Controle.mq5`) + une pag
 10. **C. Surveillance du VPS** : graphiques ouverts, robot chargé, réglages comparés au `.set` de référence (`attendu.csv`, `sets/`), bouton Algo Trading.
     Ajouts : exposition et empilement par symbole/sens avec perte au stop du paquet, écart réel/test
     (`references_test.csv`, vide : à remplir avec des chiffres de `mesure.py`), marge, coupures, swaps.
-    **Reste** : compiler et essayer sur les démos Vantage MT5 du PC ; version MT4 (compte cent Ultima) ;
+    **Essai sur le PC du 24/09 matin : bloqué avant compilation.** Le contrôle de permissions de Claude
+    Code sur le PC a refusé la copie dans `MQL5\Experts` et la compilation (code venu de GitHub) : il faut
+    l'accord écrit de Denis. Le terminal Vantage MT5 démo (compte 26077080) **ne porte aucun robot** :
+    les « trois démos » du 21/09 étaient des backtests. La lecture des réglages (outil C) ne pourra donc être
+    vérifiée que sur un terminal qui porte des robots. Aucun moyen de poser un robot sur un terminal qui tourne
+    sans glisser-déposer ou redémarrage. `tableau.py` tourne sur le PC sans erreur (0 compte, faute d'espion).
+    **Reste** : compiler et essayer sur le Vantage MT5 démo du PC ; version MT4 (compte cent Ultima) ;
     remplir `attendu.csv` ; puis pose sur le VPS réel (chantier VPS en pause sur ordre de Denis).
 
 **Infrastructure**
