@@ -1,0 +1,10 @@
+nom;valeur
+empilement_positions;5
+paquet_perte_pct;2
+spread_multiple;2
+marge_niveau_min;500
+releve_muet_s;120
+ping_ms_max;150
+glissement_pts_alerte;20
+ecart_test_pct;30
+trades_min_ecart;20
