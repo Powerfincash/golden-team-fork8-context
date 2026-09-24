@@ -1,0 +1,21 @@
+VERIFIE (C1 C2 C3) — EagleOwl_GP · XAGUSD.p · 2021-01-04 → 2024-12-31 (4.0 ans) · depot 100000 · 4328 deals
+  rendement annualise                 1.1 %/an   (solde final 104494)
+  creux max de SOLDE / pic           0.41 %      (MT5 affiche : 408.73 (0.41%))
+VERIFIE (C1 C2 C3) — EagleOwl_GP · XAGUSD.p · 2025-01-02 → 2025-12-30 (1.0 ans) · depot 100000 · 1074 deals
+  rendement annualise                 0.6 %/an   (solde final 100603)
+  creux max de SOLDE / pic           0.44 %      (MT5 affiche : 445.51 (0.44%))
+VERIFIE (C1 C2 C3) — EagleOwl_GP · XAGUSD.p · 2026-01-02 → 2026-09-23 (0.7 ans) · depot 100000 · 822 deals
+  rendement annualise                 6.3 %/an   (solde final 104550)
+  creux max de SOLDE / pic           1.20 %      (MT5 affiche : 1 253.57 (1.20%))
+    01 2026.06.17 21:04:43 GardienPaquet : XAGUSD.p paquet achats de 6 positions a -486.34, plafond 485.73 : COUPE
+    01 2026.06.17 21:04:43 GardienPaquet : XAGUSD.p paquet achats entièrement fermé
+    01 2026.08.03 22:22:31 GardienPaquet : XAGUSD.p paquet ventes de 6 positions a -406.64, plafond 406.18 : COUPE
+    01 2026.08.03 22:22:31 GardienPaquet : XAGUSD.p paquet ventes entièrement fermé
+    01 2026.09.17 01:00:00 GardienPaquet : XAGUSD.p paquet ventes de 12 positions a -452.79, plafond 439.69 : COUPE — 12 fermeture(s) refusée(s) (10018 market closed), nouvel essai dans 2 s
+    01 2026.09.17 01:01:00 GardienPaquet : XAGUSD.p paquet ventes entièrement fermé
+    01 2025.12.03 07:41:17 GardienPaquet : XAGUSD.p paquet achats de 9 positions a -407.82, plafond 404.27 : COUPE
+    01 2025.12.03 07:41:18 GardienPaquet : XAGUSD.p paquet achats entièrement fermé
+    01 2021.03.22 14:17:32 GardienPaquet : XAGUSD.p paquet ventes de 13 positions a -181.31, plafond 179.45 : COUPE
+    01 2021.03.22 14:17:33 GardienPaquet : XAGUSD.p paquet ventes entièrement fermé
+    01 2022.02.18 12:30:41 GardienPaquet : XAGUSD.p paquet achats de 14 positions a -166.29, plafond 165.75 : COUPE
+    01 2022.02.18 12:30:41 GardienPaquet : XAGUSD.p paquet achats entièrement fermé

@@ -13,7 +13,9 @@ risque est la perte en cours, pas la finale. Rejeu minute par minute de 597 paqu
 historique M1 PU Prime `.hcc`, ramené au prix actuel) : 450 est le seul seuil positif sur les trois périodes
 (+17 / +54 / +122) avec de la marge ; 300 coupe deux paquets finis gagnants (−868 / −895).
 
-**How to apply:** avant tout retour en réel de l'argent, un gardien externe doit porter ce plafond (UBS ne
-l'a pas). Outil : `outils/plafond_paquet.py` ; détail : `resultats/plafond_paquet_xag/PLAFOND.md`.
+**How to apply:** avant tout retour en réel de l'argent, poser le gardien `gardien/GardienPaquet.mq5` (écrit et
+essayé le 24/09 : 6 coupes au testeur, +3/+51/+266 $) sur un second graphique XAGUSD.sc d'Ultima — accord écrit de
+Denis exigé. Piège vu au test : à 01h00 serveur le marché est fermé, la fermeture est refusée ; le gardien réessaie
+toutes les 2 s jusqu'à fermer. Outil : `outils/plafond_paquet.py` ; détail : `resultats/plafond_paquet_xag/PLAFOND.md`.
 Lecteur `.hcc` MT5 inclus (en-tête 228 octets, table de blocs de 18 octets, blocs = 189 octets + barres de 60).
 Lié : [[portefeuille-de-reserve]].
