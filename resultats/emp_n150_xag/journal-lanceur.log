@@ -1,0 +1,10 @@
+﻿08:41:05  CHAINE emp_n150_xag [terminal PUPrime]
+08:41:05  ATTENTION : 1 autre(s) terminal64 en service, NON touche(s) : C:\Program Files\Vantage Markets MT5 Terminal\terminal64.exe
+08:41:07    prelance: disque libre : 96.0 Go
+08:41:07    prelance: autre(s) terminal64 en service, ignore(s) par le lanceur : C:\Program Files\Vantage Markets MT5 Terminal\terminal64.exe
+08:41:07    prelance:   emp_n150_xag.ini : contr├┤les pass├®s
+08:41:07    prelance: OK
+08:41:07  LANCE emp_n150_xag (libre 89.4 Go, journaux testeur 10384 Mo)
+08:42:27  emp_n150_xag : test démarré
+08:42:48  emp_n150_xag terminé en 2 min : VERIFIE (C1 C2 C3) ÔÇö EagleOwl_v1 ┬À XAGUSD.p ┬À 2021-01-04 ÔåÆ 2024-12-31 (4.0 ans) ┬À depot 100000 ┬À 4328 deals |   rendement annualise                 1.1 %/an   (solde final 104491) |   creux max de SOLDE / pic           0.41 %      (MT5 affiche : 409.13 (0.41%))
+08:42:48  FIN de chaine
