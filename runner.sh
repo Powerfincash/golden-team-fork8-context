@@ -243,7 +243,9 @@ PID_LANCEUR=$!
 
 # ------------------------------- le controle des 5 minutes (consigne CLAUDE.md)
 chercher_rapport() {
-  for racine in "${FOREX:-}" "${MT4_DONNEES:-}" "$(dirname "${MT4_EXE:-/x}")" "$HOME"; do
+  # 24/09 : MT5 ecrit le rapport dans son dossier de donnees (AppData\...\Terminal\<id>), trop
+  # profond pour la recherche depuis $HOME : le rapport du test argent 2026 n'a pas ete vu.
+  for racine in "${FOREX:-}" "${MT4_DONNEES:-}" "$(dirname "${MT4_EXE:-/x}")" "$HOME/AppData/Roaming/MetaQuotes/Terminal" "$HOME"; do
     [ -d "$racine" ] || continue
     trouve="$(find "$racine" -maxdepth 3 \( -iname "$RAPPORT.htm" -o -iname "$RAPPORT.html" \) \
               -newer "$TEMOIN_TEMPS" -print -quit 2>/dev/null)"
