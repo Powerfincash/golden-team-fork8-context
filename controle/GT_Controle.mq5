@@ -248,7 +248,7 @@ void EcrireEtat()
 
    string sp = "[";
    for(int i = 0; i < ArraySize(sym); i++)
-      sp += (i ? "," : "") + "{\"symbole\":" + Q(sym[i])
+      sp += (i > 0 ? "," : "") + "{\"symbole\":" + Q(sym[i])
             + ",\"spread_points\":" + IntegerToString(SymbolInfoInteger(sym[i], SYMBOL_SPREAD))
             + ",\"point\":" + DoubleToString(SymbolInfoDouble(sym[i], SYMBOL_POINT), 8) + "}";
    sp += "]";

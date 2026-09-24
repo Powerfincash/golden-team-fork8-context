@@ -15,6 +15,7 @@ Ajouts validés le 24/09 : (1) exposition par symbole et par sens avec alerte d'
 | Fichier | Rôle |
 |---|---|
 | `GT_Controle.mq5` | L'espion, posé sur **un** graphique de chaque terminal MT5. **Lecture seule** : aucun appel de trading dans le fichier. |
+| `GT_Controle.mq4` | Le même espion pour MT4 (compte cent Ultima). Mêmes fichiers. En MT4, pas de délai serveur, et le glissement n'est mesuré que sur stop ou objectif touché. |
 | `tableau.py` | Lit les fichiers de l'espion, écrit `tableau.html` (se rafraîchit seul chaque minute) et `resume.json`. |
 | `attendu.csv` | Ce qui DOIT être chargé : compte (vide = tous), symbole, période, robot, `.set` de référence, magic, nom. |
 | `sets/` | Les `.set` de référence cités par `attendu.csv`. |
