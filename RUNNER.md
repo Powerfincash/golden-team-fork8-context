@@ -1,6 +1,6 @@
 # L'agent de calcul
 
-**Dernier passage : 24/09/2026 a 08h33 — REFUS — aucun rapport.**
+**Dernier passage : 24/09/2026 a 08h40 — passe terminee en 6 min.**
 
 **Demandes en attente dans `jobs/` : 1.**
 
@@ -12,6 +12,7 @@ L'agent regarde dans `jobs/` toutes les dix minutes.
 
 | Passage | Demande | Resultat |
 |---|---|---|
+| 24/09/2026 08h40 | emp_2026_xag | passe terminee en 6 min |
 | 24/09/2026 08h33 | emp_2026_xag | REFUS — aucun rapport |
 | 22/09/2026 15h21 | test_001 | REFUS — ShutdownTerminal n'est pas a 1 : le terminal resterait ouvert et la file se bloquerait |
 

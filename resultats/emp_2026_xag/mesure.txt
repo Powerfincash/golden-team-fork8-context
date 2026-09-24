@@ -1,0 +1,7 @@
+VERIFIE (C1 C2 C3) — EagleOwl_v1 · XAGUSD.p · 2026-01-02 → 2026-09-23 (0.7 ans) · depot 100000 · 822 deals
+  rendement annualise                 6.0 %/an   (solde final 104284)
+  creux max de SOLDE / pic           1.30 %      (MT5 affiche : 1 357.11 (1.30%))
+  rapport rendement/creux solde      4.61
+  creux solde par annee          2026: 1.30 %
+  episodes >= 1 % : 1 ; moyenne 1.30  Q1 1.30  mediane 1.30  Q3 1.30  P90 1.30
+  creux de FONDS                 non mesure (pas d'historique M1 fourni)
