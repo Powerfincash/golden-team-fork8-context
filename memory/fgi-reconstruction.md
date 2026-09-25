@@ -26,3 +26,5 @@ malgré « 99 % ticks réels » dans le rapport (même fichier, section 6).
 **25/09 fin de matinée** : option 1 choisie ; simulée sur M1 2021-2024, la gestion de S2 avec des entrées simples
 (15h30, quart d'heure, cassure M15) donne ≈ 0 moins frais, comme une entrée au hasard (+134 $). L'avantage est dans
 l'entrée. Achat seul = flatté par la hausse 2025-2026 : réserve positive non probante.
+
+S3 (même test) : cassures H1 simples + gestion S3 = +194 à +362 $ sur 2021-2024, dans le bruit (t ≈ 0,4-1), original +1 031 $.

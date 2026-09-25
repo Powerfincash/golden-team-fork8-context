@@ -110,3 +110,21 @@ n'est qu'une moyenne à la baisse qui ne crée rien. Et un robot qui ne fait qu'
 
 Première version de la simulation fausse (ajouts en cascade après un stop, −9 000 à −18 000 $) :
 corrigée avant toute conclusion.
+
+## 8. Même test pour la gestion de S3 (25/09, question de Denis « Même S2 et S3 ? »)
+
+`scripts/sim3.py`, barres M1 2021-2024 : une position à la fois, objectif 15 $, stop 22 $, décision à
+l'heure pile, pas le lundi, achats et ventes.
+
+| Entrée | Trades | Net 2021-2024 | Moyenne | Par année |
+|---|---|---|---|---|
+| Cassure du canal H1 24 bougies +1 $ | 578 | +194 $ | +0,33 $ | −72 / +18 / +208 / +39 |
+| Cassure H1 36 bougies +2 $ | 448 | +362 $ | +0,81 $ | −180 / +177 / +229 / +137 |
+| Cassure H1 12 bougies | 690 | +312 $ | +0,45 $ | −122 / +110 / +114 / +210 |
+| Hasard (3 tirages, ~150 trades) | 130-160 | −127 à −3 $ | −0,79 à −0,02 $ | |
+| Original S3 (rapport fgi_s3) | 495 | +1 031 $ | +2,08 $ | |
+
+Une cassure simple fait mieux que le hasard, mais l'écart est dans le bruit : ~18 $ d'écart-type par
+trade, soit ±0,85 $ d'erreur sur la moyenne pour 450 trades (t ≈ 0,4 à 1). L'original fait 2,5 à 6 fois
+mieux. Et une version maison serait une cassure de plus sur l'or, dans un livre déjà 100 % cassure
+(S3 original : corrélation 0,41-0,45 à la jambe or).
