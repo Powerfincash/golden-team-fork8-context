@@ -154,3 +154,7 @@ fabriqués (section 6) : à revoir sur 2025-2026 et sur Vantage si le chantier e
 Les trois gestions, avec des entrées simples, ne battent pas le hasard (S3 fait un peu mieux, mais dans
 le bruit). L'avantage de Forex GOLD Investor est dans ses entrées, qu'on ne sait pas retrouver.
 Recommandation : arrêter le chantier et garder l'effort pour le poste retour à la moyenne.
+
+## 11. Décision (25/09, 15h07 Paris)
+
+Denis : « 4 arrêter ». Chantier Forex GOLD Investor clos : ni clone, ni achat, ni robot maison.
