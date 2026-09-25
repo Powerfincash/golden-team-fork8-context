@@ -56,3 +56,20 @@ net / creux de fonds / simultanées max
 
 Comptes au 25/09 07h29 Paris : Vantage solde 1 505,04 $, 9 positions (4 ventes EURUSD, 5 Heron −5,48 $) ;
 Ultima idem ; NY4 Ultima/Vantage toujours fermés.
+
+## Bilan 4 (25/09/2026 08h34 Paris) : Heron avec stop ATR, 8 tests VÉRIFIÉ
+net / creux de fonds / simultanées max
+
+| Heron | 2021-2024 | réserve 01/2025 → 23/09/2026 |
+|---|---|---|
+| AUDCAD sans stop (réel) | +473 / 111 / 3 | +132 / 110 / 3 |
+| AUDCAD stop 3 ATR | +263 / 116 / 3 | −19 / 97 / 3 |
+| AUDCAD stop 5 ATR | +384 / 120 / 3 | +82 / 102 / 3 |
+| NZDCAD sans stop (réel) | +111 / 166 / 3 | −1 / 96 / 3 |
+| NZDCAD stop 3 ATR | −205 / 264 / 3 | −204 / 228 / 3 |
+| NZDCAD stop 5 ATR | −31 / 219 / 3 | −83 / 124 / 3 |
+
+Un stop dégrade Heron (retour à la moyenne : coupé, il ré-entre aussitôt, 9 à 16 entrées par épisode au lieu de 3).
+Proposition (Claude, 25/09) : Vantage — GBPUSD MaxTrades 3 ; CHFJPY retiré (gain de réserve dû aux seuls gros paquets,
+plafonné il devient perdant) ; Heron AUDCAD inchangé ; Heron NZDCAD : mesurer d'abord sa corrélation avec AUDCAD
+(redondance > +0,5 = vrai disqualifiant du crible), pas de retrait sur la seule faiblesse. Ultima garde tout en témoin.
