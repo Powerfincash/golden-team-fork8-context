@@ -339,3 +339,9 @@ Dans cet ordre, sans urgence :
 - Il reste **court** — une page. Ce qui déborde part dans `memory/` et n'est plus qu'un lien d'ici.
 - Il ne contient **aucun chiffre qui ne vienne pas de `mesure.py`**.
 - Il n'est à jour que **s'il est poussé** : `./sauver.sh "ce qui a changé"`.
+
+### 25/09 matin — Vantage FX2 et silence Ultima
+- 09h33 Paris : DaytradePro_GBPUSD.set (SetsVantage_FX2) MaxTrades 99→3 (ligne 62 seule, ASCII) ; DaytradePro_CHFJPY.set déplacé dans _sauvegardes_sets (copies sha256 vérifiées). Ultima inchangé (99). Attend F7 de Denis sur UBS GBPUSD M15 Vantage (chart06), puis suppression de l'ordre CHFJPY orphelin 6102 (buy stop 198,566).
+- Silence Zebra/Heron Ultima 17-20/09 : CAUSE PROUVÉE = tous les experts d'Ultima Londres retirés le 17/09 20:02:45-20:03:08 UTC (geste manuel ou changement de profil), rechargés le 20/09 21:46 UTC ; suppressions groupées d'ordres le 20/09 depuis Londres ET NY4. NY4 n'avait aucun expert depuis le 13/09.
+- Question ouverte à Denis : l'adresse 62.216.81.78 (autorisations sur Ultima réel les 17, 18, 19 et 20/09), inconnue des deux VPS.
+- Zebra EURUSD Ultima : boucle « modify position [invalid stops] » depuis le 21/09 12:02 UTC (stop suiveur refusé), à corriger.
