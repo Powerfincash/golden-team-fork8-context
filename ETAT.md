@@ -31,8 +31,10 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    positif sur les trois périodes, 6 paquets coupés en 5 ans 9 mois, aucun qui aurait fini gagnant ;
    350 est plus rentable mais à 5 $ d'un paquet gagnant (300 coûte −868 / −895). Détail :
    `resultats/plafond_paquet_xag/PLAFOND.md`. **Gardien écrit et essayé le 24/09 soir** (`gardien/`, `GardienPaquet.mq5`) : au testeur, 6 coupes, les mêmes que
-   le rejeu ; +3 / +51 / +266 $ sur 2021-2024 / 2025 / 2026 (mesure.py). **Pas posé sur le compte réel** : exige
-   l'accord écrit de Denis, à faire avant de remettre les jeux argent (mode d'emploi : `gardien/LISEZMOI.md`). **Aucun retour en réel de l'argent sans ce gardien.**
+   le rejeu ; +3 / +51 / +266 $ sur 2021-2024 / 2025 / 2026 (mesure.py). **Accord écrit de Denis le 25/09 à 15h13 (Paris)**. 25/09 : `GardienPaquet.ex5`
+   (sha256 5E297C7E…, compilé build 6182, terminal VPS 6193) + sources copiés dans `MQL5\Experts\Gardien\` du terminal
+   Ultima de vps-london. **Pas encore attaché** : glisser-déposer de Denis sur un second graphique argent
+   (mode d'emploi : `gardien/LISEZMOI.md`), puis vérifier la ligne « plafond 450 à 64.44 » dans le journal Experts. **Aucun retour en réel de l'argent sans ce gardien.**
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
    **25/09 (Forex GOLD Investor)** : trois systèmes indépendants, testés un par un sur 2021-2024
