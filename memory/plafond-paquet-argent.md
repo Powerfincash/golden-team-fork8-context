@@ -19,3 +19,6 @@ Denis exigé. Piège vu au test : à 01h00 serveur le marché est fermé, la fer
 toutes les 2 s jusqu'à fermer. Outil : `outils/plafond_paquet.py` ; détail : `resultats/plafond_paquet_xag/PLAFOND.md`.
 Lecteur `.hcc` MT5 inclus (en-tête 228 octets, table de blocs de 18 octets, blocs = 189 octets + barres de 60).
 Lié : [[portefeuille-de-reserve]].
+
+**25/09/2026 15h24 (Paris) : POSÉ** sur un second graphique XAGUSD.sc M15 du terminal Ultima de vps-london (accord écrit
+de Denis 15h13), journal : plafond du jour 448,72 USC pour 0,01 lot. Les jeux argent restent retirés.
