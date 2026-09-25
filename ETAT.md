@@ -346,3 +346,4 @@ Dans cet ordre, sans urgence :
 - Silence Zebra/Heron Ultima 17-20/09 : CAUSE PROUVÉE = tous les experts d'Ultima Londres retirés le 17/09 20:02:45-20:03:08 UTC (geste manuel ou changement de profil), rechargés le 20/09 21:46 UTC ; suppressions groupées d'ordres le 20/09 depuis Londres ET NY4. NY4 n'avait aucun expert depuis le 13/09.
 - Question ouverte à Denis : l'adresse 62.216.81.78 (autorisations sur Ultima réel les 17, 18, 19 et 20/09), inconnue des deux VPS.
 - Zebra EURUSD Ultima : boucle « modify position [invalid stops] » depuis le 21/09 12:02 UTC (stop suiveur refusé), à corriger.
+- VPS de tests 62.216.81.78 (Londres, confirmé par Denis 25/09 09h42 : « pas de comptes réels ») : pourtant connecté au compte Ultima RÉEL les 17, 18, 19, 20, 23 et 24/09 (dernière vue 24/09 16h08 Paris). Pas d'accès SSH depuis le PC. Geste demandé à Denis : vérifier le compte connecté dans ses MT5 par bureau à distance, passer en démo si c'est le réel.
