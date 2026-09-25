@@ -347,3 +347,4 @@ Dans cet ordre, sans urgence :
 - Question ouverte à Denis : l'adresse 62.216.81.78 (autorisations sur Ultima réel les 17, 18, 19 et 20/09), inconnue des deux VPS.
 - Zebra EURUSD Ultima : boucle « modify position [invalid stops] » depuis le 21/09 12:02 UTC (stop suiveur refusé), à corriger.
 - VPS de tests 62.216.81.78 (Londres, confirmé par Denis 25/09 09h42 : « pas de comptes réels ») : pourtant connecté au compte Ultima RÉEL les 17, 18, 19, 20, 23 et 24/09 (dernière vue 24/09 16h08 Paris). Pas d'accès SSH depuis le PC. Geste demandé à Denis : vérifier le compte connecté dans ses MT5 par bureau à distance, passer en démo si c'est le réel.
+  → 25/09 09h48 Paris : Denis confirme, le compte Ultima réel était bien connecté sur le VPS de tests ; corrigé (« fait »). Question posée : robots attachés ? Proposé : alerte de connexion depuis une adresse autre que Londres, via le journal lu depuis le PC.
