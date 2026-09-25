@@ -369,6 +369,34 @@ void EcrireHistorique()
              + Csv(HistoryDealGetString(d, DEAL_COMMENT)) + "\n";
      }
    EcrireFichier("historique.csv", txt);
+
+   // C : activité des robots. Chaque ordre posé (exécuté, annulé, expiré ou encore en attente),
+   // pour repérer un robot chargé mais muet (Zebra et Heron sans aucun ordre sur Ultima du
+   // 17/09 après-midi au 21/09, vu seulement le 25/09).
+   string o = "utc_pose;ticket;symbole;type;magic;etat;commentaire\n";
+   int no = HistoryOrdersTotal();
+   for(int i = 0; i < no; i++)
+     {
+      ulong t = HistoryOrderGetTicket(i);
+      if(t == 0) continue;
+      o += Horo((datetime)HistoryOrderGetInteger(t, ORDER_TIME_SETUP) - decal) + ";"
+           + IntegerToString((long)t) + ";" + HistoryOrderGetString(t, ORDER_SYMBOL) + ";"
+           + IntegerToString(HistoryOrderGetInteger(t, ORDER_TYPE)) + ";"
+           + IntegerToString(HistoryOrderGetInteger(t, ORDER_MAGIC)) + ";"
+           + IntegerToString(HistoryOrderGetInteger(t, ORDER_STATE)) + ";"
+           + Csv(HistoryOrderGetString(t, ORDER_COMMENT)) + "\n";
+     }
+   for(int i = 0; i < OrdersTotal(); i++)
+     {
+      ulong t = OrderGetTicket(i);
+      if(t == 0) continue;
+      o += Horo((datetime)OrderGetInteger(ORDER_TIME_SETUP) - decal) + ";"
+           + IntegerToString((long)t) + ";" + OrderGetString(ORDER_SYMBOL) + ";"
+           + IntegerToString(OrderGetInteger(ORDER_TYPE)) + ";"
+           + IntegerToString(OrderGetInteger(ORDER_MAGIC)) + ";en_attente;"
+           + Csv(OrderGetString(ORDER_COMMENT)) + "\n";
+     }
+   EcrireFichier("ordres.csv", o);
   }
 
 //+------------------------------------------------------------------+

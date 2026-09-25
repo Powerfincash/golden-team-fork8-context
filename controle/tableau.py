@@ -37,6 +37,9 @@ SEUILS = {
     'glissement_pts_alerte': 20.0,  # glissement moyen défavorable par symbole
     'ecart_test_pct': 30.0,         # écart réel/test jugé anormal
     'trades_min_ecart': 20,         # en dessous : pas de jugement réel/test
+    'muet_multiple': 1.5,           # robot muet : silence > 1,5 × son plus long silence habituel (P95)
+    'muet_min_h': 24.0,             # jamais d'alerte « muet » sous 24 h de marché ouvert
+    'muet_ordres_min': 10,          # en dessous : pas assez d'historique pour juger
 }
 
 
@@ -130,6 +133,43 @@ def serie_creux(valeurs):
         if courant > cmax:
             cmax, quand, pic_max = courant, t, pic
     return courant, cmax, quand, pic_max
+
+
+def heures_marche(t1, t2):
+    """Heures entre t1 et t2 (UTC) sans les samedis et dimanches : un silence de week-end n'en est pas un."""
+    if t2 <= t1:
+        return 0.0
+    h, t = 0.0, t1
+    while t < t2:
+        suivant = min(t2, dt.datetime.combine(t.date() + dt.timedelta(days=1), dt.time()))
+        if t.weekday() < 5:
+            h += (suivant - t).total_seconds() / 3600
+        t = suivant
+    return h
+
+
+def robots_muets(ordres, maintenant, S):
+    """Par magic : plus long silence habituel entre deux ordres posés (P95) et silence actuel."""
+    par = {}
+    for r in ordres:
+        m, q = (r.get('magic') or '').strip(), lire_heure(r.get('utc_pose', ''))
+        if m and m != '0' and q:
+            par.setdefault(m, {'poses': [], 'nom': ''})['poses'].append(q)
+            if r.get('commentaire'):
+                par[m]['nom'] = r['commentaire']
+    res = []
+    for m, d in par.items():
+        p = sorted(set(d['poses']))
+        if len(p) < S['muet_ordres_min']:
+            continue
+        ecarts = sorted(heures_marche(a, b) for a, b in zip(p, p[1:]))
+        p95 = ecarts[min(len(ecarts) - 1, int(0.95 * len(ecarts)))]
+        seuil = max(S['muet_min_h'], S['muet_multiple'] * p95)
+        silence = heures_marche(p[-1], maintenant)
+        res.append({'magic': m, 'nom': d['nom'], 'dernier': p[-1], 'silence_h': silence,
+                    'p95_h': p95, 'seuil_h': seuil, 'muet': silence > seuil})
+    return sorted(res, key=lambda x: -x['silence_h'] / x['seuil_h'])
+
 
 
 def analyser_compte(dossier, conf, maintenant):
@@ -388,6 +428,14 @@ def analyser_compte(dossier, conf, maintenant):
     if attendu:
         for g in inattendus:
             alerte('orange', 'C', f"Robot non prévu : {g['robot']} sur {g['symbole']} {g['periode']}.")
+
+    # C : robot chargé mais muet (aucun ordre posé depuis plus longtemps que d'habitude)
+    muets = robots_muets(lire_csv(os.path.join(dossier, 'ordres.csv')), maintenant, S)
+    for r in muets:
+        if r['muet']:
+            alerte('rouge', 'C', f"Robot muet : {r['nom'] or r['magic']} (magic {r['magic']}) n'a posé aucun ordre depuis "
+                                 f"{hp(r['dernier'])}, soit {r['silence_h']:.0f} h de marché ; son plus long silence habituel est "
+                                 f"{r['p95_h']:.0f} h.")
 
     ordre = {'rouge': 0, 'orange': 1}
     alertes.sort(key=lambda a: ordre.get(a['niveau'], 2))
