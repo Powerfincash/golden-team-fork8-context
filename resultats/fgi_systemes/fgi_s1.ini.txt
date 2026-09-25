@@ -1,0 +1,23 @@
+[Tester]
+Expert=Market\Forex GOLD Investor MT5.ex5
+Symbol=XAUUSD.p
+Period=M15
+Optimization=0
+ForwardMode=0
+Deposit=10000
+Currency=USD
+ProfitInPips=0
+Leverage=500
+ExecutionMode=0
+OptimizationCriterion=0
+Visual=0
+Model=4
+FromDate=2021.01.04
+ToDate=2024.12.31
+Report=fgi_s1
+ReplaceReport=1
+ShutdownTerminal=1
+[TesterInputs]
+UseSystem1=true||false||0||true||N
+UseSystem2=false||false||0||true||N
+UseSystem3=false||false||0||true||N

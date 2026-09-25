@@ -35,8 +35,13 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    l'accord écrit de Denis, à faire avant de remettre les jeux argent (mode d'emploi : `gardien/LISEZMOI.md`). **Aucun retour en réel de l'argent sans ce gardien.**
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
-   Prochain geste : exporter leurs paramètres d'entrée depuis les démos MT5 (une heure, aucun code)
-   pour voir si la logique est lisible. Détail : section 3ter et `outils/RECONSTRUIRE-OU-NON.md`.
+   **25/09 (Forex GOLD Investor)** : trois systèmes indépendants, testés un par un sur 2021-2024
+   (S1 +506 $, S2 +753 $, S3 +1 031 $, somme = l'original à 22 $ près). Corrélation mensuelle à la
+   jambe or : S1 +0,04, S2 +0,01/+0,08, **S3 +0,41/+0,45**. Sorties et lots lisibles (S2 : achats
+   seulement, 0,01 puis 0,02 à −5 $, panier fermé à +5 $ du prix moyen, stop 17 $). **Entrées
+   introuvables** : ≤ 31 % retrouvées pour S3, ≤ 20 % pour S2 — le seuil Q1 du 22/09 dit « on
+   renonce ». **En attente : décision de Denis** (robot maison inspiré de S2 recommandé / continuer
+   / arrêter). Détail : `resultats/fgi_systemes/RESUME.md`. GOLD Scalper PRO : pas commencé.
 3. **Jambe or sur la réserve 2025, avec et sans GoldDaily1** : à mesurer.
 4. **Sakura et Happy Pound** : réserve 2025 à relancer (le 21/09 n'a produit aucun rapport).
 5. **AUDUSD** : 0 trade, symbole nu au lieu de `.s` ; corriger puis relancer.

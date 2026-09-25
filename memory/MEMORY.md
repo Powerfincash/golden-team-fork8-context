@@ -79,3 +79,4 @@
 - [Règle d'entrée TradingView Powerfin](regle-entree-tradingview-powerfin.md) — confluence 4 indicateurs, 1 %
 - [Claude vs TradingView](claudeverstradingview.md) — pont MCP installé 04/09, port 9222
 - [Zebra sur indices](zebra-indices.md) — **trois fermes, NAS100 candidat non admis** : le classement des quatre indices reproduit exactement leur ecart/ATR, et l historique commence fin 2023
+- [Forex GOLD Investor reconstruit ?](fgi-reconstruction.md) — **25/09** : 3 systèmes séparés, S1/S2 non corrélés à l'or, entrées introuvables (≤ 31 %) ; décision de Denis attendue
