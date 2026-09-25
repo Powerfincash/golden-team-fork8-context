@@ -28,3 +28,4 @@ malgré « 99 % ticks réels » dans le rapport (même fichier, section 6).
 l'entrée. Achat seul = flatté par la hausse 2025-2026 : réserve positive non probante.
 
 S3 (même test) : cassures H1 simples + gestion S3 = +194 à +362 $ sur 2021-2024, dans le bruit (t ≈ 0,4-1), original +1 031 $.
+S1 (même test) : gestion réelle = petit gain ~2 $ / stop 15 $ ; entrées simples perdent (−509 à −2 942 $), hasard ≈ 0. Verdict 25/09 : les trois gestions sans entrée ne valent rien ; arrêt recommandé.

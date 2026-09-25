@@ -128,3 +128,29 @@ Une cassure simple fait mieux que le hasard, mais l'écart est dans le bruit : ~
 trade, soit ±0,85 $ d'erreur sur la moyenne pour 450 trades (t ≈ 0,4 à 1). L'original fait 2,5 à 6 fois
 mieux. Et une version maison serait une cassure de plus sur l'or, dans un livre déjà 100 % cassure
 (S3 original : corrélation 0,41-0,45 à la jambe or).
+
+## 9. Même test pour la gestion de S1 (25/09, question de Denis « Pour le S1 ? »)
+
+Ce que les trades de l'original montrent : 1 028 trades (651 achats, 377 ventes), 0,01 lot ; **949 sorties
+par le robot, presque toutes à ~+1,9 $** (médiane), 73 stops à 15 $, 6 objectifs à 13 $. Gestion réelle :
+petit gain d'environ 2 $, stop 15 $, soit ~88 % de gagnants nécessaires. Original : +506 $, +0,49 $/trade.
+
+`scripts/sim1.py`, M1 2021-2024, objectif 2 $ / stop 15 $, décision aux quarts d'heure, achats et ventes :
+
+| Entrée | Trades | Net 2021-2024, écart 0,15 / 0,25 / 0,35 $ |
+|---|---|---|
+| Hasard (3 tirages) | ~350 | −44 à +148 / −61 à +114 / −84 à +114 |
+| Dans le sens de la bougie M15 > 2 $ | ~6 300 | −1 590 / −2 159 / −2 198 |
+| Contre la bougie M15 > 2 $ | ~6 300 | −1 972 / −2 491 / −2 942 |
+| Dans le sens > 4 $ | ~2 800 | −509 / −829 / −952 |
+| Contre > 4 $ | ~2 750 | −818 / −1 195 / −1 456 |
+
+Même verdict que S2 : la gestion seule ne rapporte rien, l'avantage est dans l'entrée. **Réserve** :
+c'est un scalping à 2 $, très sensible à l'écart, et les ticks 2021-2024 de PU Prime sont surtout
+fabriqués (section 6) : à revoir sur 2025-2026 et sur Vantage si le chantier est rouvert.
+
+## 10. Verdict d'ensemble (25/09)
+
+Les trois gestions, avec des entrées simples, ne battent pas le hasard (S3 fait un peu mieux, mais dans
+le bruit). L'avantage de Forex GOLD Investor est dans ses entrées, qu'on ne sait pas retrouver.
+Recommandation : arrêter le chantier et garder l'effort pour le poste retour à la moyenne.
