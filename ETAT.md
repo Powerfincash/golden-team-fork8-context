@@ -5,7 +5,7 @@
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
 **À jour au : 25/09/2026**
-**Dernier geste : gardien argent POSÉ en réel sur Ultima le 25/09 15h24 et vérifié. Avant : gardien de paquet argent écrit et essayé au testeur (`gardien/`), non posé en réel ; plafond ACCEPTÉ par Denis le 24/09 18h45 ; proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
+**Dernier geste : argent Till REMIS en réel sur Ultima le 25/09 15h37, sous le gardien. Avant : gardien argent POSÉ en réel sur Ultima le 25/09 15h24 et vérifié. Avant : gardien de paquet argent écrit et essayé au testeur (`gardien/`), non posé en réel ; plafond ACCEPTÉ par Denis le 24/09 18h45 ; proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
 `vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
 `COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle
 v1.47 — tous les seuils du protocole franchis, voir section 1.**
@@ -34,8 +34,9 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    le rejeu ; +3 / +51 / +266 $ sur 2021-2024 / 2025 / 2026 (mesure.py). **Accord écrit de Denis le 25/09 à 15h13 (Paris)**. 25/09 : `GardienPaquet.ex5`
    (sha256 5E297C7E…, compilé build 6182, terminal VPS 6193) + sources copiés dans `MQL5\Experts\Gardien\` du terminal
    Ultima de vps-london. **POSÉ le 25/09 à 15h24 (Paris) par Denis** sur XAGUSD.sc M15 d'Ultima (vps-london) ; journal Experts
-   15h24:45 : « plafond 450 à 64.44, aujourd'hui 448.72 pour 0,01 lot » — vérifié. Les jeux argent restent retirés :
-   le gardien n'a rien à garder tant qu'ils ne sont pas remis. **Aucun retour en réel de l'argent sans ce gardien.**
+   15h24:45 : « plafond 450 à 64.44, aujourd'hui 448.72 pour 0,01 lot » — vérifié. **Argent REMIS en réel le 25/09 à 15h37 (Paris)** par Denis :
+   dossier `SetsUltima_XAG` renommé, UBS rechargé, journal « Successfully loaded 3 set file(s) » (AGA04/06/09, 0,01 lot),
+   sous le gardien (les 3 jeux plafonnés ENSEMBLE par sens). Vantage : `SetsVantage_XAG_retire_20260920` toujours retiré. **Aucun retour en réel de l'argent sans ce gardien.**
 2. **Forex GOLD Investor** et **GOLD Scalper PRO** (FXAutomater, or M15) : retenus en réserve
    le 20/09 (1,8 et 1,7 sur 2021-2024 ; 7,3 et 8,1 en 2025), à **reconstruire, pas acheter**.
    **25/09 (Forex GOLD Investor)** : trois systèmes indépendants, testés un par un sur 2021-2024

@@ -21,4 +21,5 @@ Lecteur `.hcc` MT5 inclus (en-tête 228 octets, table de blocs de 18 octets, blo
 Lié : [[portefeuille-de-reserve]].
 
 **25/09/2026 15h24 (Paris) : POSÉ** sur un second graphique XAGUSD.sc M15 du terminal Ultima de vps-london (accord écrit
-de Denis 15h13), journal : plafond du jour 448,72 USC pour 0,01 lot. Les jeux argent restent retirés.
+de Denis 15h13), journal : plafond du jour 448,72 USC pour 0,01 lot. **15h37 : argent REMIS en réel** (3 jeux AGA04/06/09 à 0,01, un seul chargement UBS — les 3 ou rien, dit Denis) ; le gardien
+plafonne les 3 jeux ensemble par sens. Vantage argent toujours retiré.
