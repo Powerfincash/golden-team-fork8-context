@@ -4,7 +4,7 @@
 > Les autres fichiers du dépôt sont des archives : ils disent ce qui a été mesuré,
 > pas ce qui est vivant. Un chiffre dans une archive sans date est un chiffre périmé.
 
-**À jour au : 24/09/2026**
+**À jour au : 25/09/2026**
 **Dernier geste : gardien de paquet argent écrit et essayé au testeur (`gardien/`), non posé en réel ; plafond ACCEPTÉ par Denis le 24/09 18h45 ; proposé (450 $ par 0,01 lot, `resultats/plafond_paquet_xag/`). Avant : les deux agents sont écrits et poussés — `runner.sh` (calcul, sur le PC) et
 `vps_agent.sh` (remontée, sur la branche `vps`). Ils attendent que Denis colle les lignes de
 `COMMANDE.md`. Geste précédent : réserve 2025 argent Till mesurée en entier, profil fidèle

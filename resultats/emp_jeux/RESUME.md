@@ -41,3 +41,18 @@ Lecture (Claude) : les jeux or MaxTrades 99 n'empilent en pratique que 2 à 7 po
 Gold Reaper 6 et 5 est la TAILLE du compte Vantage (1 505 $, sous le capital minimum de 2 865 $ calculé le 17/09),
 pas le réglage. Prochaines mesures proposées : GBPUSD et CHFJPY 99/3/1 sur les deux fenêtres ; Heron avec stop ATR 3 et 5.
 Fichiers complets sur le PC : Documents\forex\resultats\emp_jeux\.
+
+## Bilan 3 (25/09/2026 matin) : plafonds DaytradePro GBPUSD et CHFJPY, 12 tests VÉRIFIÉ
+net / creux de fonds / simultanées max
+
+| Jeu | MaxTrades | 2021-2024 | réserve 01/2025 → 23/09/2026 |
+|---|---|---|---|
+| GBPUSD 6101 | 99 (réel) | +338 / 273 / 12 | −131 / 289 / 10 |
+| GBPUSD 6101 | 3 | +185 / 118 / 3 | −23 / 115 / 3 |
+| GBPUSD 6101 | 1 | +75 / 59 / 1 | +16 / 38 / 1 |
+| CHFJPY 6102 | 99 (réel) | +450 / 233 / 16 | +73 / 123 / 12 |
+| CHFJPY 6102 | 3 | +173 / 125 / 3 | −23 / 99 / 3 |
+| CHFJPY 6102 | 1 | +76 / 61 / 1 | −27 / 70 / 1 |
+
+Comptes au 25/09 07h29 Paris : Vantage solde 1 505,04 $, 9 positions (4 ventes EURUSD, 5 Heron −5,48 $) ;
+Ultima idem ; NY4 Ultima/Vantage toujours fermés.
