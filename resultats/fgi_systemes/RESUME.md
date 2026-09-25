@@ -89,3 +89,24 @@ journaux des 24 et 25/09 seulement (les plus anciens sont purgés). Signalé au 
 - `s2_first.csv` : premiers ordres de S2 (hors ordre d'ajout).
 - `fgi_s*.ini.txt` : configurations de test (copie UTF-8 des .ini).
 - `scripts/` : extraction, appariement, caractéristiques et évaluations.
+
+## 7. Option 1 (robot maison inspiré de S2) : la gestion seule n'a pas d'avantage (25/09, fin de matinée)
+
+Choix de Denis à 09h31 (Paris) : option 1. Simulation sur barres M1 2021-2024 (`scripts/sim2.py` :
+écart 0,20 $, commission 0,07 $ par 0,01 lot ; ajout de 0,02 seulement sur le premier ordre ; panier
+fermé à +5 $ du prix moyen ; stop 17 $ par ordre ; achats seulement, fenêtre 15h-20h courtier).
+
+| Entrée | Paniers | Net 2021-2024 | Moyenne | Gagnants |
+|---|---|---|---|---|
+| Tous les jours à 15h30 | 1 094 | −732 $ | −0,67 $ | 71 % |
+| Chaque quart d'heure de la fenêtre | 2 917 | −356 $ | −0,12 $ | 73 % |
+| Cassure M15 (8 bougies) | 1 496 | −801 $ | −0,54 $ | 71 % |
+| **Entrée au hasard** | 586 | **+134 $** | +0,23 $ | 74 % |
+
+Toutes les entrées simples se valent : autour de zéro moins les frais, comme le hasard. **L'avantage de S2
+est dans son entrée, pas dans sa gestion.** Sans entrée porteuse, la gestion (un ajout de 0,02 à −5 $)
+n'est qu'une moyenne à la baisse qui ne crée rien. Et un robot qui ne fait qu'acheter sera flatté par
+2025-2026 (forte hausse de l'or) : une réserve positive ne prouverait rien.
+
+Première version de la simulation fausse (ajouts en cascade après un stop, −9 000 à −18 000 $) :
+corrigée avant toute conclusion.

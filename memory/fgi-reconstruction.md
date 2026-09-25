@@ -22,3 +22,7 @@ souple). Seuil Q1 du 22/09 (`outils/RECONSTRUIRE-OU-NON.md`) : entrées opaques 
 robot maison inspiré de S2 jugé sur ses propres critères [[portefeuille-de-reserve]] [[ecarts-rentables-a-garder]].
 Détail : `resultats/fgi_systemes/RESUME.md`. Constat annexe : ticks 2021-2024 PU Prime surtout générés
 malgré « 99 % ticks réels » dans le rapport (même fichier, section 6).
+
+**25/09 fin de matinée** : option 1 choisie ; simulée sur M1 2021-2024, la gestion de S2 avec des entrées simples
+(15h30, quart d'heure, cassure M15) donne ≈ 0 moins frais, comme une entrée au hasard (+134 $). L'avantage est dans
+l'entrée. Achat seul = flatté par la hausse 2025-2026 : réserve positive non probante.

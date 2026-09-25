@@ -40,8 +40,9 @@ v1.47 — tous les seuils du protocole franchis, voir section 1.**
    jambe or : S1 +0,04, S2 +0,01/+0,08, **S3 +0,41/+0,45**. Sorties et lots lisibles (S2 : achats
    seulement, 0,01 puis 0,02 à −5 $, panier fermé à +5 $ du prix moyen, stop 17 $). **Entrées
    introuvables** : ≤ 31 % retrouvées pour S3, ≤ 20 % pour S2 — le seuil Q1 du 22/09 dit « on
-   renonce ». **En attente : décision de Denis** (robot maison inspiré de S2 recommandé / continuer
-   / arrêter). Détail : `resultats/fgi_systemes/RESUME.md`. GOLD Scalper PRO : pas commencé.
+   renonce ». Denis a choisi le robot maison inspiré de S2 (25/09 09h31) ; **simulation 2021-2024 :
+   la gestion de S2 seule ne rapporte rien** (entrées simples ≈ hasard ≈ 0 moins frais) — l'avantage
+   est dans l'entrée introuvable. **En attente : Denis, arrêter ou chercher une entrée neuve.** Détail : `resultats/fgi_systemes/RESUME.md`. GOLD Scalper PRO : pas commencé.
 3. **Jambe or sur la réserve 2025, avec et sans GoldDaily1** : à mesurer.
 4. **Sakura et Happy Pound** : réserve 2025 à relancer (le 21/09 n'a produit aucun rapport).
 5. **AUDUSD** : 0 trade, symbole nu au lieu de `.s` ; corriger puis relancer.
