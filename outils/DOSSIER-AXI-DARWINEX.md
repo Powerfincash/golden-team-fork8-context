@@ -19,8 +19,10 @@ avec leur lien ; quand deux sources se contredisent, la source officielle l'empo
   Ce sont donc les règles de la section 1 qui s'appliquent, pas celles d'Axi EU (CySEC).
 - Il démarre en **Pre-Seed** : c'est le compte réel à son nom qui construit l'Edge Score (50 requis) avec
   500 $ minimum, avant tout compte financé.
-- À vérifier dans le Client Portal, une fois : plateforme du compte (MT4 ou MT5, un seul possible) et type
-  (Standard ou Pro), qui fixent le nom des symboles (section 1.4).
+- **Plateforme : MT5** (dit par Denis le 26/09). Type Standard ou Pro encore inconnu : il ne change ni les
+  lots ni la taille des contrats, seulement le nom des symboles (suffixe `.pro` en Pro, section 1.4) et le
+  coût (écart ou commission). Compte à retrouver : Client Portal Axi (menu Axi Select), sinon le courriel
+  de bienvenue d'Axi, sinon le chat du support.
 
 ---
 
@@ -205,7 +207,7 @@ Watch** (42 paires annoncées, liste non publiée sur cette page). USO H4 (USOUS
 
 ## 3. Ce qui reste à faire avant l'ouverture
 
-1. Denis : dire si le compte Axi Select existant est MT4 ou MT5, Standard ou Pro (visible dans le Client Portal).
+1. Denis : retrouver le compte Axi Select (MT5) et dire s'il est Standard ou Pro.
 2. Denis ou nous : demander au support Axi la durée minimale de détention ; nous : compter les positions opposées d'Eagle-owl sur un même symbole.
 3. Nous : rejouer le livre Axi aux lots arrondis de 20 k$, sans AdvSc ; mesurer la part du temps au-dessus de 23 000 $ de notionnel (plafond Darwinex).
 4. Après ouverture (accord écrit de Denis) : lire les noms de symboles dans le Market Watch, poser les `.set`
