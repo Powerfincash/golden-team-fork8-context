@@ -210,3 +210,17 @@ Watch** (42 paires annoncées, liste non publiée sur cette page). USO H4 (USOUS
 3. Nous : rejouer le livre Axi aux lots arrondis de 20 k$, sans AdvSc ; mesurer la part du temps au-dessus de 23 000 $ de notionnel (plafond Darwinex).
 4. Après ouverture (accord écrit de Denis) : lire les noms de symboles dans le Market Watch, poser les `.set`
    corrigés, contrôler le premier jour avec l'espion.
+
+---
+
+## 4. Où placer chaque compte (pings mesurés par Denis le 26/09)
+
+| Compte | Ping depuis New York | Ping depuis Londres | VPS |
+|---|---|---|---|
+| Axi Select | 9,25 ms | 76 ms (mesure donnée pour les deux) | **New York** |
+| PU Prime cent | 7,56 ms | 76 ms | **New York** |
+| Darwinex, Darwinex Zero | – | Londres (dit par Denis, ping non chiffré) | **Londres**, avec Ultima |
+
+- Compte cent pour le livre propre : **PU Prime cent** (MT5, USC, lot 0,01 cent = 0,0001 lot). Vantage a refusé
+  le compte cent à Denis (essai de sa part, septembre 2026). PU Prime est aussi le courtier des backtests :
+  mêmes symboles, même flux de prix, meilleur contrôle réel contre test.
