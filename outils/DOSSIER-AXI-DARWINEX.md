@@ -9,6 +9,11 @@ avec leur lien ; quand deux sources se contredisent, la source officielle l'empo
 > 13,73) et tous leurs chiffres ici (creux, VaR, pire mois, lots) sont **en échantillon** : calculés sur la
 > période 2021-2024 qui a servi au dosage. Le juge est la réserve 2025-2026 (`outils/suite_reserve.sh` puis
 > `reserve_2526.py` sur les quatre livres). Le choix du livre de chaque compte peut changer avec ce résultat.
+>
+> **storyG EXCLU de tout livre réel tant que son défaut n'est pas corrigé** (26/09) : en test 2025-2026, Eagle-owl
+> storyG EURUSD boucle sur des modifications de stop refusées (« invalid stops », ≈ 1 267 échecs pour 128
+> réussites). En réel, cela martèlerait le serveur du courtier, motif de sanction chez Axi comme chez Darwinex.
+> Candidat de remplacement : l'or de Till (à mesurer). Les lots storyG des tableaux ci-dessous sont donc à retirer.
 
 ---
 
