@@ -5,6 +5,11 @@ Préparé le 26/09/2026. **Rien n'est ouvert ni installé** : ouverture et pose 
 chaque transaction), source = fil « Relevé des tests de la nuit ». Les règles des courtiers sont citées
 avec leur lien ; quand deux sources se contredisent, la source officielle l'emporte et l'écart est dit.
 
+> **PROVISOIRE, AUCUNE POSE AVANT LE VERDICT DE LA RÉSERVE 2025-2026.** Les livres sans Zebra (12,90 ; 13,23 ;
+> 13,73) et tous leurs chiffres ici (creux, VaR, pire mois, lots) sont **en échantillon** : calculés sur la
+> période 2021-2024 qui a servi au dosage. Le juge est la réserve 2025-2026 (`outils/suite_reserve.sh` puis
+> `reserve_2526.py` sur les quatre livres). Le choix du livre de chaque compte peut changer avec ce résultat.
+
 ---
 
 ## 0. Compte Axi Select : Denis en a déjà un (ouvert, jamais utilisé)
