@@ -177,13 +177,18 @@ EO AdvSc JPY et Heron NZDCAD à 0. Pire jour −18,3 %, pire mois −14,7 % à c
   Proposition : faire mesurer par le fil des tests un dosage « à VaR égale » par jambe, pour stabiliser
   la VaR (ce qui fait monter la note Rs).
 
-**Capital recommandé : 3 000 $, compte en USD, lots du livre à 1 721 $ inchangés.**
-- La VaR mensuelle tombe à 5,1 %, au milieu de la bande 3,25-6,5 % : le moteur de Darwinex n'a presque
-  rien à corriger.
-- Pour Denis : pire creux 430 $ = 14,3 % ; pire jour ≈ −10,5 % ; pire mois ≈ −8,4 % (règles de trois sur
-  les chiffres à 1 721 $). Après le pire creux, il reste ≈ 2 570 $, loin du seuil d'exclusion DarwinIA de 900 $.
-- **Reste à vérifier : la marge au levier de détail** (or 20:1, argent et pétrole 10:1) quand plusieurs
-  jeux or sont ouverts en même temps. À mesurer avec l'outil d'empilement sur les rapports, avant la pose.
+**Capital recommandé : 10 000 $, compte en USD, lots du livre à 1 721 $ inchangés.** (Corrigé le 26/09 :
+une première version disait 3 000 $, sans avoir mesuré la marge.)
+- Notionnel ouvert mesuré (fil des tests, `notionnel_livre_eo.txt`) : **146 000 $ au maximum** (12/04/2024),
+  79 000 $ au 99e centile, 15 700 $ en médiane. Au levier de détail UE (or 20:1, devises 20 à 30:1, argent et
+  pétrole 10:1), le pire instant immobilise de l'ordre de **5 000 à 7 500 $ de marge** : à 3 000 $, appel de
+  marge. À 10 000 $, la marge reste couverte au pire instant, avec le pire creux (430 $) en plus.
+- À 10 000 $ : VaR mensuelle 1,5 %, sous la bande ; Darwinex la remonte pour le DARWIN. Notre lot n'agit
+  pas sur le DARWIN, seulement sur notre propre risque (creux 4,3 %).
+- **Plafond Darwinex** : levier du DARWIN ≤ 9,75 pour les positions de plus d'une heure. Le livre a peu de
+  VaR par dollar de notionnel : pour viser 6,5 %, le DARWIN devrait monter à un levier d'environ 62 au pire
+  instant et 6,7 en médiane. Le plafond joue donc dès ~23 000 $ de notionnel ouvert, **quels que soient nos
+  lots** : le DARWIN fera moins que le « ≈ 19 %/mois » théorique. Part du temps au-dessus de 23 000 $ : à mesurer.
 
 ### 2.5 Symboles Darwinex
 
@@ -197,6 +202,6 @@ Watch** (42 paires annoncées, liste non publiée sur cette page). USO H4 (USOUS
 
 1. Denis : dire si le compte Axi Select existant est MT4 ou MT5, Standard ou Pro (visible dans le Client Portal).
 2. Denis ou nous : demander au support Axi la durée minimale de détention ; nous : compter les positions opposées d'Eagle-owl sur un même symbole.
-3. Nous : rejouer le livre Axi aux lots arrondis de 20 k$, sans AdvSc ; mesurer la marge Darwinex à 3 000 $.
+3. Nous : rejouer le livre Axi aux lots arrondis de 20 k$, sans AdvSc ; mesurer la part du temps au-dessus de 23 000 $ de notionnel (plafond Darwinex).
 4. Après ouverture (accord écrit de Denis) : lire les noms de symboles dans le Market Watch, poser les `.set`
    corrigés, contrôler le premier jour avec l'espion.
