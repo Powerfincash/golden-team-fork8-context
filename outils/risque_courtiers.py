@@ -54,8 +54,11 @@ def lire(chemin, col):
     if col:
         choix = [entete.index(col)]
     else:
-        prefere = [i for i in numeriques if entete[i].lower() in ("total", "livre", "net", "pnl", "gain")]
-        choix = prefere[:1] or (numeriques if len(numeriques) == 1 else numeriques)
+        prefere = [i for i in numeriques if entete[i].lower() in ("total", "livre", "livre_usd", "net", "pnl", "gain")]
+        prefere += [i for i in numeriques if entete[i].lower().startswith("livre") and i not in prefere]
+        if not prefere and len(numeriques) > 1:
+            sys.exit(f"Plusieurs colonnes numériques {[entete[i] for i in numeriques]} : préciser --col (refus de les additionner au hasard).")
+        choix = prefere[:1] or numeriques
     print(f"Fichier : {chemin}")
     print(f"En-tête : {entete}")
     print(f"Colonne(s) prise(s) : {[entete[i] for i in choix]}"
